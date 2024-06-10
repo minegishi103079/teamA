@@ -8,19 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.services.SalesService;
-
 /**
- * Servlet implementation class SalelistServlet
+ * Servlet implementation class C0020_DashbordServlet
  */
-@WebServlet("/Sales0021")
-public class Sales0021_SearchResultServlet extends HttpServlet {
+@WebServlet("/C0020")
+public class C0020_DashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0021_SearchResultServlet() {
+    public C0020_DashboardServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,26 +27,16 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAllTable());
-		
-		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("/Dashboard.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		// ToDo:検索条件を受け取る
-		
-		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAllTable());
-		
-		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

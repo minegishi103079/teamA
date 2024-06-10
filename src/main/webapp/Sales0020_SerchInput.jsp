@@ -19,7 +19,7 @@
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上検索条件入力</h1>
 			
-			<form class="was-validated" name="form" action="" method="post">
+			<form class="was-validated" name="form" action="Sales0021" method="post">
 			<!-- formタグの中身確認！actionのなか書く -->
 
 				<div class="row g-3 align-items-center">
