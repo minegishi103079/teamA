@@ -9,6 +9,7 @@
 <title>売上登録</title>
 </head>
 <body>
+<jsp:include page="Dashboard.jsp"></jsp:include>
 	<h1>売上登録</h1>
 
 	<div class="container-fluid">

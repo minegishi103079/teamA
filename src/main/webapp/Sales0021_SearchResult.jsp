@@ -11,6 +11,7 @@
 	<title></title>
 </head>
 <body>
+	<jsp:include page="Dashboard.jsp"></jsp:include>
 	<div class="container mt-5 justify-content-center">
 		<h1>売上検索結果表示</h1>
 		<table class="table">
