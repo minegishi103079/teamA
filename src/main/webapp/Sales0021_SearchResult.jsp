@@ -36,8 +36,8 @@
 					<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>
 					<td><c:out value="${saleslist.getCategory_name()}" /></td> <%-- 商品カテゴリー--%>
 					<td><c:out value="${saleslist.getTrade_name()}" /></td> <%-- 商品名--%>
-					<td><c:out value="${saleslist.getUnit_price()}" /></td> <%-- 単価--%>
-					<td><c:out value="${saleslist.getSale_number()}" /></td> <%-- 個数--%>
+					<td><c:out value="${CommonUtil.numberComma( saleslist.getUnit_price() )}" /></td> <%-- 単価--%>
+					<td><c:out value="${CommonUtil.numberComma( saleslist.getSale_number() )}" /></td> <%-- 個数--%>
 					<td><c:out value="${saleslist.getUnit_price() * saleslist.getSale_number()}" /></td> <%-- 小計--%>
 				</tr>
 			</c:forEach>

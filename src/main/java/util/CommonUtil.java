@@ -1,5 +1,6 @@
 package util;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,6 +22,11 @@ public class CommonUtil {
 	
 	public static String localDateFormat(LocalDate date) {
 		return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+	}
+	
+	public static String numberComma(int num) {
+		NumberFormat ni = NumberFormat.getNumberInstance();
+		return ni.format(num);
 	}
 	
 	// jsp側のnameと合わせる
