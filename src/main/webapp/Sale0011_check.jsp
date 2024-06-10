@@ -4,21 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <meta charset="UTF-8">
-<title>売上登録</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<title>売上登録確認</title>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
-			<h1>売上登録</h1>
-			<form class="was-validated" action="Sale0010Registration_Servlet">
+			<h1>売上登録確認</h1>
+			<form class="was-validated" action="Sale0011check_Servlet">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">販売日
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">販売日</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" id="validationTextarea"
@@ -29,9 +27,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
-						<label for="varidationTextarea" class="col-form-label">担当
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">担当</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="Responsible" required>
@@ -45,9 +41,7 @@
 
 				<div class="row align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">商品カテゴリー
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="goodscategory" required>
@@ -61,9 +55,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">商品名
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">商品名</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="validationTextarea"
@@ -73,9 +65,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">単価
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">単価</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="validationTextarea"
@@ -85,9 +75,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">個数
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
-						</label>
+						<label for="varidationTextarea" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="validationTextarea"
@@ -97,6 +85,15 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
+						<label for="varidationTextarea" class="col-form-label">小計</label>
+					</div>
+					<div class="col-3 p-2">
+						<input type="textarea" id="validationTextarea"
+							class="form-control" name="subtotal" placeholder="小計" required>
+					</div>
+				</div>
+				<div class="row g-3 align-items-center">
+					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
@@ -104,14 +101,14 @@
 							name="textarea" placeholder="備考" required></textarea>
 					</div>
 				</div>
-
-				<div class="mx-auto p-2" style="width: 100px;">
-					<button type="submit" class="btn btn-primary" href="Sale0010Registration_Servlet">✓登録</button>
-				</div>
-
+			
+				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
+					  <button class="btn btn-primary" type="submit" href="Sale0011check_Servlet">✓OK</button>
+					  <button class="btn btn-secondary" type="submit" href="Saleoo10_Registration">キャンセル</button>
+					</div>
 			</form>
 		</div>
-		<c:forEach var="SaleRegistration" items="${SaleRegistration}">
+		<c:forEach var="salecheck" items="${salecheck}">
 	            <tr>
 					<td><c:out value="${salecheck.getSale_date()}" /></td>
 					<td><c:out value="${salecheck.getAccount_id()}" /></td>
