@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,20 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.beans.SalesBean;
 import model.services.SalesService;
 
 /**
  * Servlet implementation class SalelistServlet
  */
 @WebServlet("/Sales0021")
-public class SearchResultServlet extends HttpServlet {
+public class Sales0021_SearchResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchResultServlet() {
+    public Sales0021_SearchResultServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,8 +31,7 @@ public class SearchResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAll());
-		ArrayList<SalesBean> salelist = ss.selectAll();
+		request.setAttribute("sales", ss.selectAllTable());
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		

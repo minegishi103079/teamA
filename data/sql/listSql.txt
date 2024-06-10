@@ -1,0 +1,5 @@
+・すべてのテーブルを結合して表示
+SELECT * FROM sales s 
+LEFT JOIN accounts a ON s.account_id = a.account_id
+LEFT JOIN categories c ON s.category_id = c.category_id;
+

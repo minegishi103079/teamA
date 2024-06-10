@@ -1,0 +1,16 @@
+[accountsテーブル]
+create database management;
+
+create table accounts(
+account_id int primary key auto_increment,
+name varchar(20) not null,
+mail varchar(100) not null,
+password varchar(30)not null,
+authority int not null default'0'
+);
+
+
+・テスト用データ作成
+insert into accounts 
+(name, mail, password) values ('田中', 'test@test', 'test');
+
