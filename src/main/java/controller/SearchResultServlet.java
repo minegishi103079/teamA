@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.beans.SalesBean;
 import model.services.SalesService;
 
 /**
@@ -32,9 +34,9 @@ public class SearchResultServlet extends HttpServlet {
 		
 		SalesService ss = new SalesService();
 		request.setAttribute("sales", ss.selectAll());
+		ArrayList<SalesBean> salelist = ss.selectAll();
 		
-		
-		request.getRequestDispatcher("/#").forward(request, response);
+		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
 	}
 

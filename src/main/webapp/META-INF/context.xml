@@ -24,5 +24,5 @@
 		driverClassName="org.mariadb.jdbc.Driver"
 		url="jdbc:mariadb://localhost:3306/management?useUnicode=true&amp;characterEncoding=utf8"
 		maxActive="4" maxIdle="10" maxWait="5000"
-		validationQuery="SELECT count(*) FROM management" />
+		validationQuery="SELECT count(*) FROM sales" />
 </Context>

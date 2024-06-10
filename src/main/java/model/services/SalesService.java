@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import model.beans.SalesBean;
 import util.CommonUtil;
+import util.DbUtil;
 
 public class SalesService {
 	
@@ -20,10 +21,10 @@ public class SalesService {
 	
 	public SalesBean detailSale(String sales_id) {
 		String sql = "select * from sales where sales_id = ?";
-		SalesBean sales;
+		SalesBean sales = null;
 		
 		try (
-				Connection con = DbUtil.open;
+				Connection con = DbUtil.open();
 				PreparedStatement ps = con.prepareStatement(sql);
 		){
 			ps.setString(1, sales_id);
@@ -54,7 +55,7 @@ public class SalesService {
 		ArrayList<SalesBean> salelist = new ArrayList<>();
 		
 		try (
-				Connection con = DbUtil.open;
+				Connection con = DbUtil.open();
 				PreparedStatement ps = con.prepareStatement(sql);
 		){
 			ResultSet rs = ps.executeQuery();
