@@ -14,7 +14,6 @@ public class DbUtil {
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
 			DataSource ds = (DataSource) envContext.lookup("jdbc/mariadb");	
 			con = ds.getConnection();
-			System.out.println("接続成功");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

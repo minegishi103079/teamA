@@ -33,10 +33,8 @@ public class SearchResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		SalesService ss = new SalesService();
-//		request.setAttribute("sales", ss.selectAll());
+		request.setAttribute("sales", ss.selectAll());
 		ArrayList<SalesBean> salelist = ss.selectAll();
-		
-		System.out.println(salelist.get(0).getAccount_id());
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
