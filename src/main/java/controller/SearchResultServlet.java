@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.beans.SalesBean;
 import model.services.SalesService;
 
 /**
@@ -31,10 +33,12 @@ public class SearchResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAll());
+//		request.setAttribute("sales", ss.selectAll());
+		ArrayList<SalesBean> salelist = ss.selectAll();
 		
+		System.out.println(salelist.get(0).getAccount_id());
 		
-		request.getRequestDispatcher("/#").forward(request, response);
+		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
 	}
 
