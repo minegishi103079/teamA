@@ -19,7 +19,9 @@ public class CommonUtil {
 		return num;
 	}
 	
-	
+	public static String localDateFormat(LocalDate date) {
+		return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+	}
 	
 	// jsp側のnameと合わせる
 	public static SalesBean request_Sales(HttpServletRequest request) {
