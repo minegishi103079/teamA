@@ -34,7 +34,7 @@
 					<c:forEach var="saleslist" items="${sales}">
 						<tr>
 						
-							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${sale_id }"> ✓詳細 </button</td>
+							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${saleslist.getSale_id() }"> ✓詳細 </button</td>
 							<td><c:out value="${saleslist.getSale_id()}" /></td> <%--No --%>
 							<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td> <%-- 販売日--%>
 							<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>

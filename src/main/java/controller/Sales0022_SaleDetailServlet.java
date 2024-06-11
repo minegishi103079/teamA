@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.SalesService;
 
@@ -32,8 +33,13 @@ public class Sales0022_SaleDetailServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = request.getSession();
+		if (request.getParameter("sale_id") != null) {
+			session.setAttribute("sale_id", request.getParameter("sale_id"));
+		}
+		
 		SalesService ss = new SalesService();
-//		request.setAttribute("sales", ss.detailSales(request.getParameter("sale_id")));
+		request.setAttribute("sales", ss.detailSales((String)session.getAttribute("sale_id")) );
 		
 		request.getRequestDispatcher("/Sales0022_SaleDetail.jsp").forward(request, response);
 		

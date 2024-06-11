@@ -23,8 +23,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     販売日
                 </div>
-                <div class="col-8">
-                    2015/11/11
+                <div class="col-6">
+                    <c:out value="${sales.getSale_date() }"></c:out>
                 </div>
             </div>
 
@@ -32,8 +32,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     担当
                 </div>
-                <div class="col-8">
-                    田中
+                <div class="col-6">
+                    <c:out value="${sales.getName()}"></c:out>
                 </div>
             </div>
 
@@ -41,8 +41,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     商品カテゴリー
                 </div>
-                <div class="col-8">
-                    食料品
+                <div class="col-6">
+                    <c:out value="${sales.getCategory_name()}"></c:out>
                 </div>
             </div>
 
@@ -50,8 +50,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     商品名
                 </div>
-                <div class="col-8">
-                    オレンジ
+                <div class="col-6">
+                    <c:out value="${sales.getTrade_name()}"></c:out>
                 </div>
             </div>
 
@@ -59,8 +59,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     単価
                 </div>
-                <div class="col-8">
-                    500
+                <div class="col-6">
+                    <c:out value="${sales.getUnit_price()}"></c:out>
                 </div>
             </div>
 
@@ -68,8 +68,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     個数
                 </div>
-                <div class="col-8">
-                    3
+                <div class="col-6">
+                    <c:out value="${sales.getSale_number()}"></c:out>
                 </div>
             </div>
 
@@ -77,8 +77,8 @@
                 <div class="col-4 d-flex flex-row-reverse">
                     備考
                 </div>
-                <div class="col-8">
-                    テスト
+                <div class="col-6">
+                    <c:out value="${sales.getNote()}"></c:out>
                 </div>
             </div>
 
