@@ -24,7 +24,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control"
-							name="date" placeholder="yyyy/mm/dd" value="${ }" disabled >
+							name="date" placeholder="yyyy/mm/dd" value="<c:out value="${ }"></c:out>" disabled >
 					</div>
 				</div>
 
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="goodscategory" id="category" disabled>
-						<c:out value="${ }">
+						<c:out value="${ }"></c:out>
 						</select>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="trade" class="form-control"
-							name="goodsname" value="${ }" placeholder="商品名" disabled>
+							name="goodsname" value="<c:out value="${ }"></c:out>" placeholder="商品名" disabled>
 					</div>
 				</div>
 
@@ -67,7 +67,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="unit" class="form-control" name="price"
-							value="${ }" placeholder="単価" disabled>
+							value="<c:out value="${ }"></c:out>" placeholder="単価" disabled>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 						<label for="num" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="num" class="form-control"name="quantity" value="${ }" placeholder="個数" disabled>
+						<input type="textarea" id="num" class="form-control"name="quantity" value="<c:out value="${ }"></c:out>" placeholder="個数" disabled>
 					</div>
 				</div>
 
@@ -85,9 +85,7 @@
 						<label for="note" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="note" name="textarea"placeholder="備考" disabled>
-						<c:out value="${}">
-						</textarea>
+						<textarea class="form-control" id="note" name="textarea"placeholder="備考" disabled><c:out value="${}"></c:out></textarea>
 					</div>
 				</div>
 
@@ -108,5 +106,5 @@
 </html>
 
 <!--valueの中身
-OKとキャンセルボタンのリンク先の指定  -->
+formactionとOKとキャンセルボタンのリンク先の指定  -->
 
