@@ -31,7 +31,7 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAllTable());
+		request.setAttribute("sales", ss.selectAll());
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
@@ -45,7 +45,7 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 		// ToDo:検索条件を受け取る
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAllTable());
+		request.setAttribute("sales", ss.selectAll());
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
