@@ -85,13 +85,17 @@
             <div class="row d-flex justify-content-center mt-2">
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary" href="#">✓編集</button>
+                	<form class="" action="Sales0023" method="get" id="edit">
+                    	<button type="submit" class="btn btn-primary" name="sale_id" value="id" for="edit">✓編集</button>
+                    </form>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-danger" href="#">×削除</button>
+	                <form class="" action="Sales0025" method="get" id="delete">
+    	                <button type="submit" class="btn btn-danger" name="sale_id" value="id" for="delete">×削除</button>
+    	            </form>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-light" href="#">キャンセル</button>
+                    <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
                 </div>
                 
             </div>

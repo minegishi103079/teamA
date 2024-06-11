@@ -16,7 +16,7 @@
 	<div class="container-fluid">
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上詳細編集確認</h1>
-			<form action="#">
+			<form action="Sales0024" method="post" id="decide">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -24,7 +24,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control"
-							name="date" placeholder="yyyy/mm/dd" value="<c:out value="${ }"></c:out>" disabled >
+							name="date" placeholder="yyyy/mm/dd" value="<c:out value="${a }"></c:out>" disabled >
 					</div>
 				</div>
 
@@ -35,7 +35,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="Responsible" id="account" disabled>
-							<c:out value="${ }">
+							<c:out value="${a }" />
 						</select>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="goodscategory" id="category" disabled>
-						<c:out value="${ }"></c:out>
+						<c:out value="${a }"></c:out>
 						</select>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="trade" class="form-control"
-							name="goodsname" value="<c:out value="${ }"></c:out>" placeholder="商品名" disabled>
+							name="goodsname" value="<c:out value="${a }"></c:out>" placeholder="商品名" disabled>
 					</div>
 				</div>
 
@@ -67,7 +67,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="unit" class="form-control" name="price"
-							value="<c:out value="${ }"></c:out>" placeholder="単価" disabled>
+							value="<c:out value="${a }"></c:out>" placeholder="単価" disabled>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 						<label for="num" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="num" class="form-control"name="quantity" value="<c:out value="${ }"></c:out>" placeholder="個数" disabled>
+						<input type="textarea" id="num" class="form-control"name="quantity" value="<c:out value="${a }"></c:out>" placeholder="個数" disabled>
 					</div>
 				</div>
 
@@ -85,19 +85,22 @@
 						<label for="note" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="note" name="textarea"placeholder="備考" disabled><c:out value="${}"></c:out></textarea>
-					</div>
-				</div>
-
-				<div class="row d-flex justify-content-center mt-2">
-					<div class="col-auto">
-						<button type="submit" class="btn btn-primary" href="">✓OK</button>
-					</div>
-					<div class="col-auto">
-						<button type="submit" class="btn btn-light" href="">キャンセル</button>
+						<textarea class="form-control" id="note" name="textarea"placeholder="備考" disabled><c:out value="${a}"></c:out></textarea>
 					</div>
 				</div>
 			</form>
+
+				<div class="row d-flex justify-content-center mt-2">
+					<div class="col-auto">
+						<button type="submit" class="btn btn-primary" form="decide" name="sales_id" values="id">✓OK</button>
+					</div>
+					<div class="col-auto">
+						<form method="get" action="Sales0022" id="cancel">
+							<button type="submit" class="btn btn-light" name="sales_id" values="id" form="cancel">キャンセル</button>
+						</form>
+					</div>
+				</div>
+			
 		</div>
 
 	</div>

@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
-import model.beans.SalesBean;
+import model.beans.ListBean;
 
 public class CommonUtil {
 	
@@ -29,11 +29,12 @@ public class CommonUtil {
 		return ni.format(num);
 	}
 	
-	// jsp側のnameと合わせる
-	public static SalesBean request_Sales(HttpServletRequest request) {
-		SalesBean sales = null;
+
+	// jsp側のnameと合わせる。入力されない値は仮決めする。
+	public static ListBean request_ListBean(HttpServletRequest request) {
+		ListBean sales = null;
 		try {
-			sales = new SalesBean(
+			sales = new ListBean(
 					str_Int(request.getParameter("sale_id")),
 					CommonUtil.str_LocalDate(request.getParameter("sale_date")),
 					str_Int(request.getParameter("account_id")),
@@ -41,14 +42,17 @@ public class CommonUtil {
 					request.getParameter("trade_name"),
 					str_Int(request.getParameter("unit_price")),
 					str_Int(request.getParameter("sale_number")),
-					request.getParameter("note")
+					request.getParameter("note"),
+					request.getParameter("name"),
+					str_Int(request.getParameter("authority")),
+					request.getParameter("category_name"),
+					str_Int(request.getParameter("active_fjg"))
 			);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
 		return sales;
-		
 	}
 	
 	

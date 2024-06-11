@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="position-absolute top-50 start-50 translate-middle col-10">
             <h1>売上詳細編集</h1>
-            <form action="#">
+            <form action="Sales0024" method="get">
 
                 <div class="row g-3 align-items-center">
                     <div class="col-4 d-flex flex-row-reverse">
@@ -108,10 +108,10 @@
 
                 <div class="row d-flex justify-content-center mt-2">
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary" href="#">✓更新</button>
+                        <button type="submit" class="btn btn-primary">✓更新</button>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-light" href="#">キャンセル</button>
+                        <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
                     </div>
                 </div>
             </form>

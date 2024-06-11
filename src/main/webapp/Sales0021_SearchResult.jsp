@@ -30,19 +30,22 @@
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-			<c:forEach var="saleslist" items="${sales}">
-				<tr>
-					<td><buttontype ="submit" class="btn btn-primary"> ✓詳細 </button</td>
-					<td><c:out value="${saleslist.getSale_id()}" /></td> <%--No --%>
-					<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td> <%-- 販売日--%>
-					<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>
-					<td><c:out value="${saleslist.getCategory_name()}" /></td> <%-- 商品カテゴリー--%>
-					<td><c:out value="${saleslist.getTrade_name()}" /></td> <%-- 商品名--%>
-					<td><c:out value="${CommonUtil.numberComma( saleslist.getUnit_price() )}" /></td> <%-- 単価--%>
-					<td><c:out value="${CommonUtil.numberComma( saleslist.getSale_number() )}" /></td> <%-- 個数--%>
-					<td><c:out value="${saleslist.getUnit_price() * saleslist.getSale_number()}" /></td> <%-- 小計--%>
-				</tr>
-			</c:forEach>
+				<form method="get" action="Sales0022">
+					<c:forEach var="saleslist" items="${sales}">
+						<tr>
+						
+							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${sale_id }"> ✓詳細 </button</td>
+							<td><c:out value="${saleslist.getSale_id()}" /></td> <%--No --%>
+							<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td> <%-- 販売日--%>
+							<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>
+							<td><c:out value="${saleslist.getCategory_name()}" /></td> <%-- 商品カテゴリー--%>
+							<td><c:out value="${saleslist.getTrade_name()}" /></td> <%-- 商品名--%>
+							<td><c:out value="${CommonUtil.numberComma( saleslist.getUnit_price() )}" /></td> <%-- 単価--%>
+							<td><c:out value="${CommonUtil.numberComma( saleslist.getSale_number() )}" /></td> <%-- 個数--%>
+							<td><c:out value="${saleslist.getUnit_price() * saleslist.getSale_number()}" /></td> <%-- 小計--%>
+						</tr>
+					</c:forEach>
+				</form>
 			</tbody>
 		</table>
 	</div>
