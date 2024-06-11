@@ -19,9 +19,8 @@
 						<label for="varidationTextarea" class="col-form-label">販売日</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="date" id="validationTextarea"
-							class="col-4 form-control" name="date" placeholder="yyyy/mm/dd"
-							required>
+						<input type="date" value="<c:out value="${sale_date}"></c:out>" 
+							id="validationTextarea" class="col-4 form-control" name="sale_date" disabled>
 					</div>
 				</div>
 
@@ -30,11 +29,13 @@
 						<label for="varidationTextarea" class="col-form-label">担当</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="Responsible" required>
+						<select class="form-select" name="account_id" disabled>
+						<c:out value="${account_id}">
 							<option value="" disabled selected>選択してください</option>
-							<option value="高">高</option>
-							<option value="中">中</option>
-							<option value="低">低</option>
+							<option value="3">高</option>
+							<option value="2">中</option>
+							<option value="1">低</option>
+						</c:out>
 						</select>
 					</div>
 				</div>
@@ -44,11 +45,13 @@
 						<label for="varidationTextarea" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="goodscategory" required>
+						<select class="form-select" name="category_id" disabled>
+						<c:out value="${category_id }">
 							<option value="" disabled selected>選択してください</option>
-							<option value="高">高</option>
-							<option value="中">中</option>
-							<option value="低">低</option>
+							<option value="3">高</option>
+							<option value="2">中</option>
+							<option value="1">低</option>
+						</c:out>
 						</select>
 					</div>
 				</div>
@@ -58,8 +61,8 @@
 						<label for="varidationTextarea" class="col-form-label">商品名</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" id="validationTextarea"
-							class="form-control" name="goodsname" placeholder="商品名" required>
+						<input type="textarea"  value="<c:out value="${trade_name}"></c:out>" id="validationTextarea"
+							class="form-control" name="trade_name" disabled>
 					</div>
 				</div>
 
@@ -68,8 +71,8 @@
 						<label for="varidationTextarea" class="col-form-label">単価</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="validationTextarea"
-							class="form-control" name="price" placeholder="単価" required>
+						<input type="textarea"  value="<c:out value="${unit_price}"></c:out>" id="validationTextarea"
+							class="form-control" name="unit_price" disabled>
 					</div>
 				</div>
 
@@ -78,8 +81,8 @@
 						<label for="varidationTextarea" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="validationTextarea"
-							class="form-control" name="quantity" placeholder="個数" required>
+						<input type="textarea"  value="<c:out value="${sale_number}"></c:out>" id="validationTextarea"
+							class="form-control" name="sale_number" disabled>
 					</div>
 				</div>
 
@@ -88,8 +91,8 @@
 						<label for="varidationTextarea" class="col-form-label">小計</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="validationTextarea"
-							class="form-control" name="subtotal" placeholder="小計" required>
+						<input type="textarea" value="<c:out value="${unit_price * sale_number }"></c:out>" id="validationTextarea"
+							class="form-control" name=""  disabled>
 					</div>
 				</div>
 				<div class="row g-3 align-items-center">
@@ -98,27 +101,18 @@
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control" id="validationTextarea"
-							name="textarea" placeholder="備考" required></textarea>
+							name="note" disabled><c:out value="${note}"></c:out></textarea>
 					</div>
 				</div>
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit" href="Sale0011check_Servlet">✓OK</button>
-					  <button class="btn btn-secondary" type="submit" href="Saleoo10_Registration">キャンセル</button>
+					  <button class="btn btn-primary" type="submit" href="Sale0011_checkjsp">✓OK</button>
+					  <a class="btn btn-secondary" type="button" href="Sale0010_Registration.jsp">キャンセル</a>
 					</div>
 			</form>
 		</div>
-		<c:forEach var="salecheck" items="${salecheck}">
-	            <tr>
-					<td><c:out value="${salecheck.getSale_date()}" /></td>
-					<td><c:out value="${salecheck.getAccount_id()}" /></td>
-					<td><c:out value="${salecheck.getCategory_id()}" /></td>
-					<td><c:out value="${salecheck.getTrade_id()}" /></td>
-					<td><c:out value="${salecheck.getUnit_price()}" /></td>
-					<td><c:out value="${salecheck.getSale_number()}" /></td>
-					<td><c:out value="${salecheck.getNote()}" /></td>
-				</tr>
-		</c:forEach>
 	</div>
 </body>
 </html>
+
+<!-- エラーメッセージは未完了--!>
