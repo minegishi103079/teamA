@@ -53,8 +53,8 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
-							name="Responsible" placeholder="選択してください">
-							<option value=""></option>
+							name="Responsible">
+							<option value=""　disabled selected>選択してください</option>
 							<option value="高">高</option>
 							<option value="中">中</option>
 							<option value="低">低</option>
@@ -68,8 +68,8 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
-							name="goodscategory" placeholder="選択してください">
-							<option value=""></option>
+							name="goodscategory">
+							<option value="" disabled selected>選択してください</option>
 							<option value="高">高</option>
 							<option value="中">中</option>
 							<option value="低">低</option>
@@ -102,8 +102,8 @@
 				</div>
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
-					<button type="submit" class="btn btn-primary">検索</button>
-					<button type="submit" class="btn btn-light">クリア</button>
+					<button type="submit" class="btn btn-primary" href="#">検索</button>
+					<button type="submit" class="btn btn-light" href="#">クリア</button>
 				</div>
 
 			</form>
