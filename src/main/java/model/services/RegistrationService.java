@@ -53,12 +53,48 @@ public class RegistrationService {
 				CategoriesBean cg=new CategoriesBean(
 						rs.getInt("category_id"),
 						rs.getString("Category_name"),
-						rs.getInt("active_flag")
+						rs.getInt("active_flg")
 						);
 				cb.add(cg);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}return cb;
+	}
+	
+	public String accountsname(String accountid) {
+		String sql="select name from accounts where account_id=?";
+		String ai=null;
+		try (
+				Connection con=DbUtil.open();
+				PreparedStatement stmt = con.prepareStatement(sql);
+			){
+				//PreparedStatementがクローズされるタイミングでクローズ
+			stmt.setString(1, accountid);	
+			ResultSet rs =stmt.executeQuery();
+				while(rs.next()) {
+					ai=rs.getString("name");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}return ai;
+	}
+	
+	public String categoryname(String categoryid) {
+		String sql="select category_name from categories where category_id=?";
+		String ci=null;
+		try (
+				Connection con=DbUtil.open();
+				PreparedStatement stmt = con.prepareStatement(sql);
+			){
+				//PreparedStatementがクローズされるタイミングでクローズ
+			stmt.setString(1, categoryid);	
+			ResultSet rs =stmt.executeQuery();
+				while(rs.next()) {
+					ci=rs.getString("category_name");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}return ci;
 	}
 }

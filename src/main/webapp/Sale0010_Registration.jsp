@@ -38,6 +38,7 @@
 							<option value="<c:out value="${accounts.getAccount_id()}"></c:out>"><c:out value="${accounts.getName()}"></c:out></option>
 							</c:forEach>
 						</select>
+						
 					</div>
 				</div>
 
@@ -50,9 +51,9 @@
 					<div class="col-6 p-2">
 						<select class="form-select" name="category_id" required>
 							<option value="" disabled selected>選択してください</option>
-							<option value="3">高</option>
-							<option value="2">中</option>
-							<option value="1">低</option>
+							<c:forEach var="categories" items="${categories}">
+							<option value="<c:out value="${categories.getCategory_id()}"></c:out>"><c:out value="${categories.getCategory_name()}"></c:out></option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
@@ -93,12 +94,12 @@
 					</div>
 				</div>
 
-				<div class="row g-3 align-items-center">
+				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="validationTextarea"
+						<textarea class="form-control" id="validationTextarea" rows="3"
 							name="note" placeholder="備考" required></textarea>
 					</div>
 				</div>

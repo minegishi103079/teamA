@@ -30,12 +30,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" name="account_id" disabled>
-						<c:out value="${account_id}">
-							<option value="" disabled selected>選択してください</option>
-							<option value="3">高</option>
-							<option value="2">中</option>
-							<option value="1">低</option>
-						</c:out>
+							<option value="<c:out value="${account_id}"></c:out>"><c:out value="${name}"></c:out></option>
 						</select>
 					</div>
 				</div>
@@ -45,13 +40,8 @@
 						<label for="varidationTextarea" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="category_id" disabled>
-						<c:out value="${category_id }">
-							<option value="" disabled selected>選択してください</option>
-							<option value="3">高</option>
-							<option value="2">中</option>
-							<option value="1">低</option>
-						</c:out>
+						<select class="form-select" name="category_id"  disabled>
+							<option value="<c:out value="${category_id}"></c:out>"><c:out value="${category_name}"></c:out></option>
 						</select>
 					</div>
 				</div>
@@ -95,12 +85,12 @@
 							class="form-control" name=""  disabled>
 					</div>
 				</div>
-				<div class="row g-3 align-items-center">
+				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="validationTextarea"
+						<textarea class="form-control" id="validationTextarea" rows="3"
 							name="note" disabled><c:out value="${note}"></c:out></textarea>
 					</div>
 				</div>
