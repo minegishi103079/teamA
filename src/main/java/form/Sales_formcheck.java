@@ -35,14 +35,25 @@ public class Sales_formcheck {
 		boolean m = noteLength(req.getParameter("note"));
 		boolean n = accountExist(req.getParameter("account_id"));
 		boolean o = categoryExist(req.getParameter("category_id"));
+		
+		
+		
+		boolean result = a && b && c && d && e && f && g && h && i && j && k && l && m && n && o;
+		
+		return result;
+	}
+	
+	public boolean validate_2(HttpServletRequest req) {
+		
 		boolean p = dateStartFormat(req.getParameter("date1"));
 		boolean q = dateEndFormat(req.getParameter("date2"));
 		boolean r = numberCheck(req);
 		
-		
-		boolean result = a && b && c && d && e && f && g && h && i && j && k && l && m && n && o && p&& q && r;
+		boolean result = p&& q && r;
 		
 		return result;
+		
+		
 	}
 	
 	//販売日必須入力チェック

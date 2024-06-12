@@ -42,7 +42,7 @@
 					</div>
 				</div>
 
-				<div class="row align-items-center">
+				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="category" class="col-form-label">商品カテゴリー</label>
 					</div>
