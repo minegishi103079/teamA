@@ -107,18 +107,17 @@
 
 				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">備考</label>
+						<label for="Textarea" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="validationTextarea" rows="3"
-							name="note" placeholder="備考" required></textarea>
+						<textarea class="form-control" id="Textarea" rows="3"
+							name="note" placeholder="備考"></textarea>
 					</div>
 				</div>
 
 				<div class="mx-auto p-2" style="width: 100px;">
 					<button type="submit" class="btn btn-primary" href="Sale0011_check.jsp">✓登録</button>
 				</div>
-
 			</form>
 		</div>
 	</div>

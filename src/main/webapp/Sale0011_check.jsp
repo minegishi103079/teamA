@@ -87,10 +87,10 @@
 				</div>
 				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">備考</label>
+						<label for="Textarea" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="validationTextarea" rows="3"
+						<textarea class="form-control" id="Textarea" rows="3"
 							name="note" readonly><c:out value="${note}"></c:out></textarea>
 					</div>
 				</div>
