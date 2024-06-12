@@ -14,6 +14,14 @@
 
 <body>
 <jsp:include page="Dashboard.jsp"></jsp:include>
+	
+	<c:if test="${ not empty errors }">
+		<div class="alert alert-danger" role="alert">
+			<c:forEach var="error" items="${ errors }">
+				<c:out value="${ error }" />
+			</c:forEach>
+		</div>
+	</c:if>
 
     <div class="container-fluid">
         <div class="position-absolute top-50 start-50 translate-middle col-10">

@@ -8,12 +8,15 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import lombok.Getter;
 import util.CommonUtil;
 import util.DbUtil;
 
+@Getter
+
 public class Sales_formcheck {
 
-	static ArrayList<String> errors = new ArrayList<>();
+	private ArrayList<String> errors = new ArrayList<>();
 	
 	public boolean validate(HttpServletRequest req) {
 		
@@ -52,7 +55,7 @@ public class Sales_formcheck {
 	}
 	
 	//販売日形式チェック
-	private static boolean dateFormat(String str) {
+	private  boolean dateFormat(String str) {
 		try {
 			CommonUtil.str_LocalDate(str);
 			
@@ -177,7 +180,7 @@ public class Sales_formcheck {
 	}
 	
 	//アカウントテーブル存在チェック
-	public static boolean accountExist(String str) {
+	public boolean accountExist(String str) {
 		
 		String sql = "select count(*) from sales where account_id =?"; 
 		
@@ -204,7 +207,7 @@ public class Sales_formcheck {
 	}
 	
 	//商品カテゴリーテーブル存在チェック
-	public static boolean categoryExist(String str) {
+	public boolean categoryExist(String str) {
 		
 		String sql = "select count(*) from sales where category_id =?"; 
 		
@@ -233,7 +236,7 @@ public class Sales_formcheck {
 	
 	
 	//販売日形式（検索開始日）チェック
-	private static boolean dateStartFormat(String str) {
+	private boolean dateStartFormat(String str) {
 		try {
 			CommonUtil.str_LocalDate(str);
 			
@@ -246,7 +249,7 @@ public class Sales_formcheck {
 	}
 	
 	//販売日形式（検索終了日）チェック
-	private static boolean dateEndFormat(String str) {
+	private  boolean dateEndFormat(String str) {
 		try {
 			CommonUtil.str_LocalDate(str);
 			
@@ -260,7 +263,7 @@ public class Sales_formcheck {
 	
 	
 	//件数チェック
-	public static boolean numberCheck(HttpServletRequest request) {
+	public boolean numberCheck(HttpServletRequest request) {
 		String sql = "select count(*) from sales s ";
 		String date1 = request.getParameter("date1");
 		String date2 = request.getParameter("date2");
