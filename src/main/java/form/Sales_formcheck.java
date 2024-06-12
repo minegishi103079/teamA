@@ -12,21 +12,32 @@ import util.CommonUtil;
 import util.DbUtil;
 
 public class Sales_formcheck {
-	
-	public static void main(String[] args) {
-		
-		
-		
-		System.out.println(accountExist("0"));
-	}
+
 	static ArrayList<String> errors = new ArrayList<>();
 	
 	public boolean validate(HttpServletRequest req) {
 		
 		boolean a = dateEmpty("a");
-		boolean b = accountEmpty("b");
+		boolean b = dateFormat("b");
+		boolean c = accountEmpty("c");
+		boolean d = categoryEmpty("d");
+		boolean e = nameEmpty("e");
+		boolean f = nameLength("f");
+		boolean g = priceEmpty("g");
+		boolean h = priceFormat("h");
+		boolean i = priceLength("i");
+		boolean j = saleNumberEmpty("j");
+		boolean k = saleNumberFormat("k");
+		boolean l = saleNumberLength("l");
+		boolean m = noteLength("m");
+		boolean n = accountEmpty("n");
+		boolean o = categoryExist("o");
+		boolean p = dateStartFormat("p");
+		boolean q = dateEndFormat("q");
+		boolean r = numberCheck(req);
 		
-		boolean result = a && b;
+		
+		boolean result = a && b && c && d && e && f && g && h && i && j && k && l && m && n && o && p&& q && r;
 		
 		return result;
 	}
@@ -249,23 +260,33 @@ public class Sales_formcheck {
 	
 	
 	//件数チェック
-public static boolean numberCheck(String d1,String d2, String a,String c, String t, String n) {
+	public static boolean numberCheck(HttpServletRequest request) {
+		String sql = "select count(*) from sales s ";
+		String date1 = request.getParameter("date1");
+		String date2 = request.getParameter("date2");
+		String account = request.getParameter("account_id");
+		String category = request.getParameter("category_id");
+		String trade = request.getParameter("trade_name");
+		String note = request.getParameter("note");
 		
-		String sql = "select * from sales where saledate between ? and ? and account_id=? and category_id =? and trade_name like '%?%' and note like '%?%'"; 
+		sql += "where sale_date >= '"+ date1 +"' ";
+		if (!date2.isEmpty())
+			sql += "and sale_date <= '"+ date2 +"' ";
+		if (!account.isEmpty())
+			sql += "and account_id = '"+ account +"' ";
+		if (!category.isEmpty())
+			sql += "and category_id = '"+ category +"' ";
+		sql += "and trade_name like '%"+ trade +"%' ";
+		sql += "and note like '%"+ note+"%' ";
+		
 		
 		try(Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);){
 				
-				ps.setString(1, d1);
-				ps.setString(2, d2);
-				ps.setString(3, a);
-				ps.setString(4, c);
-				ps.setString(5, t);
-				ps.setString(6, n);
-				
 				ResultSet rs = ps.executeQuery();
 				
 				rs.next();
+				
 				if(rs.getInt("count(*)")==0) {
 					errors.add("検索結果はありません。");
 					return false;
@@ -278,19 +299,9 @@ public static boolean numberCheck(String d1,String d2, String a,String c, String
 				return false;
 			}
 			return true;
-		
-	}
-	
-	
-	
-	
-	
-	
+	}	
 }
 
-
-//まだできてないやつ
-//・件数チェック
 
 
 
