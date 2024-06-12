@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import javax.servlet.http.HttpServletRequest;
 
 import model.beans.ListBean;
+import model.beans.SearchResultBean;
 import model.services.RegistrationService;
 
 public class CommonUtil {
@@ -53,6 +54,18 @@ public class CommonUtil {
 		}
 		
 		return sales;
+	}
+	
+	
+	public static SearchResultBean request_SearchBean(HttpServletRequest request) {
+		String date1 = request.getParameter("date1");
+		String date2 = request.getParameter("date2");
+		String account = request.getParameter("account_id");
+		String category = request.getParameter("category_id");
+		String trade = request.getParameter("trade_name");
+		String note = request.getParameter("note");
+		
+		return new SearchResultBean(date1, date2, account, category, trade, note);
 	}
 	
 	

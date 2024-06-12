@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.beans.SearchResultBean;
+import model.services.SalesService;
+
 /**
  * Servlet implementation class SalelistServlet
  */
@@ -29,12 +32,15 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ToDo:sessionにListBeanで保管されている検索条件から、一覧を表示
-		
-		HttpSession session = request.getSession();
-		
+		// ToDo:sessionにBeanで保管されている検索条件から、一覧を表示
 		
 		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		SalesService ss = new SalesService();
+		SearchResultBean bean = (SearchResultBean)session.getAttribute("search");
+		request.setAttribute("salelist", ss.searchResultList(bean));
+		
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
@@ -46,7 +52,7 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-			
+		
 		
 	}
 

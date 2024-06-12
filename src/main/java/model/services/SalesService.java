@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import model.beans.ListBean;
+import model.beans.SearchResultBean;
 import util.CommonUtil;
 import util.DbUtil;
 
@@ -97,7 +98,30 @@ public class SalesService {
 		
 	}
 	
-	
+	public ArrayList<ListBean> searchResultList(SearchResultBean bean) {
+		String sql = "select * from sales s "
+				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
+		
+		String date1 = bean.getDate1();
+		String date2 = bean.getDate2();
+		String account = bean.getAccount();
+		String category = bean.getCategory();
+		String trade = bean.getTrade();
+		String note = bean.getNote();
+		sql += "where sale_date >= '"+ date1 +"' ";
+		if (!date2.isEmpty())
+			sql += "and sale_date <= '"+ date2 +"' ";
+		if (!account.isEmpty())
+			sql += "and account_id = '"+ account +"' ";
+		if (!category.isEmpty())
+			sql += "and category_id = '"+ category +"' ";
+		sql += "and trade_name like '%"+ trade +"%' ";
+		sql += "and note like '%"+ note+"%' ";
+		
+		
+		return result_AllList(sql);
+	}
 	
 	
 	

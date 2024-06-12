@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import form.Sales_formcheck;
 import model.services.RegistrationService;
-import model.services.SalesService;
 import util.CommonUtil;
 
 /**
@@ -57,25 +56,18 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 		
 		Sales_formcheck sf = new Sales_formcheck();
 		
-		if(sf.validate(request)) {
+		// フォームチェック、問題なければtrue
+//		if(sf.validate(request)) {
 			
-		HttpSession session = request.getSession();
-		SalesService ss = new SalesService();
-		// 検索結果をlistbeanに入れる
-		session.setAttribute("salelist", CommonUtil.request_ListBean(request));
-//		session.setAttribute("salelist", ss.searchResult(request));
-		
-		
-		response.sendRedirect("Sales0021");
-		
-		}else {
-			request.setAttribute("errors", sf.getErrors());
-			RegistrationService rs=new RegistrationService();
-			request.setAttribute("accounts", rs.accounts());
-			request.setAttribute("categories", rs.categories());
+			HttpSession session = request.getSession();
+			// 検索結果をbeanに入れる
+			session.setAttribute("search", CommonUtil.request_SearchBean(request));
+			response.sendRedirect("Sales0021");
 			
-			request.getRequestDispatcher("/Sales0020_SerchInput.jsp").forward(request, response);
-		}
+//		}else {
+//			request.setAttribute("errors", sf.getErrors());
+//			doGet(request, response);
+//		}
 		
 	}
 
