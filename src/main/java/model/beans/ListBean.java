@@ -17,9 +17,7 @@ public class ListBean {
 	private int sale_number;
 	private String note;
 	private String name;	// アカウントの名前
-	private int authority;		// アカウントの権限
 	private String category_name;
-	private int active_flg;		// カテゴリーの有効フラグ
 	
 	
 }

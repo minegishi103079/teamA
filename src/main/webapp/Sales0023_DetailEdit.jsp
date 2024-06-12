@@ -35,8 +35,8 @@
                         </label>
                     </div>
                     <div class="col-3 p-2">
-                        <input type="date" id="date" class="col-4 form-control" name="date" placeholder="yyyy/mm/dd"
-                            value="<c:out value="${sales.getSale_date() }" ></c:out>" required>
+                        <input type="date" id="date" class="col-4 form-control" name="sale_date" placeholder="yyyy/mm/dd"
+                            value="<c:out value="${sales.getSale_date() }"></c:out>" required>
                     </div>
                 </div>
 
@@ -47,31 +47,33 @@
                         </label>
                     </div>
                     <div class="col-6 p-2">
-                        <select class="form-select" name="Responsible" id="account" required>
-                            <option value="<c:out value="${sales.getAccount_id()}">" selected>
+                        <select class="form-select" name="account_id" id="account" required>
+                            <option value="<c:out value="${sales.getAccount_id()}"></c:out>" selected>
                             	<c:out value="${sales.getName()}"></c:out>
                             </option>
-                            <option value="<c:out value="${accounts.getAccount_id()}"/>">
-								<c:out value="${accounts.getName()}"></c:out>
-							</option>
+                            <c:forEach var="accounts" items="${accounts}">
+								<option value="<c:out value="${accounts.getAccount_id()}"></c:out>">
+									<c:out value="${accounts.getName()}"></c:out>
+								</option>
+							</c:forEach>
                         </select>
                     </div>
                 </div>
 
-                <div class="row align-items-center">
+                <div class="row g-3 align-items-center">
                     <div class="col-4 d-flex flex-row-reverse">
                         <label for="category" class="col-form-label">商品カテゴリー
                             <button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
                         </label>
                     </div>
                     <div class="col-6 p-2">
-                        <select class="form-select" name="goodscategory" id="category" required>
+                        <select class="form-select" name="category_id" id="category" required>
                             <option value="<c:out value="${sales.getCategory_id()}"></c:out>" selected>
                             	<c:out value="${sales.getCategory_name()}"></c:out>
                             </option>
-                            <c:forEach var="accounts" items="${accounts}">
-								<option value="<c:out value="${accounts.getAccount_id()}"/>">
-									<c:out value="${accounts.getName()}"></c:out>
+                            <c:forEach var="categories" items="${categories}">
+								<option value="<c:out value="${categories.getCategory_id()}"/>">
+									<c:out value="${categories.getCategory_name()}"></c:out>
 								</option>
 							</c:forEach>
                         </select>
@@ -98,7 +100,7 @@
                         </label>
                     </div>
                     <div class="col-3 p-2">
-                        <input type="textarea" id="unit" class="form-control" name="price" 
+                        <input type="textarea" id="unit" class="form-control" name="unit_price" 
                         value="<c:out value="${sales.getUnit_price()}"></c:out>" placeholder="単価" required>
                     </div>
                 </div>
@@ -121,15 +123,15 @@
                         <label for="note" class="col-form-label">備考</label>
                     </div>
                     <div class="col-6 p-2">
-                        <textarea class="form-control" id="note" name="note" placeholder="備考" required>
-                        	<c:out value="${sales.getNote()}"></c:out>
+                        <textarea class="form-control" id="note" name="note" placeholder="備考" required><c:out value="${sales.getNote()}"></c:out>
                         </textarea>
                     </div>
                 </div>
 
                 <div class="row d-flex justify-content-center mt-2">
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary" name="sales" value="${sales }">✓更新</button>
+                        <button type="submit" class="btn btn-primary" name="sale_id" 
+                        value="<c:out value="${sales.getSale_id() }"></c:out>">✓更新</button>
                     </div>
                     <div class="col-auto">
                         <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
