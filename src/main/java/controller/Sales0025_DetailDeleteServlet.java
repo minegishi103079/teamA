@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.services.SalesService;
+
 /**
  * Servlet implementation class Sales0025_DeleteServlet
  */
@@ -27,11 +29,11 @@ public class Sales0025_DetailDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Detailのデータを上手いこと受け渡す or もう一回引っ張り出す
 		
 		request.setCharacterEncoding("UTF-8");
 			
-		request.setAttribute("sales", request.getParameter("sales") );
+		SalesService ss = new SalesService();
+		request.setAttribute("sales", ss.detailSales(request.getParameter("sale_id")) );
 		
 		
 		request.getRequestDispatcher("/Sales0025_DetailDelete.jsp").forward(request, response);

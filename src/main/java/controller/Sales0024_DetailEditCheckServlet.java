@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.services.SaleService_2;
+import model.services.SalesService;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class Sales0024_Servlet
@@ -37,7 +38,7 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 		
 		
 		// 受け取ったデータをListBeanに入れて渡す
-//		request.setAttribute("sales", CommonUtil.request_ListBean(request));
+		request.setAttribute("sales", CommonUtil.request_ListBean(request));
 		request.getRequestDispatcher("/Sales0024_DetailEditCheck.jsp").forward(request, response);
 		
 	}
@@ -49,11 +50,10 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 		
 		
 		// 変更を適用して、一覧画面に戻す
+		request.setCharacterEncoding("UTF-8");
 		
-		
-		SaleService_2 ss2 = new SaleService_2();
-		// ToDo:リクエストから値を取り出す。
-//		ss2.salesupdate(getServletInfo(), 0, 0, getServletName(), 0, 0, getServletInfo());
+		SalesService ss = new SalesService();
+		ss.salesUpdate(request);
 		
 		
 		response.sendRedirect("Sales0021");

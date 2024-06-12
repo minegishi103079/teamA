@@ -27,7 +27,7 @@
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上検索条件入力</h1>
 			
-			<form name="form" action="Sales0021" method="post">
+			<form name="form" action="Sales0020" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">

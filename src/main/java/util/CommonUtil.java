@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import javax.servlet.http.HttpServletRequest;
 
 import model.beans.ListBean;
+import model.services.RegistrationService;
 
 public class CommonUtil {
 	
@@ -33,6 +34,7 @@ public class CommonUtil {
 	// jsp側のnameと合わせる。入力されない値は仮決めする。
 	public static ListBean request_ListBean(HttpServletRequest request) {
 		ListBean sales = null;
+		RegistrationService rs = new RegistrationService();
 		try {
 			sales = new ListBean(
 					str_Int(request.getParameter("sale_id")),
@@ -43,10 +45,8 @@ public class CommonUtil {
 					str_Int(request.getParameter("unit_price")),
 					str_Int(request.getParameter("sale_number")),
 					request.getParameter("note"),
-					request.getParameter("name"),
-					str_Int(request.getParameter("authority")),
-					request.getParameter("category_name"),
-					str_Int(request.getParameter("active_fjg"))
+					rs.accountsname(request.getParameter("account_id")),
+					rs.categoryname(request.getParameter("category_id"))
 			);
 		} catch(Exception e) {
 			e.printStackTrace();

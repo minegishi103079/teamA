@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import form.Sales_formcheck;
-import model.services.RegistrationService;
-import model.services.SalesService;
-
 /**
  * Servlet implementation class SalelistServlet
  */
@@ -33,7 +29,10 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ほかのページから戻ってきたとき。
+		// ToDo:sessionにListBeanで保管されている検索条件から、一覧を表示
+		
+		HttpSession session = request.getSession();
+		
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -46,32 +45,7 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 検索結果を反映する
 		
-		request.setCharacterEncoding("UTF-8");
-		
-		Sales_formcheck sf = new Sales_formcheck();
-		
-		if(sf.validate(request)) {
-			
-		HttpSession session = request.getSession();
-		SalesService ss = new SalesService();
-		session.setAttribute("salelist", ss.searchResult(request));
-		
-//		request.setAttribute("sales", ss.searchResult(request));
-		
-		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
-		}else {
-			request.setAttribute("errors", sf.getErrors());
-			RegistrationService rs=new RegistrationService();
-			request.setAttribute("accounts", rs.accounts());
-			request.setAttribute("categories", rs.categories());
-			
-			request.getRequestDispatcher("/Sales0020_SerchInput.jsp").forward(request, response);
-			
-			
-		}
 			
 		
 	}

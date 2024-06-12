@@ -49,9 +49,7 @@ public class SalesService {
 						rs.getInt("sale_number"), 
 						rs.getString("note"),
 						rs.getString("name"),
-						rs.getInt("authority"), 
-						rs.getString("category_name"),
-						rs.getInt("active_flg")
+						rs.getString("category_name")
 						);
 			};
 			
@@ -101,6 +99,8 @@ public class SalesService {
 	
 	
 	
+	
+	
 	ArrayList<ListBean> result_AllList(String sql) {
 		ArrayList<ListBean> list = new ArrayList<>();
 		
@@ -120,9 +120,7 @@ public class SalesService {
 						rs.getInt("sale_number"), 
 						rs.getString("note"),
 						rs.getString("name"),
-						rs.getInt("authority"), 
-						rs.getString("category_name"),
-						rs.getInt("active_flg")
+						rs.getString("category_name")
 						);
 				list.add(sales);
 			}
@@ -133,7 +131,24 @@ public class SalesService {
 	}
 	
 	
-	
+	public void salesUpdate(HttpServletRequest request) {
+		SaleService_2 s2 = new SaleService_2();
+		try {
+			s2.salesupdate(request.getParameter("sale_date"), 
+					CommonUtil.str_Int(request.getParameter("account_id")), 
+					CommonUtil.str_Int(request.getParameter("category_id")), 
+					request.getParameter("trade_name"), 
+					CommonUtil.str_Int(request.getParameter("unit_price")), 
+					CommonUtil.str_Int(request.getParameter("sale_number")), 
+					request.getParameter("note"), 
+					CommonUtil.str_Int(request.getParameter("sale_id")) 
+					);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 }

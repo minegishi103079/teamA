@@ -29,8 +29,8 @@ public class SaleService_2 {
 	}
 	
 	//売上更新
-	public void salesupdate(String da,int ai,int ci,String tn,int up,int sn,String n) {
-		String sql = "update sales set sale_date=?,account_id=?,categpry_id=?,trade_name=?,unit_price=?,sale_number=?,note=? where sale_id=?";
+	public void salesupdate(String da,int ai,int ci,String tn,int up,int sn,String n,int si) {
+		String sql = "update sales set sale_date=?,account_id=?,category_id=?,trade_name=?,unit_price=?,sale_number=?,note=? where sale_id=?";
 		try(Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);){
 			
@@ -41,6 +41,7 @@ public class SaleService_2 {
 			ps.setInt(5, up);
 			ps.setInt(6, sn);
 			ps.setString(7, n);
+			ps.setInt(8, si);
 			
 			ps.executeUpdate();
 			
