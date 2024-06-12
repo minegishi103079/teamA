@@ -70,6 +70,7 @@ public class Sales0011check_Servlet extends HttpServlet {
 		
 //		String bt[]=request.getParameterValues("button");
 //		request.setAttribute("button",bt);
+		request.setCharacterEncoding("UTF-8");
 		SaleService_2 s2=new SaleService_2();
 		s2.salesinsert(request.getParameter("sale_date"),
 						Integer.parseInt(request.getParameter("account_id")),
@@ -79,6 +80,6 @@ public class Sales0011check_Servlet extends HttpServlet {
 						Integer.parseInt(request.getParameter("sale_number")),
 						request.getParameter("note"));
 		
-		response.sendRedirect("/Sale0010Registration_Servlet");
+		response.sendRedirect("Sale0010Registration_Servlet");
 	}
 }

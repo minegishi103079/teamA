@@ -9,7 +9,7 @@ import util.DbUtil;
 public class SaleService_2 {
 	//売上追加
 	public void salesinsert(String da,int ai,int ci,String tn,int up,int sn,String n) {
-		String sql = "INSERT into sales(sale_date,account_id,categpry_id,trade_name,unit_price,sale_number,note) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT into sales(sale_date,account_id,category_id,trade_name,unit_price,sale_number,note) VALUES(?,?,?,?,?,?,?)";
 		try(Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);){
 			

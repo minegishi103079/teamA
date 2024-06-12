@@ -20,7 +20,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" value="<c:out value="${sale_date}"></c:out>" 
-							id="validationTextarea" class="col-4 form-control" name="sale_date" disabled>
+							id="validationTextarea" class="col-4 form-control" name="sale_date" readonly>
 					</div>
 				</div>
 
@@ -29,7 +29,7 @@
 						<label for="varidationTextarea" class="col-form-label">担当</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="account_id" disabled>
+						<select class="form-select" name="account_id" readonly>
 							<option value="<c:out value="${account_id}"></c:out>"><c:out value="${name}"></c:out></option>
 						</select>
 					</div>
@@ -40,7 +40,7 @@
 						<label for="varidationTextarea" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="category_id"  disabled>
+						<select class="form-select" name="category_id" readonly>
 							<option value="<c:out value="${category_id}"></c:out>"><c:out value="${category_name}"></c:out></option>
 						</select>
 					</div>
@@ -52,7 +52,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea"  value="<c:out value="${trade_name}"></c:out>" id="validationTextarea"
-							class="form-control" name="trade_name" disabled>
+							class="form-control" name="trade_name" readonly>
 					</div>
 				</div>
 
@@ -62,7 +62,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea"  value="<c:out value="${unit_price}"></c:out>" id="validationTextarea"
-							class="form-control" name="unit_price" disabled>
+							class="form-control" name="unit_price" readonly>
 					</div>
 				</div>
 
@@ -72,7 +72,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea"  value="<c:out value="${sale_number}"></c:out>" id="validationTextarea"
-							class="form-control" name="sale_number" disabled>
+							class="form-control" name="sale_number" readonly>
 					</div>
 				</div>
 
@@ -82,7 +82,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" value="<c:out value="${unit_price * sale_number }"></c:out>" id="validationTextarea"
-							class="form-control" name=""  disabled>
+							class="form-control" name=""  readonly>
 					</div>
 				</div>
 				<div class="row g-3 align-items">
@@ -91,12 +91,12 @@
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control" id="validationTextarea" rows="3"
-							name="note" disabled><c:out value="${note}"></c:out></textarea>
+							name="note" readonly><c:out value="${note}"></c:out></textarea>
 					</div>
 				</div>
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit" name="button" href="Sales0011check_Servlet">✓OK</button>
+					  <button class="btn btn-primary" type="submit" href="Sales0011check_Servlet">✓OK</button>
 					  <a class="btn btn-secondary" type="button" href="Sale0010_Registration.jsp">キャンセル</a>
 					</div>
 			</form>
