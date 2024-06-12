@@ -20,23 +20,23 @@ public class Sales_formcheck {
 	
 	public boolean validate(HttpServletRequest req) {
 		
-		boolean a = dateEmpty("a");
-		boolean b = dateFormat("b");
-		boolean c = accountEmpty("c");
-		boolean d = categoryEmpty("d");
-		boolean e = nameEmpty("e");
-		boolean f = nameLength("f");
-		boolean g = priceEmpty("g");
-		boolean h = priceFormat("h");
-		boolean i = priceLength("i");
-		boolean j = saleNumberEmpty("j");
-		boolean k = saleNumberFormat("k");
-		boolean l = saleNumberLength("l");
-		boolean m = noteLength("m");
-		boolean n = accountEmpty("n");
-		boolean o = categoryExist("o");
-		boolean p = dateStartFormat("p");
-		boolean q = dateEndFormat("q");
+		boolean a = dateEmpty(req.getParameter("sale_date"));
+		boolean b = dateFormat(req.getParameter("sale_date"));
+		boolean c = accountEmpty(req.getParameter("account_id"));
+		boolean d = categoryEmpty(req.getParameter("category_id"));
+		boolean e = nameEmpty(req.getParameter("trade_name"));
+		boolean f = nameLength(req.getParameter("trade_name"));
+		boolean g = priceEmpty(req.getParameter("unit_price"));
+		boolean h = priceFormat(req.getParameter("unit_price"));
+		boolean i = priceLength(req.getParameter("unit_price"));
+		boolean j = saleNumberEmpty(req.getParameter("sale_number"));
+		boolean k = saleNumberFormat(req.getParameter("sale_number"));
+		boolean l = saleNumberLength(req.getParameter("sale_number"));
+		boolean m = noteLength(req.getParameter("note"));
+		boolean n = accountExist(req.getParameter("account_id"));
+		boolean o = categoryExist(req.getParameter("category_id"));
+		boolean p = dateStartFormat(req.getParameter("date1"));
+		boolean q = dateEndFormat(req.getParameter("date2"));
 		boolean r = numberCheck(req);
 		
 		
