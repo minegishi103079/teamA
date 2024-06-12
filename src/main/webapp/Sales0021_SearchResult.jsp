@@ -30,8 +30,8 @@
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<form method="get" action="Sales0022">
-					<c:forEach var="saleslist" items="${sales}">
+				<form method="post" action="Sales0022">
+					<c:forEach var="saleslist" items="${salelist}">
 						<tr>
 						
 							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${saleslist.getSale_id() }"> ✓詳細 </button</td>

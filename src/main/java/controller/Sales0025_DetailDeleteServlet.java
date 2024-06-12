@@ -29,12 +29,12 @@ public class Sales0025_DetailDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Detailのデータを上手いこと受け渡す or もう一回引っ張り出す
 		
-				request.setCharacterEncoding("UTF-8");
-				
-				request.setAttribute("sales", request.getParameter("sales") );
-				
-				
-				request.getRequestDispatcher("/Sales0025_DetailDelete.jsp").forward(request, response);
+		request.setCharacterEncoding("UTF-8");
+			
+		request.setAttribute("sales", request.getParameter("sales") );
+		
+		
+		request.getRequestDispatcher("/Sales0025_DetailDelete.jsp").forward(request, response);
 	}
 
 	/**

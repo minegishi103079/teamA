@@ -31,7 +31,9 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// ほかのページから戻ってきたとき。
 		
+		request.setCharacterEncoding("UTF-8");
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
@@ -42,13 +44,13 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ToDo:検索条件を受け取る
+		// 検索結果を反映する
 		
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
 		SalesService ss = new SalesService();
-		session.setAttribute("sales", ss.searchResult(request));
+		session.setAttribute("salelist", ss.searchResult(request));
 //		request.setAttribute("sales", ss.searchResult(request));
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);

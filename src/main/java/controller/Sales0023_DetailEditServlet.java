@@ -34,7 +34,7 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		request.setAttribute("sales", request.getParameter("sales") );
-		
+		System.out.println(request.getParameter("sales"));
 		
 		request.getRequestDispatcher("/Sales0023_DetailEdit.jsp").forward(request, response);
 	}

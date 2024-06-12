@@ -31,7 +31,9 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// 検索画面に来た段階で、検索結果のセッションを消す。
 		HttpSession session = request.getSession();
+		session.removeAttribute("salelist");
 		
 		RegistrationService rs=new RegistrationService();
 		request.setAttribute("accounts", rs.accounts());
