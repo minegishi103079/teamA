@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.services.RegistrationService;
+
 /**
  * Servlet implementation class Sales0023_DetailEditServlet
  */
@@ -29,12 +31,15 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		// Detailのデータを上手いこと受け渡す or もう一回引っ張り出す
+		// DetailからsalesというListBeanを受け取って、再びセットする。
 		
 		request.setCharacterEncoding("UTF-8");
 		
 		request.setAttribute("sales", request.getParameter("sales") );
-		System.out.println(request.getParameter("sales"));
+		
+		RegistrationService rs=new RegistrationService();
+		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("categories", rs.categories());
 		
 		request.getRequestDispatcher("/Sales0023_DetailEdit.jsp").forward(request, response);
 	}
