@@ -24,7 +24,7 @@
 							aria-current="page" href="C0020">ダッシュボード</a></li>
 					</div>
 					<div class="p-2 ms-auto">
-						<li class="nav-item"><a class="nav-link" href="#">売上登録</a></li>
+						<li class="nav-item"><a class="nav-link" href="Sale0010Registration_Servlet">売上登録</a></li>
 					</div>
 					<div class="p-2 ms-auto">
 						<li class="nav-item"><a class="nav-link" href="Sales0020">売上検索</a></li>

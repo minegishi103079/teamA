@@ -47,15 +47,15 @@ public class Sales0011check_Servlet extends HttpServlet {
 		nm=rs.accountsname(request.getParameter("account_id"));
 		cn=rs.categoryname(request.getParameter("category_id"));
 		
-		request.setAttribute("sale_date", date);
-		request.setAttribute("account_id", ai);
-		request.setAttribute("category_id", ci);
-		request.setAttribute("trade_name", tn);
-		request.setAttribute("unit_price", up);
-		request.setAttribute("sale_number", sn);
-		request.setAttribute("note", n);
+		request.setAttribute("sale_date",date);
+		request.setAttribute("account_id",ai);
+		request.setAttribute("category_id",ci);
+		request.setAttribute("trade_name",tn);
+		request.setAttribute("unit_price",up);
+		request.setAttribute("sale_number",sn);
+		request.setAttribute("note",n);
 		request.setAttribute("name",nm );
-		request.setAttribute("category_name", cn);
+		request.setAttribute("category_name",cn);
 		
 		
 		this.getServletContext().getRequestDispatcher("/Sale0011_check.jsp").forward(request,response);

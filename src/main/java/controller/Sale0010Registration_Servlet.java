@@ -50,7 +50,6 @@ public class Sale0010Registration_Servlet extends HttpServlet {
 		request.setAttribute("categories", rs.categories());
 		
 		this.getServletContext().getRequestDispatcher("/Sale0010_Registration.jsp").forward(request,response);
-		
 	}
 
 	/**
