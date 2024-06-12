@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.services.RegistrationService;
+import model.services.SaleService_2;
 
 /**
  * Servlet implementation class Sales0011check_Servlet
@@ -66,11 +67,18 @@ public class Sales0011check_Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		
+//		String bt[]=request.getParameterValues("button");
+//		request.setAttribute("button",bt);
+		SaleService_2 s2=new SaleService_2();
+		s2.salesinsert(request.getParameter("sale_date"),
+						Integer.parseInt(request.getParameter("account_id")),
+						Integer.parseInt(request.getParameter("category_id")),
+						request.getParameter("trade_name"),
+						Integer.parseInt(request.getParameter("unit_price")),
+						Integer.parseInt(request.getParameter("sale_number")),
+						request.getParameter("note"));
 		
-		
-		
+		response.sendRedirect("/Sale0010Registration_Servlet");
 	}
-
 }

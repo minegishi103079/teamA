@@ -12,7 +12,7 @@
 	<div class="container-fluid">
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上登録確認</h1>
-			<form class="was-validated" action="Sale0011check_Servlet">
+			<form class="was-validated" action="Sales0011check_Servlet" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -96,7 +96,7 @@
 				</div>
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit" href="Sale0011_checkjsp">✓OK</button>
+					  <button class="btn btn-primary" type="submit" name="button" href="Sales0011check_Servlet">✓OK</button>
 					  <a class="btn btn-secondary" type="button" href="Sale0010_Registration.jsp">キャンセル</a>
 					</div>
 			</form>
