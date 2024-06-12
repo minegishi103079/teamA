@@ -36,7 +36,6 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 		// ToDo:フォームの入力をチェックする
 		
 		
-		
 		// 受け取ったデータをListBeanに入れて渡す
 //		request.setAttribute("sales", CommonUtil.request_ListBean(request));
 		request.getRequestDispatcher("/Sales0024_DetailEditCheck.jsp").forward(request, response);
