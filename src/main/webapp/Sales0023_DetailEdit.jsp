@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-3 p-2">
                         <input type="date" id="date" class="col-4 form-control" name="date" placeholder="yyyy/mm/dd"
-                            value="2014-01-05" required>
+                            value="<c:out value="${sales.getSale_date() }" ></c:out>" required>
                     </div>
                 </div>
 
@@ -48,10 +48,12 @@
                     </div>
                     <div class="col-6 p-2">
                         <select class="form-select" name="Responsible" id="account" required>
-                            <option value="account_id" disabled selected>accountName</option>
-                            <option value="高">高</option>
-                            <option value="中">中</option>
-                            <option value="低">低</option>
+                            <option value="<c:out value="${sales.getAccount_id()}">" selected>
+                            	<c:out value="${sales.getName()}"></c:out>
+                            </option>
+                            <option value="<c:out value="${accounts.getAccount_id()}"/>">
+								<c:out value="${accounts.getName()}"></c:out>
+							</option>
                         </select>
                     </div>
                 </div>
@@ -64,10 +66,14 @@
                     </div>
                     <div class="col-6 p-2">
                         <select class="form-select" name="goodscategory" id="category" required>
-                            <option value="category_id" disabled selected>categoryName</option>
-                            <option value="高">高</option>
-                            <option value="中">中</option>
-                            <option value="低">低</option>
+                            <option value="<c:out value="${sales.getCategory_id()}"></c:out>" selected>
+                            	<c:out value="${sales.getCategory_name()}"></c:out>
+                            </option>
+                            <c:forEach var="accounts" items="${accounts}">
+								<option value="<c:out value="${accounts.getAccount_id()}"/>">
+									<c:out value="${accounts.getName()}"></c:out>
+								</option>
+							</c:forEach>
                         </select>
                     </div>
                 </div>
@@ -79,7 +85,8 @@
                         </label>
                     </div>
                     <div class="col-6 p-2">
-                        <input type="textarea" id="trade" class="form-control" name="goodsname" value="trade_name"
+                        <input type="textarea" id="trade" class="form-control" name="trade_name" 
+                        value="<c:out value="${sales.getTrade_name()}"></c:out>"
                         placeholder="商品名" required>
                     </div>
                 </div>
@@ -91,7 +98,8 @@
                         </label>
                     </div>
                     <div class="col-3 p-2">
-                        <input type="textarea" id="unit" class="form-control" name="price" value="unit_price" placeholder="単価" required>
+                        <input type="textarea" id="unit" class="form-control" name="price" 
+                        value="<c:out value="${sales.getUnit_price()}"></c:out>" placeholder="単価" required>
                     </div>
                 </div>
 
@@ -102,7 +110,8 @@
                         </label>
                     </div>
                     <div class="col-3 p-2">
-                        <input type="textarea" id="num" class="form-control" name="quantity" value="sale_number"
+                        <input type="textarea" id="num" class="form-control" name="sale_number" 
+                        value="<c:out value="${sales.getSale_number()}"></c:out>"
                         placeholder="個数" required>
                     </div>
                 </div>
@@ -112,13 +121,15 @@
                         <label for="note" class="col-form-label">備考</label>
                     </div>
                     <div class="col-6 p-2">
-                        <textarea class="form-control" id="note" name="textarea" placeholder="備考" required>note</textarea>
+                        <textarea class="form-control" id="note" name="note" placeholder="備考" required>
+                        	<c:out value="${sales.getNote()}"></c:out>
+                        </textarea>
                     </div>
                 </div>
 
                 <div class="row d-flex justify-content-center mt-2">
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary">✓更新</button>
+                        <button type="submit" class="btn btn-primary" name="sales" value="${sales }">✓更新</button>
                     </div>
                     <div class="col-auto">
                         <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
