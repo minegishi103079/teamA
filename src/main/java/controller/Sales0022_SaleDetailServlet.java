@@ -44,11 +44,6 @@ public class Sales0022_SaleDetailServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-//		HttpSession session = request.getSession();
-//		if (request.getParameter("sale_id") != null) {
-//			session.setAttribute("sale_id", request.getParameter("sale_id"));
-//		}
-//		(String)session.getAttribute("sale_id");
 		
 		SalesService ss = new SalesService();
 		ListBean sale = ss.detailSales(request.getParameter("sale_id"));

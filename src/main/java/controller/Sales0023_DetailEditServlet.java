@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.services.RegistrationService;
+import model.services.SalesService;
 
 /**
  * Servlet implementation class Sales0023_DetailEditServlet
@@ -31,11 +32,12 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		// DetailからsalesというListBeanを受け取って、再びセットする。
+		// Detailからsale_idを受け取って、salesというListBeanにして再びセットする。
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		request.setAttribute("sales", request.getParameter("sales") );
+		SalesService ss = new SalesService();
+		request.setAttribute("sales", ss.detailSales(request.getParameter("sale_id")) );
 		
 		RegistrationService rs=new RegistrationService();
 		request.setAttribute("accounts", rs.accounts());
@@ -50,7 +52,7 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-		// 編集確認から戻ってきたときに入力したデータを残す？
+		// ToDo:フォームチェックの実装
 		
 		doGet(request, response);
 	}

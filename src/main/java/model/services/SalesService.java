@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import model.beans.ListBean;
+import model.beans.SearchResultBean;
 import util.CommonUtil;
 import util.DbUtil;
 
@@ -49,9 +50,7 @@ public class SalesService {
 						rs.getInt("sale_number"), 
 						rs.getString("note"),
 						rs.getString("name"),
-						rs.getInt("authority"), 
-						rs.getString("category_name"),
-						rs.getInt("active_flg")
+						rs.getString("category_name")
 						);
 			};
 			
@@ -99,6 +98,31 @@ public class SalesService {
 		
 	}
 	
+	public ArrayList<ListBean> searchResultList(SearchResultBean bean) {
+		String sql = "select * from sales s "
+				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
+		
+		String date1 = bean.getDate1();
+		String date2 = bean.getDate2();
+		String account = bean.getAccount();
+		String category = bean.getCategory();
+		String trade = bean.getTrade();
+		String note = bean.getNote();
+		sql += "where sale_date >= '"+ date1 +"' ";
+		if (!date2.isEmpty())
+			sql += "and sale_date <= '"+ date2 +"' ";
+		if (!account.isEmpty())
+			sql += "and account_id = '"+ account +"' ";
+		if (!category.isEmpty())
+			sql += "and category_id = '"+ category +"' ";
+		sql += "and trade_name like '%"+ trade +"%' ";
+		sql += "and note like '%"+ note+"%' ";
+		
+		
+		return result_AllList(sql);
+	}
+	
 	
 	
 	ArrayList<ListBean> result_AllList(String sql) {
@@ -120,9 +144,7 @@ public class SalesService {
 						rs.getInt("sale_number"), 
 						rs.getString("note"),
 						rs.getString("name"),
-						rs.getInt("authority"), 
-						rs.getString("category_name"),
-						rs.getInt("active_flg")
+						rs.getString("category_name")
 						);
 				list.add(sales);
 			}
@@ -133,7 +155,24 @@ public class SalesService {
 	}
 	
 	
-	
+	public void salesUpdate(HttpServletRequest request) {
+		SaleService_2 s2 = new SaleService_2();
+		try {
+			s2.salesupdate(request.getParameter("sale_date"), 
+					CommonUtil.str_Int(request.getParameter("account_id")), 
+					CommonUtil.str_Int(request.getParameter("category_id")), 
+					request.getParameter("trade_name"), 
+					CommonUtil.str_Int(request.getParameter("unit_price")), 
+					CommonUtil.str_Int(request.getParameter("sale_number")), 
+					request.getParameter("note"), 
+					CommonUtil.str_Int(request.getParameter("sale_id")) 
+					);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 }

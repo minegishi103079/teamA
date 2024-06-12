@@ -89,12 +89,14 @@
 
                 <div class="col-auto">
                 	<form class="" action="Sales0023" method="get" id="edit">
-                    	<button type="submit" class="btn btn-primary" name="sales" value="${sales }" for="edit">✓編集</button>
+                    	<button type="submit" class="btn btn-primary" name="sale_id" 
+                    	value="<c:out value="${sales.getSale_id() }"></c:out>" for="edit">✓編集</button>
                     </form>
                 </div>
                 <div class="col-auto">
 	                <form class="" action="Sales0025" method="get" id="delete">
-    	                <button type="submit" class="btn btn-danger" name="sales" value="${sales }" for="delete">×削除</button>
+    	                <button type="submit" class="btn btn-danger" name="sale_id" 
+    	                value="<c:out value="${sales.getSale_id() }"></c:out>" for="delete">×削除</button>
     	            </form>
                 </div>
                 <div class="col-auto">
