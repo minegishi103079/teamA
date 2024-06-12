@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<jsp:include page="Dashboard.jsp"></jsp:include>
+
     <div class="container-fluid">
         <div class="position-absolute top-50 start-50 translate-middle col-10">
             <h1>売上詳細編集</h1>

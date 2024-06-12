@@ -19,8 +19,7 @@
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上検索条件入力</h1>
 			
-			<form class="was-validated" name="form" action="Sales0021" method="post">
-			<!-- formタグの中身確認！actionのなか書く -->
+			<form name="form" action="Sales0021" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -49,42 +48,46 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
-						<label class="col-form-label">担当</label>
+						<label class="col-form-label" for="account">担当</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
-							name="Responsible">
-							<option value=""　disabled selected>選択してください</option>
-							<option value="高">高</option>
-							<option value="中">中</option>
-							<option value="低">低</option>
+							name="account_id" id="account">
+							<option value="" selected>選択してください</option>
+							<c:forEach var="accounts" items="${accounts}">
+								<option value="<c:out value="${accounts.getAccount_id()}"/>">
+									<c:out value="${accounts.getName()}"></c:out>
+								</option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
 
 				<div class="row align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label">商品カテゴリー</label>
+						<label class="col-form-label" for="category">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
-							name="goodscategory">
-							<option value="" disabled selected>選択してください</option>
-							<option value="高">高</option>
-							<option value="中">中</option>
-							<option value="低">低</option>
+							name="category_id" id="category" >
+							<option value="" selected>選択してください</option>
+							<c:forEach var="categories" items="${categories}">
+								<option value="<c:out value="${categories.getCategory_id()}"/>">
+									<c:out value="${categories.getCategory_name()}"></c:out>
+								</option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label">商品名
+						<label class="col-form-label" for="trade" >商品名
 							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" class="form-control" name="goodsname"
+						<input type="textarea" class="form-control" name="trade_name" id="trade"
 							placeholder="商品名">
 					</div>
 				</div>
@@ -92,18 +95,18 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label">備考
+						<label class="col-form-label" for="note">備考
 							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" class="form-control" placeholder="備考"></input>
+						<input type="textarea" class="form-control" placeholder="備考" name="note" id="note" ></input>
 					</div>
 				</div>
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
-					<button type="submit" class="btn btn-primary" href="#">検索</button>
-					<button type="submit" class="btn btn-light" href="#">クリア</button>
+					<button type="submit" class="btn btn-primary">検索</button>
+					<a class="btn btn-light" href="Sales0020">クリア</a>
 				</div>
 
 			</form>
@@ -114,6 +117,6 @@
 
 <!-- 
 ・チェックのエラーメッセージ（販売日、件数）
-・検索、クリアボタンのリンクの指定
-・nameは適当なのでわかりやすいものに変更したほうがいいかも
+・検索、クリアボタンのリンクの指定　→完了
+・nameは適当なのでわかりやすいものに変更したほうがいいかも　→完了
  -->

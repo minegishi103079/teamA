@@ -5,15 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import model.beans.ListBean;
 import util.CommonUtil;
 import util.DbUtil;
 
 public class SalesService {
 	
+
+	
+	
+	
 	public static void main(String[] args) {
 		
-		String str = "rt";
+		String str = "";
 		Integer.parseInt(str);
 		
 	}
@@ -61,10 +67,38 @@ public class SalesService {
 	public ArrayList<ListBean> selectAll() {
 		String sql = "SELECT * FROM sales s "
 		+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
-		+ "LEFT JOIN categories c ON s.category_id = c.category_id;";
+		+ "LEFT JOIN categories c ON s.category_id = c.category_id";
 		
 		return result_AllList(sql);
 	}
+	
+	
+	public ArrayList<ListBean> searchResult(HttpServletRequest request){
+		String sql = "select * from sales s "
+				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
+		
+		String date1 = request.getParameter("date1");
+		String date2 = request.getParameter("date2");
+		String account = request.getParameter("account_id");
+		String category = request.getParameter("category_id");
+		String trade = request.getParameter("trade_name");
+		String note = request.getParameter("note");
+		sql += "where sale_date >= '"+ date1 +"' ";
+		if (!date2.isEmpty())
+			sql += "and sale_date <= '"+ date2 +"' ";
+		if (!account.isEmpty())
+			sql += "and account_id = '"+ account +"' ";
+		if (!category.isEmpty())
+			sql += "and category_id = '"+ category +"' ";
+		sql += "and trade_name like '%"+ trade +"%' ";
+		sql += "and note like '%"+ note+"%' ";
+		
+		
+		return result_AllList(sql);
+		
+	}
+	
 	
 	
 	ArrayList<ListBean> result_AllList(String sql) {
@@ -97,6 +131,8 @@ public class SalesService {
 		}
 		return list;
 	}
+	
+	
 	
 	
 	

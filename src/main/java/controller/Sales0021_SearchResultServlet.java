@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.SalesService;
 
@@ -30,8 +31,7 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAll());
+		
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
@@ -44,8 +44,12 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 		
 		// ToDo:検索条件を受け取る
 		
+		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.selectAll());
+		session.setAttribute("sales", ss.searchResult(request));
+//		request.setAttribute("sales", ss.searchResult(request));
 		
 		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		

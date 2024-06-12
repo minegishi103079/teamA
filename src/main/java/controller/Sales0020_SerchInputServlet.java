@@ -7,6 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.services.RegistrationService;
 
 /**
  * Servlet implementation class Sales0020_SerchInputServlet
@@ -28,6 +31,11 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		
+		RegistrationService rs=new RegistrationService();
+		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("categories", rs.categories());
 		
 		request.getRequestDispatcher("/Sales0020_SerchInput.jsp").forward(request, response);
 		
