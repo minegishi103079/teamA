@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.services.AccountsService_2;
+import model.services.RegistrationService;
+
 /**
  * Servlet implementation class Sales0030_AccountsRegistrationServlet
  */
@@ -28,6 +31,13 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		AccountsService_2 a2 = new AccountsService_2();
+		RegistrationService rs=new RegistrationService();
+		rs.accounts();
+		
+		request.setAttribute("accounts", rs.accounts());
+		
 		this.getServletContext().getRequestDispatcher("/Accounts0030_Registration.jsp").forward(request,response);
 	}
 
