@@ -26,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<form method="post" action="">
+				<form method="post" action="/Accounts0041_SerchResult">
 					<c:forEach var="saleslist" items="${salelist}">
 						<tr>
 						

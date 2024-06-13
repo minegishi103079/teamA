@@ -2,8 +2,11 @@ package model.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import model.beans.AccountsBean;
 import util.CommonUtil;
 import util.DbUtil;
 
@@ -60,6 +63,38 @@ public class AccountsService_2 {
 			e.printStackTrace();
 		}
 
+	}
+	
+	//アカウント一覧表示
+	public ArrayList<AccountsBean> selectAll() {
+		String sql = "SELECT * FROM accounts";
+		
+		return result_AllList(sql);
+	}
+	
+	//アカウント検索一覧表示
+	ArrayList<AccountsBean> result_AllList(String sql) {
+		ArrayList<AccountsBean> list = new ArrayList<>();
+		
+		try (
+				Connection con = DbUtil.open();
+				PreparedStatement ps = con.prepareStatement(sql);
+		){
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				AccountsBean accounts = new AccountsBean(
+						rs.getInt("accounts_id"), 
+						rs.getString("name"),
+						rs.getString("mail"),
+						rs.getString("password"),
+						rs.getInt("authority")
+						);
+				list.add(accounts);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 }
