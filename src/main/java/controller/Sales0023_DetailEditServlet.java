@@ -7,9 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import form.Sales_formcheck;
 import model.services.RegistrationService;
 import model.services.SalesService;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class Sales0023_DetailEditServlet
@@ -34,6 +37,7 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 		
 		// Detailからsale_idを受け取って、salesというListBeanにして再びセットする。
 		
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		SalesService ss = new SalesService();
@@ -51,10 +55,25 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+		request.setCharacterEncoding("UTF-8");
 		// ToDo:フォームチェックの実装
+		Sales_formcheck sf = new Sales_formcheck();
+		if( sf.validate(request)) {
+			// 受け取ったデータをListBeanに入れて渡す
+			HttpSession session = request.getSession();
+			session.setAttribute("sales", CommonUtil.request_ListBean(request));
+//			request.setAttribute("sales", CommonUtil.request_ListBean(request));
+			
+			response.sendRedirect("Sales0024");
+		} else {
+			request.setAttribute("errors", sf.getErrors());
+			doGet(request, response);
+		}
 		
-		doGet(request, response);
+		
+		
+		
+		
 	}
 
 }

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.services.SalesService;
-import util.CommonUtil;
 
 /**
  * Servlet implementation class Sales0024_Servlet
@@ -34,12 +33,9 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		// ToDo:フォームの入力をチェックする
-		
-		
-		// 受け取ったデータをListBeanに入れて渡す
-		request.setAttribute("sales", CommonUtil.request_ListBean(request));
 		request.getRequestDispatcher("/Sales0024_DetailEditCheck.jsp").forward(request, response);
+//		HttpSession session = request.getSession();
+//		session.removeAttribute("sales");
 		
 	}
 
