@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 public class Accounts_formCheck {
 	private ArrayList<String> errors = new ArrayList<>();
 
@@ -13,12 +15,12 @@ public class Accounts_formCheck {
 		boolean b = nameLength(req.getParameter("name"));
 		boolean c = mailEmpty(req.getParameter("mail"));
 		boolean d = mailLength(req.getParameter("mail"));
-		boolean e = (req.getParameter());
-		boolean f = passEmpty(req.getParameter("password"));
-		boolean g = passLength(req.getParameter("password"));
-		boolean h = passCheckEmpty(req.getParameter("password"));
-		boolean i = passSame1(req.getParameter());
-		boolean j = passSame2(req.getParameter());
+		boolean e = mailFormat(req.getParameter("mail"));
+		boolean f = passEmpty(req.getParameter("password1"));
+		boolean g = passLength(req.getParameter("password1"));
+		boolean h = passCheckEmpty(req.getParameter("password2"));
+		boolean i = passSame1(req.getParameter("password1"),req.getParameter("password2"));
+		boolean j = passSame2(req.getParameter("password1"),req.getParameter("password2"));
 
 		boolean result = a && b && c && d && e && f && g && h && i && j;
 
@@ -62,8 +64,20 @@ public class Accounts_formCheck {
 	}
 	
 	//メールアドレス形式チェック
-	
-	
+	private boolean mailFormat(String str) {
+		
+	    if (str != null) {
+	        if(EmailValidator.getInstance().isValid(str)) {
+	            return true;
+	        }else {
+	        	errors.add("メールアドレスの形式が誤っています。");
+	        	return false;
+	        }
+	        
+	    }
+		return false;
+		
+	}
 	
 	//パスワード必須入力チェック
 	private boolean passEmpty(String str) {
@@ -113,6 +127,4 @@ public class Accounts_formCheck {
 }
 
 //まだできてないやつ
-//メールアドレス形式チェック
-//パラメータの中身
 //バリデート分ける必要があれば分ける
