@@ -20,7 +20,7 @@
 		</div>
 	</c:if>
 
-	<div class="container-fluid">
+	<div class="container-fluid mt-3">
 		<div class="position-absolute top-50 start-50 translate-middle col-10">
 			<h1>売上登録</h1>
 			<form class="was-validated" action="Sales0011check_Servlet">

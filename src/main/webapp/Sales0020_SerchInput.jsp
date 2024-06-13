@@ -7,7 +7,7 @@
 <head>
 <meta http-quiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<title>Insert title here</title>
+<title>売上検索条件入力</title>
 </head>
 <body>
 	<jsp:include page="Dashboard.jsp"></jsp:include>
