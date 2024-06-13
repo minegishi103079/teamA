@@ -24,7 +24,7 @@
 		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上登録</h1>
-			<form class="was-validated" action="Sales0011check_Servlet">
+			<form class="form" action="Sales0011check_Servlet">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -108,11 +108,10 @@
 
 				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="Textarea" class="col-form-label">備考</label>
+						<label for="Text" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="Textarea" rows="3"
-							name="note" placeholder="備考"></textarea>
+						<textarea name="note" class="form-control" id="Textarea" rows="3" placeholder="備考"></textarea>
 					</div>
 				</div>
 
