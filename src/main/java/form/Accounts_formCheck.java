@@ -9,17 +9,18 @@ public class Accounts_formCheck {
 
 	public boolean validate(HttpServletRequest req) {
 
-		boolean a = nameEmpty(req.getParameter());
-		boolean b = nameLength(req.getParameter());
-		boolean c = mailEmpty(req.getParameter());
-		boolean d = mailLength(req.getParameter());
+		boolean a = nameEmpty(req.getParameter("name"));
+		boolean b = nameLength(req.getParameter("name"));
+		boolean c = mailEmpty(req.getParameter("mail"));
+		boolean d = mailLength(req.getParameter("mail"));
 		boolean e = (req.getParameter());
-		boolean f = passEmpty(req.getParameter());
-		boolean g = passLength(req.getParameter());
-		boolean h = passCheckEmpty(req.getParameter());
-		boolean i = (req.getParameter());
+		boolean f = passEmpty(req.getParameter("password"));
+		boolean g = passLength(req.getParameter("password"));
+		boolean h = passCheckEmpty(req.getParameter("password"));
+		boolean i = passSame1(req.getParameter());
+		boolean j = passSame2(req.getParameter());
 
-		boolean result = a && b && c && d && e && f && g && h && i;
+		boolean result = a && b && c && d && e && f && g && h && i && j;
 
 		return result;
 	}
@@ -113,6 +114,5 @@ public class Accounts_formCheck {
 
 //まだできてないやつ
 //メールアドレス形式チェック
-
 //パラメータの中身
 //バリデート分ける必要があれば分ける
