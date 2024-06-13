@@ -113,9 +113,9 @@ public class SalesService {
 		if (!date2.isEmpty())
 			sql += "and sale_date <= '"+ date2 +"' ";
 		if (!account.isEmpty())
-			sql += "and account_id = '"+ account +"' ";
+			sql += "and s.account_id = '"+ account +"' ";
 		if (!category.isEmpty())
-			sql += "and category_id = '"+ category +"' ";
+			sql += "and s.category_id = '"+ category +"' ";
 		sql += "and trade_name like '%"+ trade +"%' ";
 		sql += "and note like '%"+ note+"%' ";
 		

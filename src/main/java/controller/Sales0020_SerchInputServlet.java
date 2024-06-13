@@ -57,17 +57,17 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 		Sales_formcheck sf = new Sales_formcheck();
 		
 		// フォームチェック、問題なければtrue
-//		if(sf.validate(request)) {
+		if(sf.validate_2(request)) {
 			
 			HttpSession session = request.getSession();
 			// 検索結果をbeanに入れる
 			session.setAttribute("search", CommonUtil.request_SearchBean(request));
 			response.sendRedirect("Sales0021");
 			
-//		}else {
-//			request.setAttribute("errors", sf.getErrors());
-//			doGet(request, response);
-//		}
+		}else {
+			request.setAttribute("errors", sf.getErrors());
+			doGet(request, response);
+		}
 		
 	}
 
