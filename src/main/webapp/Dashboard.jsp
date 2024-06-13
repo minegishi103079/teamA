@@ -32,10 +32,10 @@
 							<li class="nav-item"><a class="nav-link" href="Sales0020">売上検索</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="#">アカウント登録</a></li>
+							<li class="nav-item"><a class="nav-link" href="Accounts0030_RegistrationServlet">アカウント登録</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="#">アカウント検索</a></li>
+							<li class="nav-item"><a class="nav-link" href="Accounts0040_SerchInputServlet">アカウント検索</a></li>
 						</div>
 		            	<div class="p-1 ms-auto position-absolute end-0">
 		            		<li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
