@@ -47,22 +47,26 @@
 					</div>
 					<div class="col-6 p-2">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0">
                             <label class="form-check-label" for="inlineRadio1">権限なし</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">売上登録</label>
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1">
+                            <label class="form-check-label" for="inlineRadio2">売上閲覧</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">アカウント登録</label>
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2">
+                            <label class="form-check-label" for="inlineRadio3">売上担当</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3">
+                            <label class="form-check-label" for="inlineRadio4">管理者</label>
                           </div>
 					</div>
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit" href="Sales0011check_Servlet">🔍検索</button>
-					  <a class="btn btn-light" href="#">クリア</a>
+					  <a class="btn btn-light" href="Accounts0040_SerchInputServlet">クリア</a>
 					</div>
 
 			</form>

@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント登録</h1>
-			<form class="was-validated" action="Accounts0030" method="post">
+			<form class="was-validated" action="Accounts0030_RegistrationServlet" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -50,7 +50,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password" placeholder="パスワード" required>
+						<input type="password" class="form-control" name="password1" placeholder="パスワード" required>
 					</div>
 				</div>
 
@@ -61,7 +61,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password" placeholder="パスワード(確認)" required>
+						<input type="password" class="form-control" name="password2" placeholder="パスワード(確認)" required>
 					</div>
 				</div>
 
@@ -73,19 +73,19 @@
 					</div>
 					<div class="col-6 p-2">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="0">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0" checked>
                             <label class="form-check-label" for="inlineRadio1">権限なし</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1">
                             <label class="form-check-label" for="inlineRadio2">売上閲覧</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="2">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2">
                             <label class="form-check-label" for="inlineRadio3">売上担当</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="3">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3">
                             <label class="form-check-label" for="inlineRadio4">管理者</label>
                           </div>
 					</div>
