@@ -16,7 +16,7 @@
 
 
 	<div class="container-fluid">
-		<div class="position-absolute top-50 start-50 translate-middle col-10">
+		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウントを登録してよろしいですか？</h1>
 			<form class="was-validated" action="">
 

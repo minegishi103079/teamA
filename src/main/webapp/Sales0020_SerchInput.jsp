@@ -24,8 +24,9 @@
 
 	<div class="container-fluid">
 
-<!-- <div class="offset-1 col-10" style="margin-top: 10vh;"> -->
-		<div class="position-absolute top-50 start-50 translate-middle col-10">
+<!-- 
+		<div class="position-absolute top-50 start-50 translate-middle col-10">-->
+		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上検索条件入力</h1>
 			
 			<form name="form" action="Sales0020" method="post">
