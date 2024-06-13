@@ -16,37 +16,35 @@
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
+					aria-label="Toggle navigation" >
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav">
-						<div class="p-2 ms-auto">
+						<div class="p-1 ms-auto">
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="C0020">ダッシュボード</a></li>
 						</div>
-						<div class="p-2 ms-auto">
+						<div class="p-1 ms-auto">
 							<li class="nav-item"><a class="nav-link" href="Sale0010Registration_Servlet">売上登録</a></li>
 						</div>
-						<div class="p-2 ms-auto">
+						<div class="p-1 ms-auto">
 							<li class="nav-item"><a class="nav-link" href="Sales0020">売上検索</a></li>
 						</div>
-						<div class="p-2 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="#">アカウント登録</a>
-							</li>
+						<div class="p-1 ms-auto">
+							<li class="nav-item"><a class="nav-link" href="#">アカウント登録</a></li>
 						</div>
-						<div class="p-2 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="#">アカウント検索</a>
-							</li>
+						<div class="p-1 ms-auto">
+							<li class="nav-item"><a class="nav-link" href="#">アカウント検索</a></li>
 						</div>
-						<div class="position-absolute top-0 end-0 m-3">
+		            	<div class="p-1 ms-auto position-absolute end-0">
 		            		<li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
-		            	</div>
-						
+		            	</div> 					
 					</ul>
 				</div>
 		</div>
 	</nav>
+	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
