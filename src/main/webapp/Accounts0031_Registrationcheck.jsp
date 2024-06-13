@@ -8,7 +8,7 @@
 <head>
 <meta http-quiv="Content-Type" content="text/html;" charset="UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<title>アカウントを登録してよろしいですか</title>
+<title>アカウント登録画面</title>
 </head>
 <body>
 

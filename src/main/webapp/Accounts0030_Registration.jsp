@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント登録</h1>
-			<form class="was-validated" action="Accounts0030_RegistrationServlet" method="post">
+			<form class="was-validated" action="Accounts0031_CheckServlet" method="get">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -93,7 +93,7 @@
 
 
 				<div class="mx-auto p-2" style="width: 100px;">
-					<button type="submit" class="btn btn-primary" href="#">✓登録</button>
+					<button type="submit" class="btn btn-primary" href="Accounts0031_Registrationcheck.jsp">✓登録</button>
 				</div>
 
 			</form>

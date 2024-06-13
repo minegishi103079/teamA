@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import form.Accounts_formCheck;
 import model.services.AccountsService_2;
-import model.services.RegistrationService;
 
 /**
- * Servlet implementation class Sales0030_AccountsRegistrationServlet
+ * Servlet implementation class Accounts0031_CheckServlet
  */
-@WebServlet("/Accounts0030_RegistrationServlet")
-public class Accounts0030_RegistrationServlet extends HttpServlet {
+@WebServlet("/Accounts0031_CheckServlet")
+public class Accounts0031_CheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0030_RegistrationServlet() {
+    public Accounts0031_CheckServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,14 +31,25 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Accounts_formCheck af= new Accounts_formCheck();
+		
 		request.setCharacterEncoding("UTF-8");
-		AccountsService_2 a2 = new AccountsService_2();
-		RegistrationService rs=new RegistrationService();
-		rs.accounts();
+		AccountsService_2 as=new AccountsService_2();
+		String n=request.getParameter("name");
+		String m=request.getParameter("mail");
+		String pw1=request.getParameter("password1");
+		String pw2=request.getParameter("password2");
+		int at=Integer.parseInt(request.getParameter("authority"));
 		
-		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("name",n);
+		request.setAttribute("mail",m);
+		request.setAttribute("password1",pw1);
+		request.setAttribute("password2",pw2);
+		request.setAttribute("authority",at);
 		
-		this.getServletContext().getRequestDispatcher("/Accounts0030_Registration.jsp").forward(request,response);
+		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request,response);
+		
+		
 	}
 
 	/**
@@ -46,7 +57,7 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("Accounts0031_CheckServlet");
+		doGet(request, response);
 	}
 
 }
