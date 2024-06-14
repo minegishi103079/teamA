@@ -35,7 +35,7 @@
 							<td><c:out value="${accountslist.getAccount_id()}" /></td> <%--No --%>
 							<td><c:out value="${accountslist.getName()}" /></td> <%--氏名 --%>
 							<td><c:out value="${accountslist.getMail()}" /></td> <%--メール --%>
-							<td><c:out value="${accounts.getAuthority }" /></td> <%-- 権限--%>
+							<td><c:out value="${accounts.getAuthority() }" /></td> <%-- 権限--%>
 						</tr>
 					</c:forEach>
 				</form>

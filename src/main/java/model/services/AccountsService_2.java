@@ -83,7 +83,7 @@ public class AccountsService_2 {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				AccountsBean accounts = new AccountsBean(
-						rs.getInt("accounts_id"), 
+						rs.getInt("account_id"), 
 						rs.getString("name"),
 						rs.getString("mail"),
 						rs.getString("password"),
@@ -105,11 +105,9 @@ public class AccountsService_2 {
 		String mail = bean.getMail();
 		String authority = bean.getAuthority();
 		
-		
-		if (!name.isEmpty())
-			sql += "where name like '%"+ name +"%'";
+		sql += "where name like '%"+ name +"%'";	
 		if (!mail.isEmpty())
-			sql += "and miil = '"+ mail +"' ";
+			sql += "and mail = '"+ mail +"' ";
 		if (authority != null)
 			sql += "and authority = '"+ authority +"' ";
 		
