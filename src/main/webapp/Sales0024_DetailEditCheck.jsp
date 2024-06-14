@@ -26,7 +26,7 @@
 						<label for="date" class="col-form-label">販売日</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="date" id="date" class="col-4 form-control"
+						<input type="date" id="date" class="col-4 form-control bg-secondary-subtle"
 							name="sale_date" placeholder="yyyy/mm/dd" value="<c:out value="${sales.getSale_date() }"></c:out>" readonly>
 					</div>
 				</div>
@@ -37,7 +37,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="account_id" id="account" readonly>
+						<select class="form-select bg-secondary-subtle" name="account_id" id="account" readonly>
                             <option value="<c:out value="${sales.getAccount_id()}"></c:out>" selected>
                             	<c:out value="${sales.getName()}"></c:out>
                             </option>
@@ -50,7 +50,7 @@
 						<label for="category" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="category_id" id="category" readonly>
+						<select class="form-select bg-secondary-subtle" name="category_id" id="category" readonly>
 							<option value="<c:out value="${sales.getCategory_id()}"></c:out>" selected>
                             	<c:out value="${sales.getCategory_name()}"></c:out>
                             </option>
@@ -63,7 +63,7 @@
 						<label for="trade" class="col-form-label">商品名</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" id="trade" class="form-control"
+						<input type="textarea" id="trade" class="form-control bg-secondary-subtle"
 							name="trade_name" value="<c:out value="${sales.getTrade_name()}"></c:out>" placeholder="商品名" readonly>
 					</div>
 				</div>
@@ -73,7 +73,7 @@
 						<label for="unit" class="col-form-label">単価</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="unit" class="form-control" name="unit_price"
+						<input type="textarea" id="unit" class="form-control bg-secondary-subtle" name="unit_price"
 							value="<c:out value="${sales.getUnit_price()}"></c:out>" placeholder="単価" readonly>
 					</div>
 				</div>
@@ -83,7 +83,7 @@
 						<label for="num" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="num" class="form-control"name="sale_number" value="<c:out value="${sales.getSale_number()}"></c:out>" placeholder="個数" readonly>
+						<input type="textarea" id="num" class="form-control bg-secondary-subtle" name="sale_number" value="<c:out value="${sales.getSale_number()}"></c:out>" placeholder="個数" readonly>
 					</div>
 				</div>
 
@@ -92,7 +92,7 @@
 						<label for="note" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="note" name="note" placeholder="備考" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
+						<textarea class="form-control bg-secondary-subtle" id="note" name="note" placeholder="備考" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 			</form>

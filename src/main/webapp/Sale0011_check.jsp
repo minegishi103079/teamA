@@ -24,7 +24,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" value="<c:out value="${sale_date}"></c:out>" 
-							id="validationTextarea" class="col-4 form-control" name="sale_date" readonly>
+							id="validationTextarea" class="col-4 form-control bg-secondary-subtle" name="sale_date" readonly>
 					</div>
 				</div>
 
@@ -33,7 +33,7 @@
 						<label for="varidationTextarea" class="col-form-label">担当</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="account_id" readonly>
+						<select class="form-select bg-secondary-subtle" name="account_id" readonly>
 							<option value="<c:out value="${account_id}"></c:out>"><c:out value="${name}"></c:out></option>
 						</select>
 					</div>
@@ -44,7 +44,7 @@
 						<label for="varidationTextarea" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="category_id" readonly>
+						<select class="form-select bg-secondary-subtle" name="category_id" readonly>
 							<option value="<c:out value="${category_id}"></c:out>"><c:out value="${category_name}"></c:out></option>
 						</select>
 					</div>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea"  value="<c:out value="${trade_name}"></c:out>" id="validationTextarea"
-							class="form-control" name="trade_name" readonly>
+							class="form-control bg-secondary-subtle" name="trade_name" readonly>
 					</div>
 				</div>
 
@@ -66,7 +66,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea"  value="<c:out value="${unit_price}"></c:out>" id="validationTextarea"
-							class="form-control" name="unit_price" readonly>
+							class="form-control bg-secondary-subtle" name="unit_price" readonly>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea"  value="<c:out value="${sale_number}"></c:out>" id="validationTextarea"
-							class="form-control" name="sale_number" readonly>
+							class="form-control bg-secondary-subtle" name="sale_number" readonly>
 					</div>
 				</div>
 
@@ -86,15 +86,15 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" value="<c:out value="${unit_price * sale_number }"></c:out>" id="validationTextarea"
-							class="form-control" name=""  readonly>
+							class="form-control bg-secondary-subtle" name=""  readonly>
 					</div>
 				</div>
 				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="Textarea" class="col-form-label">備考</label>
 					</div>
-					<div class="col-6 p-2">
-						<textarea class="form-control" id="Textarea" rows="3"
+					<div class="col-6 p-2 ">
+						<textarea class="form-control bg-secondary-subtle" id="Textarea" rows="3"
 							name="note" readonly><c:out value="${note}"></c:out></textarea>
 					</div>
 				</div>
