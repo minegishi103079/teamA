@@ -36,7 +36,7 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("Accounts0041_SerchResultServlet");
+		response.sendRedirect("Accounts0041_SerchResult");
 	}
 
 }
