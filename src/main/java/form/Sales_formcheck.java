@@ -77,6 +77,8 @@ public class Sales_formcheck {
 
 	//担当必須入力チェック
 	private boolean accountEmpty(String str) {
+		// strがnullじゃなければstr、nullのときは""に置き換える
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("担当が未選択です。");
 			return false;
@@ -86,6 +88,7 @@ public class Sales_formcheck {
 
 	//商品カテゴリー必須入力チェック
 	private boolean categoryEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("商品カテゴリーが未選択です。");
 			return false;
@@ -95,6 +98,7 @@ public class Sales_formcheck {
 
 	//商品名必須入力チェック
 	private boolean nameEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("商品名を入力してください。");
 			return false;
@@ -113,6 +117,7 @@ public class Sales_formcheck {
 
 	//単価必須入力チェック
 	private boolean priceEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("単価を入力してください。");
 			return false;
@@ -142,6 +147,7 @@ public class Sales_formcheck {
 
 	//個数必須入力チェック
 	private boolean saleNumberEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("個数を入力してください。");
 			return false;
@@ -181,14 +187,14 @@ public class Sales_formcheck {
 	//アカウントテーブル存在チェック
 	public boolean accountExist(String str) {
 
-		String sql = "select count(*) from sales where account_id =?";
+		String sql = "select count(*) from accounts where account_id =?";
 
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
-
+			
 			ps.setString(1, str);
 			ResultSet rs = ps.executeQuery();
-
+			
 			rs.next();
 			if (rs.getInt("count(*)") == 0) {
 				errors.add("アカウントテーブルに存在しません。");
@@ -207,7 +213,7 @@ public class Sales_formcheck {
 	//商品カテゴリーテーブル存在チェック
 	public boolean categoryExist(String str) {
 
-		String sql = "select count(*) from sales where category_id =?";
+		String sql = "select count(*) from categories where category_id =?";
 
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {

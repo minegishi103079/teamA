@@ -35,7 +35,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Accounts_formCheck af = new Accounts_formCheck();
-		//if(af.validate(request)) {
+		if(af.validate(request)) {
 		HttpSession session = request.getSession();
 
 		request.setCharacterEncoding("UTF-8");
@@ -53,10 +53,10 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 		request.setAttribute("authority", at);
 
 		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request, response);
-		//		//}else {
-		//			request.setAttribute("errors", af.getErrors());
-		//			request.getRequestDispatcher("Accounts0030_RegistrationServlet").forward(request, response);
-		//		}
+				}else {
+					request.setAttribute("errors", af.getErrors());
+					request.getRequestDispatcher("Accounts0030_RegistrationServlet").forward(request, response);
+				}
 	}
 
 	/**

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.services.RegistrationService;
-import model.services.SaleService_2;
 
 /**
  * Servlet implementation class Sale0011_check_Servlet
@@ -31,7 +30,6 @@ public class Sale0010Registration_Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		SaleService_2 s2 = new SaleService_2();
 		RegistrationService rs=new RegistrationService();
 		request.setCharacterEncoding("UTF-8");
 		rs.accounts();

@@ -101,7 +101,7 @@
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit" href="Sales0011check_Servlet">✓OK</button>
-					  <a class="btn btn-light" href="Sale0010_Registration.jsp">キャンセル</a>
+					  <a class="btn btn-light" href="Sale0010Registration_Servlet">キャンセル</a>
 					</div>
 			</form>
 		</div>

@@ -27,7 +27,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control"
-							name="sale_date" placeholder="yyyy/mm/dd" value="<c:out value="${sales.getSale_date() }"></c:out>" disable>
+							name="sale_date" placeholder="yyyy/mm/dd" value="<c:out value="${sales.getSale_date() }"></c:out>" disabled>
 					</div>
 				</div>
 
@@ -37,7 +37,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="account_id" id="account" disable>
+						<select class="form-select" name="account_id" id="account" disabled>
                             <option value="<c:out value="${sales.getAccount_id()}"></c:out>" selected>
                             	<c:out value="${sales.getName()}"></c:out>
                             </option>
@@ -50,7 +50,7 @@
 						<label for="category" class="col-form-label">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
-						<select class="form-select" name="category_id" id="category" disable>
+						<select class="form-select" name="category_id" id="category" disabled>
 							<option value="<c:out value="${sales.getCategory_id()}"></c:out>" selected>
                             	<c:out value="${sales.getCategory_name()}"></c:out>
                             </option>
@@ -64,7 +64,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="trade" class="form-control"
-							name="trade_name" value="<c:out value="${sales.getTrade_name()}"></c:out>" placeholder="商品名" disable>
+							name="trade_name" value="<c:out value="${sales.getTrade_name()}"></c:out>" placeholder="商品名" disabled>
 					</div>
 				</div>
 
@@ -74,7 +74,7 @@
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="unit" class="form-control" name="unit_price"
-							value="<c:out value="${sales.getUnit_price()}"></c:out>" placeholder="単価" disable>
+							value="<c:out value="${sales.getUnit_price()}"></c:out>" placeholder="単価" disabled>
 					</div>
 				</div>
 
@@ -83,7 +83,7 @@
 						<label for="num" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" id="num" class="form-control"name="sale_number" value="<c:out value="${sales.getSale_number()}"></c:out>" placeholder="個数" disable>
+						<input type="textarea" id="num" class="form-control"name="sale_number" value="<c:out value="${sales.getSale_number()}"></c:out>" placeholder="個数" disabled>
 					</div>
 				</div>
 
@@ -92,7 +92,7 @@
 						<label for="note" class="col-form-label">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control" id="note" name="note" placeholder="備考" disable><c:out value="${sales.getNote()}"></c:out></textarea>
+						<textarea class="form-control" id="note" name="note" placeholder="備考" disabled><c:out value="${sales.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 			</form>
