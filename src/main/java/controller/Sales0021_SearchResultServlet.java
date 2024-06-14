@@ -38,7 +38,9 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		SalesService ss = new SalesService();
+		// sessionから検索結果をまとめたもの＝beanを受け取る
 		SearchResultBean bean = (SearchResultBean)session.getAttribute("search");
+		// beanをもとにリストを作成し、requestにセットする。
 		request.setAttribute("salelist", ss.searchResultList(bean));
 		
 		

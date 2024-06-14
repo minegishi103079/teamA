@@ -28,7 +28,7 @@
                     販売日
                 </div>
                 <div class="col-6">
-                    <c:out value="${sales.getSale_date() }"></c:out>
+                    <c:out value="${CommonUtil.localDateFormat( sales.getSale_date() ) }"></c:out>
                 </div>
             </div>
 

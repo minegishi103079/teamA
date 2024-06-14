@@ -37,10 +37,14 @@
 						<div class="p-1 ms-auto">
 							<li class="nav-item"><a class="nav-link" href="Accounts0040_SerchInputServlet">アカウント検索</a></li>
 						</div>
-		            	<div class="p-1 ms-auto position-absolute end-0">
+<!-- 	            	<div class="p-1 ms-auto position-absolute end-0">
 		            		<li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
-		            	</div> 					
+		            	</div> 		
+ -->				
 					</ul>
+					<div class="p-1 ms-auto">
+                        <li class="nav-item d-flex justify-content-end"><a class="nav-link" href="#">ログアウト</a></li>
+                    </div> 	
 				</div>
 		</div>
 	</nav>

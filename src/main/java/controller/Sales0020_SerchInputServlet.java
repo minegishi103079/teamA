@@ -60,8 +60,10 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 		if(sf.validate_2(request)) {
 			
 			HttpSession session = request.getSession();
-			// 検索結果をbeanに入れる
+			// 検索結果をbeanとしてまとめ、セッションに入れる。
+			// request.getParameterで一つ一つ指定してもよいが、長くなるのでBeanという形でまとめている。
 			session.setAttribute("search", CommonUtil.request_SearchBean(request));
+			// 検索結果をもとに、Listを作成するのはS0021に任せる。
 			response.sendRedirect("Sales0021");
 			
 		}else {

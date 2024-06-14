@@ -25,11 +25,12 @@ public class SalesService {
 		
 	}
 	
+	// 詳細画面に必要なデータを取り出す。結果はListBeanの形で渡す
 	public ListBean detailSales(String sale_id) {
 		String sql = "SELECT * FROM sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 				+ "LEFT JOIN categories c ON s.category_id = c.category_id "
-				+ "WHERE sale_id = ?";
+				+ "WHERE sale_id = ?";	// 担当・カテゴリーの名前は別テーブルなのでleft joinする。sale_idで一意に定める
 		ListBean sales = null;
 		
 		
@@ -63,6 +64,7 @@ public class SalesService {
 	}
 	
 	
+	// saleの中身をアカウント・カテゴリーとつなげて全部出す。
 	public ArrayList<ListBean> selectAll() {
 		String sql = "SELECT * FROM sales s "
 		+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
@@ -72,17 +74,20 @@ public class SalesService {
 	}
 	
 	
+	// 検索結果のrequestを受け取って、当てはまるデータをArrayListで返す
 	public ArrayList<ListBean> searchResult(HttpServletRequest request){
 		String sql = "select * from sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
 		
+		// 条件に当てはまるデータを絞り込むために、whereで記述すべきことを追加していく。
 		String date1 = request.getParameter("date1");
 		String date2 = request.getParameter("date2");
 		String account = request.getParameter("account_id");
 		String category = request.getParameter("category_id");
 		String trade = request.getParameter("trade_name");
 		String note = request.getParameter("note");
+		// 何もないとき（''）にエラーが出るものは、空白ではsqlに追加しないようにする。
 		sql += "where sale_date >= '"+ date1 +"' ";
 		if (!date2.isEmpty())
 			sql += "and sale_date <= '"+ date2 +"' ";
@@ -93,11 +98,15 @@ public class SalesService {
 		sql += "and trade_name like '%"+ trade +"%' ";
 		sql += "and note like '%"+ note+"%' ";
 		
-		
+		// 完成したsqlを実行してもらって、ArrayListを受け取る。
 		return result_AllList(sql);
 		
 	}
 	
+	
+	// 検索結果をページをまたいで受け取るときに、編集などがあった場合にリストの形では渡せない（編集が適用されないため）
+	// Sessionにはリクエストのデータを入れてあげる。一つ一つ記述するのは長くなるので、一つにまとめられるBeanに入れる。
+	// それ以外は上記と同じ
 	public ArrayList<ListBean> searchResultList(SearchResultBean bean) {
 		String sql = "select * from sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "

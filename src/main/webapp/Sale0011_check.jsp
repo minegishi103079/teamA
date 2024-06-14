@@ -9,6 +9,9 @@
 <title>売上登録確認</title>
 </head>
 <body>
+
+<jsp:include page="Dashboard.jsp"></jsp:include>
+
 	<div class="container-fluid">
 		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
@@ -98,7 +101,7 @@
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit" href="Sales0011check_Servlet">✓OK</button>
-					  <a class="btn btn-light" href="ale0010_Registration.jsp">キャンセル</a>
+					  <a class="btn btn-light" href="Sale0010_Registration.jsp">キャンセル</a>
 					</div>
 			</form>
 		</div>
