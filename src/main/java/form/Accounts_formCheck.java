@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
+import lombok.Getter;
+
+@Getter
+
 public class Accounts_formCheck {
 	private ArrayList<String> errors = new ArrayList<>();
 

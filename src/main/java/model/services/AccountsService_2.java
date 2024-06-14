@@ -96,5 +96,48 @@ public class AccountsService_2 {
 		}
 		return list;
 	}
+	
+	public ArrayList<AccountsBean> searchResultList(AccountsBean bean) {
+		String sql = "select * from accounts ";
+		
+		
+		String name = bean.getName();
+		String mail = bean.getMail();
+		int authority = bean.getAuthority();
+		
+		
+		if (!name.isEmpty())
+			sql += "where name like '%"+ name +"%'";
+		if (!mail.isEmpty())
+			sql += "and miil = '"+ mail +"' ";
+		if (authority != 0 )
+			sql += "and authority = '"+ authority +"' ";
+		
+		
+		return result_AllList(sql);
+		
+		
+		
+		
+		
+//		String date1 = bean.getDate1();
+//		String date2 = bean.getDate2();
+//		String account = bean.getAccount();
+//		String category = bean.getCategory();
+//		String trade = bean.getTrade();
+//		String note = bean.getNote();
+//		sql += "where sale_date >= '"+ date1 +"' ";
+//		if (!date2.isEmpty())
+//			sql += "and sale_date <= '"+ date2 +"' ";
+//		if (!account.isEmpty())
+//			sql += "and s.account_id = '"+ account +"' ";
+//		if (!category.isEmpty())
+//			sql += "and s.category_id = '"+ category +"' ";
+//		sql += "and trade_name like '%"+ trade +"%' ";
+//		sql += "and note like '%"+ note+"%' ";
+//		
+//		
+//		return result_AllList(sql);
+	}
 
 }
