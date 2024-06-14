@@ -20,9 +20,6 @@ public class SalesService {
 	
 	public static void main(String[] args) {
 		
-		String str = "";
-		Integer.parseInt(str);
-		
 	}
 	
 	// 詳細画面に必要なデータを取り出す。結果はListBeanの形で渡す

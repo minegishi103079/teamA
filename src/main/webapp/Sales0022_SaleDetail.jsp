@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="util.CommonUtil"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- c:out 未実装 -->
@@ -28,7 +28,7 @@
                     販売日
                 </div>
                 <div class="col-6">
-                    <c:out value="${CommonUtil.localDateFormat( sales.getSale_date() ) }"></c:out>
+                    <c:out value="${CommonUtil.localDateFormat(sales.getSale_date()) }"></c:out>
                 </div>
             </div>
 

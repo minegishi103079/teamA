@@ -28,7 +28,7 @@ public class RegistrationService {
 						rs.getString("name"),
 						rs.getString("mail"),
 						rs.getString("password"),
-						rs.getInt("authority")
+						rs.getString("authority")
 						);
 				ab.add(ac);
 			}
