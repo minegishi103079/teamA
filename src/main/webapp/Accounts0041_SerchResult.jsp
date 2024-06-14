@@ -26,19 +26,21 @@
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<form method="post" action="/Accounts0041_SerchResult">
+				<form method="get" action="Accounts0042_DetailsEditServlet" id="edit">
+				</form>
+				<form method="get" action="Accounts0044_DetailsEditdeleteServlet" id="delete">
+				</form>
 					<c:forEach var="accountslist" items="${accountlist}">
 						<tr>
 						
-							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${accountslist.getAccount_id() }"> ✓詳細 </button>
-							<button type ="submit" class="btn btn-danger" name="sale_id" value="${accountslist.getAccount_id() }"> ×削除</button></td>
+							<td><button type ="submit" class="btn btn-primary" name="sale_id" form="edit" value="${accountslist.getAccount_id() }"> ✓詳細 </button>
+							<button type ="submit" class="btn btn-danger" name="sale_id" form="delete" value="${accountslist.getAccount_id() }"> ×削除</button></td>
 							<td><c:out value="${accountslist.getAccount_id()}" /></td> <%--No --%>
 							<td><c:out value="${accountslist.getName()}" /></td> <%--氏名 --%>
 							<td><c:out value="${accountslist.getMail()}" /></td> <%--メール --%>
 							<td><c:out value="${accounts.getAuthority() }" /></td> <%-- 権限--%>
 						</tr>
 					</c:forEach>
-				</form>
 			</tbody>
 		</table>
 	</div>
