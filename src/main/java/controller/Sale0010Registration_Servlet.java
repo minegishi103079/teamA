@@ -34,15 +34,6 @@ public class Sale0010Registration_Servlet extends HttpServlet {
 		SaleService_2 s2 = new SaleService_2();
 		RegistrationService rs=new RegistrationService();
 		request.setCharacterEncoding("UTF-8");
-//		String date =request.getParameter("sale_date");
-//		int ai =Integer.parseInt(request.getParameter("account_id"));
-//		int ci=Integer.parseInt(request.getParameter("category_id"));
-//		String tn =request.getParameter("trade_name");
-//		int up=Integer.parseInt(request.getParameter("unit_price"));
-//		int sn=Integer.parseInt(request.getParameter("sale_number"));
-//		String n=request.getParameter("note");
-//		
-//		s2.salesinsert(date, ai, ci, tn, up, sn, n);
 		rs.accounts();
 		rs.categories();
 		
