@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import form.Accounts_formCheck;
 import util.CommonUtil;
+import validation.AccountsFormCheck;
 
 /**
  * Servlet implementation class Accounts0040_SerchInputServlet
@@ -46,7 +46,7 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 		
 				request.setCharacterEncoding("UTF-8");
 				
-				Accounts_formCheck af = new Accounts_formCheck();
+				AccountsFormCheck af = new AccountsFormCheck();
 				
 				// フォームチェック、問題なければtrue
 				if(af.validate2(request)) {

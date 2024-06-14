@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import form.Sales_formcheck;
 import model.services.RegistrationService;
 import model.services.SaleService_2;
+import validation.SalesFormCheck;
 
 /**
  * Servlet implementation class Sales0011check_Servlet
@@ -33,7 +33,7 @@ public class Sales0011check_Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Sales_formcheck sf = new Sales_formcheck();
+		SalesFormCheck sf = new SalesFormCheck();
 		
 		// フォームチェック、問題なければtrue
 		if(sf.validate(request)) {

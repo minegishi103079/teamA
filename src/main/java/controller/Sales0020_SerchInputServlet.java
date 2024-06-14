@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import form.Sales_formcheck;
 import model.services.RegistrationService;
 import util.CommonUtil;
+import validation.SalesFormCheck;
 
 /**
  * Servlet implementation class Sales0020_SerchInputServlet
@@ -54,7 +54,7 @@ public class Sales0020_SerchInputServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		Sales_formcheck sf = new Sales_formcheck();
+		SalesFormCheck sf = new SalesFormCheck();
 		
 		// フォームチェック、問題なければtrue
 		if(sf.validate_2(request)) {

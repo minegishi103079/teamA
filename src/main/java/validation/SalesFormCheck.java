@@ -1,4 +1,4 @@
-package form;
+package validation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import util.DbUtil;
 
 @Getter
 
-public class Sales_formcheck {
+public class SalesFormCheck {
 
 	private ArrayList<String> errors = new ArrayList<>();
 

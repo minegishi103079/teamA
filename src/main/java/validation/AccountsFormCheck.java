@@ -1,4 +1,4 @@
-package form;
+package validation;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import lombok.Getter;
 
 @Getter
 
-public class Accounts_formCheck {
+public class AccountsFormCheck {
 	private ArrayList<String> errors = new ArrayList<>();
 
 	public boolean validate(HttpServletRequest req) {

@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import form.Accounts_formCheck;
 import model.services.AccountsService_2;
 import util.CommonUtil;
+import validation.AccountsFormCheck;
 
 /**
  * Servlet implementation class Accounts0031_CheckServlet
@@ -34,7 +34,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Accounts_formCheck af = new Accounts_formCheck();
+		AccountsFormCheck af = new AccountsFormCheck();
 		if(af.validate(request)) {
 		HttpSession session = request.getSession();
 
