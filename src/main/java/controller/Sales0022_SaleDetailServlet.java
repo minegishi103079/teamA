@@ -46,7 +46,7 @@ public class Sales0022_SaleDetailServlet extends HttpServlet {
 		
 		
 		SalesService ss = new SalesService();
-		ListBean sale = ss.detailSales(request.getParameter("sale_id"));
+		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
 		request.setAttribute("sales", sale);
 		
 		request.getRequestDispatcher("/Sales0022_SaleDetail.jsp").forward(request, response);

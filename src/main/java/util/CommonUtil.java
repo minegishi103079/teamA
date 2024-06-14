@@ -47,8 +47,8 @@ public class CommonUtil {
 					str_Int(request.getParameter("unit_price")),
 					str_Int(request.getParameter("sale_number")),
 					request.getParameter("note"),
-					rs.accountsname(request.getParameter("account_id")),
-					rs.categoryname(request.getParameter("category_id"))
+					rs.accountsName(request.getParameter("account_id")),
+					rs.categoryName(request.getParameter("category_id"))
 			);
 		} catch(Exception e) {
 			e.printStackTrace();

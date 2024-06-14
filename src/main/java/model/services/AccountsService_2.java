@@ -13,7 +13,7 @@ import util.DbUtil;
 public class AccountsService_2 {
 	
 	//アカウント追加
-	public void salesinsert(String na,String ma, String pa, int au) {
+	public void accountsInsert(String na,String ma, String pa, int au) {
 		String sql = "INSERT into accounts(name,mail,password,authority) VALUES(?,?,?,?)";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
@@ -32,7 +32,7 @@ public class AccountsService_2 {
 	}
 
 	//アカウント更新
-	public void salesupdate(String na,String ma, String pa, int au) {
+	public void accountsUpdate(String na,String ma, String pa, int au) {
 		String sql = "update accounts set name=?,mail=?,password=?,authority=? where account_id=?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
@@ -50,7 +50,7 @@ public class AccountsService_2 {
 	}
 
 	//アカウント削除
-	public void salesdelete(String id) {
+	public void accountsDelete(String id) {
 		String sql = "delete from accounts where account_id = ?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
@@ -66,14 +66,14 @@ public class AccountsService_2 {
 	}
 	
 	//アカウント一覧表示
-	public ArrayList<AccountsBean> selectAll() {
+	public ArrayList<AccountsBean> accountsSelectAll() {
 		String sql = "SELECT * FROM accounts";
 		
-		return result_AllList(sql);
+		return accountsResultAllList(sql);
 	}
 	
 	//アカウント検索一覧表示
-	ArrayList<AccountsBean> result_AllList(String sql) {
+	ArrayList<AccountsBean> accountsResultAllList(String sql) {
 		ArrayList<AccountsBean> list = new ArrayList<>();
 		
 		try (
@@ -112,7 +112,7 @@ public class AccountsService_2 {
 			sql += "and authority = '"+ authority +"' ";
 		
 		
-		return result_AllList(sql);
+		return accountsResultAllList(sql);
 		
 		
 		

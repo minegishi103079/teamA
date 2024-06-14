@@ -23,7 +23,7 @@ public class SalesService {
 	}
 	
 	// 詳細画面に必要なデータを取り出す。結果はListBeanの形で渡す
-	public ListBean detailSales(String sale_id) {
+	public ListBean salesDetailSales(String sale_id) {
 		String sql = "SELECT * FROM sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 				+ "LEFT JOIN categories c ON s.category_id = c.category_id "
@@ -62,17 +62,17 @@ public class SalesService {
 	
 	
 	// saleの中身をアカウント・カテゴリーとつなげて全部出す。
-	public ArrayList<ListBean> selectAll() {
+	public ArrayList<ListBean> salesSelectAll() {
 		String sql = "SELECT * FROM sales s "
 		+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 		+ "LEFT JOIN categories c ON s.category_id = c.category_id";
 		
-		return result_AllList(sql);
+		return salesResultAllList(sql);
 	}
 	
 	
 	// 検索結果のrequestを受け取って、当てはまるデータをArrayListで返す
-	public ArrayList<ListBean> searchResult(HttpServletRequest request){
+	public ArrayList<ListBean> salesSearchResult(HttpServletRequest request){
 		String sql = "select * from sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
@@ -96,7 +96,7 @@ public class SalesService {
 		sql += "and note like '%"+ note+"%' ";
 		
 		// 完成したsqlを実行してもらって、ArrayListを受け取る。
-		return result_AllList(sql);
+		return salesResultAllList(sql);
 		
 	}
 	
@@ -104,7 +104,7 @@ public class SalesService {
 	// 検索結果をページをまたいで受け取るときに、編集などがあった場合にリストの形では渡せない（編集が適用されないため）
 	// Sessionにはリクエストのデータを入れてあげる。一つ一つ記述するのは長くなるので、一つにまとめられるBeanに入れる。
 	// それ以外は上記と同じ
-	public ArrayList<ListBean> searchResultList(SearchResultBean bean) {
+	public ArrayList<ListBean> salesSearchResultList(SearchResultBean bean) {
 		String sql = "select * from sales s "
 				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
 				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
@@ -126,12 +126,12 @@ public class SalesService {
 		sql += "and note like '%"+ note+"%' ";
 		
 		
-		return result_AllList(sql);
+		return salesResultAllList(sql);
 	}
 	
 	
 	
-	ArrayList<ListBean> result_AllList(String sql) {
+	ArrayList<ListBean> salesResultAllList(String sql) {
 		ArrayList<ListBean> list = new ArrayList<>();
 		
 		try (
@@ -164,7 +164,7 @@ public class SalesService {
 	public void salesUpdate(HttpServletRequest request) {
 		SaleService_2 s2 = new SaleService_2();
 		try {
-			s2.salesupdate(request.getParameter("sale_date"), 
+			s2.salesUpdate(request.getParameter("sale_date"), 
 					CommonUtil.str_Int(request.getParameter("account_id")), 
 					CommonUtil.str_Int(request.getParameter("category_id")), 
 					request.getParameter("trade_name"), 

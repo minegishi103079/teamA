@@ -41,7 +41,7 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.detailSales(request.getParameter("sale_id")) );
+		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
 		RegistrationService rs=new RegistrationService();
 		request.setAttribute("accounts", rs.accounts());

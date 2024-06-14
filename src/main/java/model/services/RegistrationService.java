@@ -62,7 +62,7 @@ public class RegistrationService {
 		}return cb;
 	}
 	
-	public String accountsname(String accountid) {
+	public String accountsName(String accountid) {
 		String sql="select name from accounts where account_id=?";
 		String ai=null;
 		try (
@@ -80,7 +80,7 @@ public class RegistrationService {
 			}return ai;
 	}
 	
-	public String categoryname(String categoryid) {
+	public String categoryName(String categoryid) {
 		String sql="select category_name from categories where category_id=?";
 		String ci=null;
 		try (

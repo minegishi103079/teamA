@@ -53,8 +53,8 @@ public class Sales0011check_Servlet extends HttpServlet {
 			String cn=request.getParameter("category_name");
 			
 			
-			nm=rs.accountsname(request.getParameter("account_id"));
-			cn=rs.categoryname(request.getParameter("category_id"));
+			nm=rs.accountsName(request.getParameter("account_id"));
+			cn=rs.categoryName(request.getParameter("category_id"));
 			
 			request.setAttribute("sale_date",date);
 			request.setAttribute("account_id",ai);
@@ -100,7 +100,7 @@ public class Sales0011check_Servlet extends HttpServlet {
 //		request.setAttribute("button",bt);
 		request.setCharacterEncoding("UTF-8");
 		SaleService_2 s2=new SaleService_2();
-		s2.salesinsert(request.getParameter("sale_date"),
+		s2.salesInsert(request.getParameter("sale_date"),
 						Integer.parseInt(request.getParameter("account_id")),
 						Integer.parseInt(request.getParameter("category_id")),
 						request.getParameter("trade_name"),

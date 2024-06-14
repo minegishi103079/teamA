@@ -69,7 +69,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 
 		try {
 
-			as.salesinsert(request.getParameter("name"),
+			as.accountsInsert(request.getParameter("name"),
 					request.getParameter("mail"),
 					request.getParameter("password1"),
 					CommonUtil.str_Int(request.getParameter("authority")));

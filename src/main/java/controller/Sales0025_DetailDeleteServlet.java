@@ -34,7 +34,7 @@ public class Sales0025_DetailDeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 			
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.detailSales(request.getParameter("sale_id")) );
+		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
 		
 		request.getRequestDispatcher("/Sales0025_DetailDelete.jsp").forward(request, response);
@@ -47,7 +47,7 @@ public class Sales0025_DetailDeleteServlet extends HttpServlet {
 		
 		// 削除の処理をする
 		SaleService_2 s2 = new SaleService_2();
-		s2.salesdelete(request.getParameter("sale_id"));
+		s2.salesDelete(request.getParameter("sale_id"));
 		
 		
 		response.sendRedirect("Sales0021");
