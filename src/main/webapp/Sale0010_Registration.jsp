@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<jsp:include page="Dashboard.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 	
 	<c:if test="${ not empty errors }">
 		<div class="alert alert-danger" role="alert">
