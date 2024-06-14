@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
+import model.beans.AccountsBean;
 import model.beans.ListBean;
 import model.beans.SearchResultBean;
 import model.services.RegistrationService;
@@ -66,6 +67,16 @@ public class CommonUtil {
 		String note = request.getParameter("note");
 		
 		return new SearchResultBean(date1, date2, account, category, trade, note);
+	}
+	
+	public static AccountsBean request_AcoountSearchBean(HttpServletRequest request) {
+		int  account_id = 0;
+		String name = request.getParameter("name");
+		String mail = request.getParameter("mail");
+		String password = null;
+		String authority = request.getParameter("authority");
+		
+		return new AccountsBean(account_id,name,mail,password,authority);
 	}
 	
 	

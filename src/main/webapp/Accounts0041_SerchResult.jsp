@@ -27,19 +27,15 @@
 			</thead>
 			<tbody class="table-group-divider">
 				<form method="post" action="/Accounts0041_SerchResult">
-					<c:forEach var="saleslist" items="${salelist}">
+					<c:forEach var="accountslist" items="${accountlist}">
 						<tr>
 						
-							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${saleslist.getSale_id() }"> ✓詳細 </button>
-							<button type ="submit" class="btn btn-danger" name="sale_id" value="${saleslist.getSale_id() }"> ×削除</button></td>
-							<td><c:out value="${saleslist.getSale_id()}" /></td> <%--No --%>
-							<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td> <%-- 販売日--%>
-							<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>
-							<td><c:out value="${saleslist.getCategory_name()}" /></td> <%-- 商品カテゴリー--%>
-							<td><c:out value="${saleslist.getTrade_name()}" /></td> <%-- 商品名--%>
-							<td><c:out value="${CommonUtil.numberComma( saleslist.getUnit_price() )}" /></td> <%-- 単価--%>
-							<td><c:out value="${CommonUtil.numberComma( saleslist.getSale_number() )}" /></td> <%-- 個数--%>
-							<td><c:out value="${saleslist.getUnit_price() * saleslist.getSale_number()}" /></td> <%-- 小計--%>
+							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${accountslist.getAccount_id() }"> ✓詳細 </button>
+							<button type ="submit" class="btn btn-danger" name="sale_id" value="${accountslist.getAccount_id() }"> ×削除</button></td>
+							<td><c:out value="${accountslist.getAccount_id()}" /></td> <%--No --%>
+							<td><c:out value="${accountslist.getName()}" /></td> <%--氏名 --%>
+							<td><c:out value="${accountslist.getMail()}" /></td> <%--メール --%>
+							<td><c:out value="${accounts.getAuthority }" /></td> <%-- 権限--%>
 						</tr>
 					</c:forEach>
 				</form>

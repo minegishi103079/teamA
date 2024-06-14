@@ -9,6 +9,8 @@ public class AccountsBean {
 	private String name;
 	private String mail;
 	private String password;
-	private int authority;
+	private String authority;
+	
+	//authorityをintからStringに変更しました
 	
 }

@@ -34,10 +34,6 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		session.removeAttribute("accountlist");
-		
-//		RegistrationService rs=new RegistrationService();
-//		request.setAttribute("accounts", rs.accounts());
-//		request.setAttribute("categories", rs.categories());
 		this.getServletContext().getRequestDispatcher("/Accounts0040_SerchInput.jsp").forward(request,response);
 	}
 
@@ -53,13 +49,12 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 				Accounts_formCheck af = new Accounts_formCheck();
 				
 				// フォームチェック、問題なければtrue
-				if(af.validate(request)) {
+				if(af.validate2(request)) {
 					
 					HttpSession session = request.getSession();
 					// 検索結果をbeanに入れる
-					session.setAttribute("search", CommonUtil.request_SearchBean(request));
-					//↑まだsaleのやつから変更してない
-					response.sendRedirect("Accounts0041_SerchResultServlet");
+					session.setAttribute("search", CommonUtil.request_AcoountSearchBean(request));
+					response.sendRedirect("Accounts0041_SerchResult");
 					
 				}else {
 					request.setAttribute("errors", af.getErrors());

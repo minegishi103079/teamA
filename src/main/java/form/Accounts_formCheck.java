@@ -31,6 +31,18 @@ public class Accounts_formCheck {
 		return result;
 	}
 	
+	public boolean validate2(HttpServletRequest req) {
+		
+		boolean k = nameLength(req.getParameter("name"));
+		boolean l  = mailLength(req.getParameter("mail"));
+		
+		boolean result = k && l;
+		
+		return result;
+		
+	}
+	
+	
 	//氏名必須入力チェック
 	private boolean nameEmpty(String str) {
 		if (str.isEmpty()) {

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.beans.SearchResultBean;
+import model.beans.AccountsBean;
 import model.services.AccountsService_2;
 
 /**
@@ -35,23 +35,22 @@ public class Accounts0041_SerchResult extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
-		//AccountsService ss = new AccountsService_2();
 		AccountsService_2 as2 = new AccountsService_2();
 		// sessionから検索結果をまとめたもの＝beanを受け取る
-		SearchResultBean bean = (SearchResultBean)session.getAttribute("search");
+		AccountsBean bean = (AccountsBean)session.getAttribute("search");
 		// beanをもとにリストを作成し、requestにセットする。
-		request.setAttribute("salelist", ss.searchResultList(bean));
+		request.setAttribute("accountlist", as2.searchResultList(bean));
 		
 		
-		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
-		
-		
+		//request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
 		
 		
 		
 		
-		request.setAttribute("Accounts", as2.selectAll());
+		
+		
+		
+		//request.setAttribute("Accounts", as2.selectAll());
 		
 		request.getRequestDispatcher("/Accounts0041_SerchResult.jsp").forward(request, response);
 	}
