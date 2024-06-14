@@ -14,6 +14,13 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
+	<c:if test="${ not empty errors }">
+		<div class="alert alert-danger" role="alert">
+			<c:forEach var="error" items="${ errors }">
+				<c:out value="${ error }" />
+			</c:forEach>
+		</div>
+	</c:if>
 
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
