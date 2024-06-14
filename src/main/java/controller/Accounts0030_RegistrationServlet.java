@@ -33,6 +33,7 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		AccountsService_2 a2 = new AccountsService_2();
+		
 		RegistrationService rs=new RegistrationService();
 		rs.accounts();
 		

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import form.Accounts_formCheck;
 import model.services.AccountsService_2;
@@ -32,6 +33,8 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Accounts_formCheck af= new Accounts_formCheck();
+		//if(af.validate(request)) {
+		HttpSession session = request.getSession();
 		
 		request.setCharacterEncoding("UTF-8");
 		AccountsService_2 as=new AccountsService_2();
@@ -46,10 +49,12 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 		request.setAttribute("password1",pw1);
 		request.setAttribute("password2",pw2);
 		request.setAttribute("authority",at);
-		
+	
 		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request,response);
-		
-		
+//		//}else {
+//			request.setAttribute("errors", af.getErrors());
+//			request.getRequestDispatcher("Accounts0030_RegistrationServlet").forward(request, response);
+//		}
 	}
 
 	/**

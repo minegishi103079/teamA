@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウントを登録してよろしいですか</h1>
-			<form class="was-validated" action="Accounts0030_RegistrationServlet" method="post">
+			<form class="form" action="Accounts0030_RegistrationServlet" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -27,7 +27,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" id="validationTextarea"
+						<input type="textarea" id="validationTextarea" value="<c:out value="${name}"></c:out>"
 							class="form-control" name="name" placeholder="氏名" required>
 					</div>
 				</div>
@@ -35,22 +35,22 @@
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">メールアドレス
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
+						<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail" placeholder="メールアドレス" required>
+						<input type="email" class="form-control"  value="<c:out value="${mail}"></c:out>" name="mail" placeholder="メールアドレス" required>
 					</div>
 				</div>
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">パスワード
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
+						<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password1" placeholder="パスワード" required>
+						<input type="password" class="form-control" value="<c:out value="${password1}"></c:out>" name="password1" placeholder="パスワード" required>
 					</div>
 				</div>
 
@@ -61,39 +61,41 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password2" placeholder="パスワード(確認)" required>
+						<input type="password" class="form-control" value="<c:out value="${password2}"></c:out>" name="password2" placeholder="パスワード(確認)" required>
 					</div>
 				</div>
 
                 <div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">権限
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
+						<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0" checked>
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="<c:out value="${authority}"></c:out>"> 
                             <label class="form-check-label" for="inlineRadio1">権限なし</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="<c:out value="${authority}"></c:out>">
                             <label class="form-check-label" for="inlineRadio2">売上閲覧</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="<c:out value="${authority}"></c:out>">
                             <label class="form-check-label" for="inlineRadio3">売上担当</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="<c:out value="${authority}"></c:out>">
                             <label class="form-check-label" for="inlineRadio4">管理者</label>
                           </div>
 					</div>
 				</div>
 
 
-				<div class="mx-auto p-2" style="width: 100px;">
-					<button type="submit" class="btn btn-primary" href="#">✓登録</button>
+					<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
+					  <button class="btn btn-primary" type="submit" href="#">OK</button>
+					  <a class="btn btn-light" href="Accounts0030_Registration.jsp">キャンセル</a>
+					</div>
 				</div>
 
 			</form>
