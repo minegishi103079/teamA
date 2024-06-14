@@ -26,7 +26,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="Textarea"
-							class="form-control" name="name" placeholder="氏名">
+							class="form-control bg-secondary-subtle" name="name" placeholder="氏名" readonly>
 					</div>
 				</div>
 
@@ -35,7 +35,7 @@
 						<label for="Textarea" class="col-form-label">メールアドレス</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail" placeholder="メールアドレス">
+						<input type="email" class="form-control bg-secondary-subtle" name="mail" placeholder="メールアドレス" readonly>
 					</div>
 				</div>
 
@@ -44,7 +44,7 @@
 						<label for="Textarea" class="col-form-label">パスワード</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password1" placeholder="パスワード">
+						<input type="password" class="form-control bg-secondary-subtle" name="password1" placeholder="パスワード" readonly>
 					</div>
 				</div>
 
@@ -53,7 +53,7 @@
 						<label for="Textarea" class="col-form-label">パスワード(確認)</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password2" placeholder="パスワード(確認)">
+						<input type="password" class="form-control bg-secondary-subtle" name="password2" placeholder="パスワード(確認)" readonly>
 					</div>
 				</div>
 
@@ -63,19 +63,19 @@
 					</div>
 					<div class="col-6 p-2">
                     	<div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0" readonly>
                             <label class="form-check-label" for="inlineRadio1">権限なし</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1" readonly>
                             <label class="form-check-label" for="inlineRadio2">売上閲覧</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2" readonly>
                             <label class="form-check-label" for="inlineRadio3">売上担当</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3">
+                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3" readonly>
                             <label class="form-check-label" for="inlineRadio4">管理者</label>
                           </div>
 					</div>
@@ -90,3 +90,6 @@
 	</div>
 </body>
 </html>
+
+
+<!-- 権限ラジオボタンのreadonly -->
