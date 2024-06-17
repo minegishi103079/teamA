@@ -118,10 +118,7 @@ public class AccountsService_2 {
 		
 		// 売上削除詳細
 		public AccountsBean AccountsDetailSales(String account_id) {
-			String sql = "SELECT * FROM accounts a "
-					+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
-					+ "LEFT JOIN categories c ON s.category_id = c.category_id "
-					+ "WHERE sale_id = ?";	// 担当・カテゴリーの名前は別テーブルなのでleft joinする。sale_idで一意に定める
+			String sql = "SELECT * FROM accounts WHERE account_id = ?";
 			AccountsBean accounts = null;
 			
 			

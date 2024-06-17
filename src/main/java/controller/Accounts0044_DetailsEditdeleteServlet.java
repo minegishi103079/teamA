@@ -32,7 +32,7 @@ public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		AccountsService_2 as2 = new AccountsService_2();
-		request.setAttribute("accounts", as2.AccountsDetailSales(request.getParameter("sale_id")) );
+		request.setAttribute("accounts", as2.AccountsDetailSales(request.getParameter("account_id")) );
 		
 		
 		request.getRequestDispatcher("/Accounts0044_DetailsEditdelete.jsp").forward(request, response);
@@ -44,7 +44,13 @@ public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
-		response.sendRedirect("Accounts0041_SerchResultServlet");
+		
+		// 削除の処理をする
+		AccountsService_2 as2 = new AccountsService_2();
+		as2.accountsDelete(request.getParameter("account_id"));
+				
+				
+		response.sendRedirect("Accounts0041_SerchResult");
 	}
 
 }
