@@ -113,6 +113,41 @@ public class AccountsService_2 {
 		
 		
 		return accountsResultAllList(sql);
+	}
+		
+		
+		// 売上削除詳細
+		public AccountsBean AccountsDetailSales(String account_id) {
+			String sql = "SELECT * FROM accounts a "
+					+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+					+ "LEFT JOIN categories c ON s.category_id = c.category_id "
+					+ "WHERE sale_id = ?";	// 担当・カテゴリーの名前は別テーブルなのでleft joinする。sale_idで一意に定める
+			AccountsBean accounts = null;
+			
+			
+			try (
+					Connection con = DbUtil.open();
+					PreparedStatement ps = con.prepareStatement(sql);
+			){
+				ps.setString(1, account_id);
+				ResultSet rs = ps.executeQuery();
+				while(rs.next()) {
+					accounts = new AccountsBean(
+							rs.getInt("account_id"), 
+							rs.getString("name"), 
+							rs.getString("mail"),
+							rs.getString("password"),
+							rs.getString("authority")
+							);
+				};
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return accounts;
+		}
 		
 		
 		
@@ -136,6 +171,6 @@ public class AccountsService_2 {
 //		
 //		
 //		return result_AllList(sql);
-	}
+
 
 }
