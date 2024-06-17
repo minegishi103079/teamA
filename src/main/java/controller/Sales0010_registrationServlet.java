@@ -8,20 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.services.SaleService_2;
-import model.services.SalesService;
+import model.services.RegistrationService;
 
 /**
- * Servlet implementation class Sales0025_DeleteServlet
+ * Servlet implementation class Sale0011_check_Servlet
  */
-@WebServlet("/Sales0025")
-public class Sales0025_DetailDeleteServlet extends HttpServlet {
+@WebServlet("/Sales0010")
+public class Sales0010_registrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0025_DetailDeleteServlet() {
+    public Sales0010_registrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,28 +29,23 @@ public class Sales0025_DetailDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
+		RegistrationService rs=new RegistrationService();
 		request.setCharacterEncoding("UTF-8");
-			
-		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
+		rs.accounts();
+		rs.categories();
 		
+		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("categories", rs.categories());
 		
-		request.getRequestDispatcher("/Sales0025_DetailDelete.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/Sales0010_registration.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		// 削除の処理をする
-		SaleService_2 s2 = new SaleService_2();
-		s2.salesDelete(request.getParameter("sale_id"));
-		
-		
-		response.sendRedirect("Sales0021");
+		// TODO Auto-generated method stub
 		
 	}
-
 }

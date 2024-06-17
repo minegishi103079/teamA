@@ -8,19 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.services.RegistrationService;
+import form.ListBean;
+import model.services.SalesService;
 
 /**
- * Servlet implementation class Sale0011_check_Servlet
+ * Servlet implementation class Sales0022_SaleDetailServlet
  */
-@WebServlet("/Sale0010Registration_Servlet")
-public class Sale0010Registration_Servlet extends HttpServlet {
+@WebServlet("/Sales0022")
+public class Sales0022_saleDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sale0010Registration_Servlet() {
+    public Sales0022_saleDetailServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,23 +30,26 @@ public class Sale0010Registration_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		RegistrationService rs=new RegistrationService();
-		request.setCharacterEncoding("UTF-8");
-		rs.accounts();
-		rs.categories();
 		
-		request.setAttribute("accounts", rs.accounts());
-		request.setAttribute("categories", rs.categories());
+		// ほかのページから戻ってくる。
 		
-		this.getServletContext().getRequestDispatcher("/Sale0010_Registration.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
+		// 検索結果画面から詳細ボタンが押される。
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		
+		SalesService ss = new SalesService();
+		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
+		request.setAttribute("sales", sale);
+		
+		request.getRequestDispatcher("/Sales0022_saleDetail.jsp").forward(request, response);
 	}
+
 }

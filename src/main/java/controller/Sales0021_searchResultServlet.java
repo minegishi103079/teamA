@@ -7,20 +7,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import form.SearchResultBean;
 import model.services.SalesService;
 
 /**
- * Servlet implementation class Sales0024_Servlet
+ * Servlet implementation class SalelistServlet
  */
-@WebServlet("/Sales0024")
-public class Sales0024_DetailEditCheckServlet extends HttpServlet {
+@WebServlet("/Sales0021")
+public class Sales0021_searchResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0024_DetailEditCheckServlet() {
+    public Sales0021_searchResultServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,12 +32,19 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// ToDo:sessionにBeanで保管されている検索条件から、一覧を表示
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		request.getRequestDispatcher("/Sales0024_DetailEditCheck.jsp").forward(request, response);
-//		HttpSession session = request.getSession();
-//		session.removeAttribute("sales");
+		HttpSession session = request.getSession();
+		SalesService ss = new SalesService();
+		// sessionから検索結果をまとめたもの＝beanを受け取る
+		SearchResultBean bean = (SearchResultBean)session.getAttribute("search");
+		// beanをもとにリストを作成し、requestにセットする。
+		request.setAttribute("salelist", ss.salesSearchResultList(bean));
+		
+		
+		request.getRequestDispatcher("/Sales0021_searchResult.jsp").forward(request, response);
 		
 	}
 
@@ -45,14 +54,8 @@ public class Sales0024_DetailEditCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		// 変更を適用して、一覧画面に戻す
-		request.setCharacterEncoding("UTF-8");
-		
-		SalesService ss = new SalesService();
-		ss.salesUpdate(request);
 		
 		
-		response.sendRedirect("Sales0021");
 	}
 
 }

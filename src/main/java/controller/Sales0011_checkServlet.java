@@ -16,14 +16,14 @@ import validation.SalesFormCheck;
 /**
  * Servlet implementation class Sales0011check_Servlet
  */
-@WebServlet("/Sales0011check_Servlet")
-public class Sales0011check_Servlet extends HttpServlet {
+@WebServlet("/Sales0011")
+public class Sales0011_checkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0011check_Servlet() {
+    public Sales0011_checkServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -66,7 +66,7 @@ public class Sales0011check_Servlet extends HttpServlet {
 			request.setAttribute("name",nm );
 			request.setAttribute("category_name",cn);
 			
-			this.getServletContext().getRequestDispatcher("/Sale0011_check.jsp").forward(request,response);
+			this.getServletContext().getRequestDispatcher("/Sales0011_check.jsp").forward(request,response);
 			
 			// 検索結果をbeanに入れる
 //			session.setAttribute("search", CommonUtil.request_SearchBean(request));
@@ -74,7 +74,7 @@ public class Sales0011check_Servlet extends HttpServlet {
 			
 		}else {
 			request.setAttribute("errors", sf.getErrors());
-			request.getRequestDispatcher("Sale0010Registration_Servlet").forward(request, response);
+			request.getRequestDispatcher("Sales0010").forward(request, response);
 			//response.sendRedirect("Sale0010Registration_Servlet");
 		}
 		

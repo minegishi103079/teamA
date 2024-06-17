@@ -18,13 +18,13 @@ import validation.SalesFormCheck;
  * Servlet implementation class Sales0023_DetailEditServlet
  */
 @WebServlet("/Sales0023")
-public class Sales0023_DetailEditServlet extends HttpServlet {
+public class Sales0023_detailEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0023_DetailEditServlet() {
+    public Sales0023_detailEditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -47,7 +47,7 @@ public class Sales0023_DetailEditServlet extends HttpServlet {
 		request.setAttribute("accounts", rs.accounts());
 		request.setAttribute("categories", rs.categories());
 		
-		request.getRequestDispatcher("/Sales0023_DetailEdit.jsp").forward(request, response);
+		request.getRequestDispatcher("/Sales0023_detailEdit.jsp").forward(request, response);
 	}
 
 	/**

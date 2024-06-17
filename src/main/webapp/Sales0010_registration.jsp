@@ -24,7 +24,7 @@
 		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上登録</h1>
-			<form class="form" action="Sales0011check_Servlet" method="get">
+			<form class="form" action="Sales0011" method="get">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -116,7 +116,7 @@
 				</div>
 
 				<div class="mx-auto p-2" style="width: 100px;">
-					<button type="submit" class="btn btn-primary" href="Sale0011_check.jsp">✓登録</button>
+					<button type="submit" class="btn btn-primary">✓登録</button>
 				</div>
 			</form>
 		</div>

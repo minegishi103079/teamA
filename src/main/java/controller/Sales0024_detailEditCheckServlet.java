@@ -8,20 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import form.ListBean;
 import model.services.SalesService;
 
 /**
- * Servlet implementation class Sales0022_SaleDetailServlet
+ * Servlet implementation class Sales0024_Servlet
  */
-@WebServlet("/Sales0022")
-public class Sales0022_SaleDetailServlet extends HttpServlet {
+@WebServlet("/Sales0024")
+public class Sales0024_detailEditCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0022_SaleDetailServlet() {
+    public Sales0024_detailEditCheckServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +30,12 @@ public class Sales0022_SaleDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ほかのページから戻ってくる。
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		request.getRequestDispatcher("/Sales0024_detailEditCheck.jsp").forward(request, response);
+//		HttpSession session = request.getSession();
+//		session.removeAttribute("sales");
 		
 	}
 
@@ -40,16 +44,15 @@ public class Sales0022_SaleDetailServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 検索結果画面から詳細ボタンが押される。
 		
+		// 変更を適用して、一覧画面に戻す
 		request.setCharacterEncoding("UTF-8");
 		
-		
 		SalesService ss = new SalesService();
-		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
-		request.setAttribute("sales", sale);
+		ss.salesUpdate(request);
 		
-		request.getRequestDispatcher("/Sales0022_SaleDetail.jsp").forward(request, response);
+		
+		response.sendRedirect("Sales0021");
 	}
 
 }

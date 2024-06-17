@@ -7,22 +7,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import form.SearchResultBean;
+import model.services.SaleService_2;
 import model.services.SalesService;
 
 /**
- * Servlet implementation class SalelistServlet
+ * Servlet implementation class Sales0025_DeleteServlet
  */
-@WebServlet("/Sales0021")
-public class Sales0021_SearchResultServlet extends HttpServlet {
+@WebServlet("/Sales0025")
+public class Sales0025_detailDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sales0021_SearchResultServlet() {
+    public Sales0025_detailDeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,20 +31,13 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ToDo:sessionにBeanで保管されている検索条件から、一覧を表示
-		
 		request.setCharacterEncoding("UTF-8");
-		
-		HttpSession session = request.getSession();
+			
 		SalesService ss = new SalesService();
-		// sessionから検索結果をまとめたもの＝beanを受け取る
-		SearchResultBean bean = (SearchResultBean)session.getAttribute("search");
-		// beanをもとにリストを作成し、requestにセットする。
-		request.setAttribute("salelist", ss.salesSearchResultList(bean));
+		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
 		
-		request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("/Sales0025_detailDelete.jsp").forward(request, response);
 	}
 
 	/**
@@ -53,8 +45,12 @@ public class Sales0021_SearchResultServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// 削除の処理をする
+		SaleService_2 s2 = new SaleService_2();
+		s2.salesDelete(request.getParameter("sale_id"));
 		
 		
+		response.sendRedirect("Sales0021");
 		
 	}
 

@@ -17,7 +17,7 @@
 		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上登録確認</h1>
-			<form class="was-validated" action="Sales0011check_Servlet" method="post">
+			<form class="was-validated" action="Sales0011" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -101,8 +101,8 @@
 				</div>
 			
 				 	<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit" href="Sales0011check_Servlet">✓OK</button>
-					  <a class="btn btn-light" href="Sale0010Registration_Servlet">キャンセル</a>
+					  <button class="btn btn-primary" type="submit">✓OK</button>
+					  <a class="btn btn-light" href="Sales0010">キャンセル</a>
 					</div>
 			</form>
 		</div>
