@@ -8,7 +8,7 @@
 <head>
 	<meta http-quiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-	<title></title>
+	<title>アカウント検索結果表示</title>
 </head>
 <body>
 

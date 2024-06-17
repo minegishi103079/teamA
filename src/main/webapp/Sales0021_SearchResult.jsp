@@ -8,12 +8,13 @@
 <head>
 	<meta http-quiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-	<title></title>
+	<title>売上検索結果表示</title>
 </head>
 <body>
 
 	<jsp:include page="header.jsp"></jsp:include>
-	<div class="container mt-5 justify-content-center">
+	<div class="container-fluid mt-5 justify-content-center">
+		<div class="ms-5 me-5">
 		<h1>売上検索結果表示</h1>
 		<table class="table">
 			<thead>
@@ -34,7 +35,7 @@
 					<c:forEach var="saleslist" items="${salelist}">
 						<tr>
 						
-							<td><button type ="submit" class="btn btn-primary" name="sale_id" value="${saleslist.getSale_id() }"> ✓詳細 </button</td>
+							<td><button type ="submit" class="btn btn-primary col-auto" name="sale_id" value="${saleslist.getSale_id() }"> ✓詳細 </button</td>
 							<td><c:out value="${saleslist.getSale_id()}" /></td> <%--No --%>
 							<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td> <%-- 販売日--%>
 							<td><c:out value="${saleslist.getName()}" /></td> <%--担当 --%>
@@ -48,6 +49,7 @@
 				</form>
 			</tbody>
 		</table>
+		</div>
 	</div>
 
 </body>
