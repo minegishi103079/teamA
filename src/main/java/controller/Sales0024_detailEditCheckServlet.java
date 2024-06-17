@@ -44,7 +44,6 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		// 変更を適用して、一覧画面に戻す
 		request.setCharacterEncoding("UTF-8");
 		

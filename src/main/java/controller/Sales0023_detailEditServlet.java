@@ -43,7 +43,7 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 		SalesService ss = new SalesService();
 		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
-		RegistrationService rs=new RegistrationService();
+		RegistrationService rs = new RegistrationService();
 		request.setAttribute("accounts", rs.accounts());
 		request.setAttribute("categories", rs.categories());
 		

@@ -44,7 +44,6 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		// 削除の処理をする
 		SaleService_2 s2 = new SaleService_2();
 		s2.salesDelete(request.getParameter("sale_id"));

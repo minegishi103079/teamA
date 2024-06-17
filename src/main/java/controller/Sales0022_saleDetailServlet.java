@@ -35,9 +35,9 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		
 		SalesService ss = new SalesService();
 		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
+		System.out.println();
 		request.setAttribute("sales", sale);
 		
 		request.getRequestDispatcher("/Sales0022_saleDetail.jsp").forward(request, response);

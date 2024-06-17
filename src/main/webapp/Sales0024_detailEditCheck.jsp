@@ -103,7 +103,7 @@
 						value="<c:out value="${sales.getSale_id() }"></c:out>">✓OK</button>
 					</div>
 					<div class="col-auto">
-						<form method="post" action="Sales0022" id="cancel">
+						<form method="get" action="Sales0022" id="cancel">
 							<button type="submit" class="btn btn-light" name="sale_id" 
 							value="<c:out value="${sales.getSale_id() }"></c:out>" form="cancel">キャンセル</button>
 						</form>
