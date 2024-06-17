@@ -55,9 +55,10 @@ public class CommonUtil {
 	public static ListBean request_ListBean(HttpServletRequest request) {
 		ListBean sales = null;
 		RegistrationService rs = new RegistrationService();
+		String sale_id = request.getParameter("sale_id") != null ? request.getParameter("sale_id"): "0";
 		try {
 			sales = new ListBean(
-					str_Int(request.getParameter("sale_id")),
+					str_Int(sale_id),
 					CommonUtil.str_LocalDate(request.getParameter("sale_date")),
 					str_Int(request.getParameter("account_id")),
 					str_Int(request.getParameter("category_id")),
