@@ -136,6 +136,7 @@ public class AccountsService_2 {
 							rs.getString("password"),
 							rs.getString("authority")
 							);
+					System.out.println(accounts);
 				};
 				
 				

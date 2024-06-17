@@ -27,19 +27,20 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" id="validationTextarea"
-							class="form-control" name="name" placeholder="氏名" required>
+						<input type="varidationTextarea" class="form-control" name="name"  
+						value="<c:out value="${accounts.getName()}"></c:out>" placeholder="氏名" required>
 					</div>
 				</div>
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">メールアドレス
+						<label for="textarea" class="col-form-label">メールアドレス
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail" placeholder="メールアドレス" required>
+						<input type="email" class="form-control" name="mail"  value="<c:out value="${accounts.getMail()}"></c:out>"
+						placeholder="メールアドレス" required>
 					</div>
 				</div>
 
@@ -50,7 +51,8 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password1" placeholder="パスワード" required>
+						<input type="password" class="form-control" name="password1"
+						 value="<c:out value="${accounts.getPassword1()}"></c:out>" placeholder="パスワード" required>
 					</div>
 				</div>
 
@@ -61,14 +63,15 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password2" placeholder="パスワード(確認)" required>
+						<input type="password" class="form-control" name="password2"
+						 value="<c:out value="${accounts.getPassword2()}"></c:out>" placeholder="パスワード(確認)" required>
 					</div>
 				</div>
 
                 <div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">権限
-							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
+							<button type="button" class="btn btn-secondary btn-sm"  value="<c:out value="${accounts.getAutority()}"></c:out>" disabled>必須</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
@@ -92,8 +95,8 @@
 				</div>
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit">✓更新</button>
-					  <a class="btn btn-light" href="Accounts0041">キャンセル</a>
+					  <button class="btn btn-primary" type="submit" name="accounts_id" value="<c:out value="${accounts.getAccounts_id() }"></c:out>">✓更新</button>
+					  <a class="btn btn-light" href="Accounts0041s">キャンセル</a>
 				</div>
 			</form>
 		</div>
