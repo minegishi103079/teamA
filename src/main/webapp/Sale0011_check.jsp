@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/readonly.css" type="text/css">
 <title>売上登録確認</title>
 </head>
 <body>

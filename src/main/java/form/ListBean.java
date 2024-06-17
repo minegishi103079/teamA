@@ -1,4 +1,4 @@
-package model.beans;
+package form;
 
 import java.time.LocalDate;
 

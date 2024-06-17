@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import model.beans.ListBean;
-import model.beans.SearchResultBean;
+import form.ListBean;
+import form.SearchResultBean;
 import util.CommonUtil;
 import util.DbUtil;
 

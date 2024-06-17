@@ -6,9 +6,9 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
+import form.ListBean;
+import form.SearchResultBean;
 import model.beans.AccountsBean;
-import model.beans.ListBean;
-import model.beans.SearchResultBean;
 import model.services.RegistrationService;
 
 public class CommonUtil {
@@ -30,6 +30,24 @@ public class CommonUtil {
 	public static String numberComma(int num) {
 		NumberFormat ni = NumberFormat.getNumberInstance();
 		return ni.format(num);
+	}
+	
+	
+	public static String authorityFormat(String str) {
+		str = str != null ? str: "";
+		switch(str) {
+		case "0":
+			return "権限なし";
+		case "1":
+			return "売上閲覧";
+		case "2":
+			return "売上担当";
+		case "3":
+			return "管理者";
+		default:
+			return "権限なし";
+		
+		}
 	}
 	
 

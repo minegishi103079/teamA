@@ -8,6 +8,7 @@
 
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/readonly.css" type="text/css">
 <meta charset="UTF-8">
 <title>売上詳細編集確認</title>
 </head>

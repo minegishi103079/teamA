@@ -8,6 +8,7 @@
 <head>
 <meta http-quiv="Content-Type" content="text/html;" charset="UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/readonly.css" type="text/css">
 <title>アカウント登録画面</title>
 </head>
 <body>
@@ -100,7 +101,7 @@
 
 
 					<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit" href="#">OK</button>
+					  <button class="btn btn-primary" type="submit">OK</button>
 					  <a class="btn btn-light" href="Accounts0030_RegistrationServlet">キャンセル</a>
 					</div>
 				</div>
