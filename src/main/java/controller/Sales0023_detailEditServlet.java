@@ -58,6 +58,7 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		// ToDo:フォームチェックの実装
 		SalesFormCheck sf = new SalesFormCheck();
+		System.out.println(request.getAttribute("sales"));;
 		if( sf.validate(request)) {
 			// 受け取ったデータをListBeanに入れて渡す
 			HttpSession session = request.getSession();

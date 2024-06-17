@@ -133,6 +133,7 @@
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary" name="sale_id" 
                         value="<c:out value="${sales.getSale_id() }"></c:out>">✓更新</button>
+                        <input type="hydden" name="sales" value="${sales }"
                     </div>
                     <div class="col-auto">
                         <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>

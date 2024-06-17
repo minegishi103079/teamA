@@ -78,16 +78,6 @@ public class Sales0011_checkServlet extends HttpServlet {
 			//response.sendRedirect("Sale0010Registration_Servlet");
 		}
 		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 	/**
@@ -108,6 +98,6 @@ public class Sales0011_checkServlet extends HttpServlet {
 						Integer.parseInt(request.getParameter("sale_number")),
 						request.getParameter("note"));
 		
-		response.sendRedirect("Sale0010Registration_Servlet");
+		response.sendRedirect("Sales0010");
 	}
 }
