@@ -7,8 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import model.beans.AccountsBean;
 import model.services.AccountsService_2;
+import validation.AccountsFormCheck;
 
 /**
  * Servlet implementation class Accounts0042_DetailsEdit
@@ -44,9 +47,28 @@ request.setCharacterEncoding("UTF-8");
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		AccountsFormCheck af = new AccountsFormCheck();
+		request.setCharacterEncoding("UTF-8");
+		if(af.validate(request)) {
+		HttpSession session = request.getSession();
+
+		AccountsService_2 as = new AccountsService_2();
+		int ai=Integer.parseInt(request.getParameter("account_id"));
+		String n = request.getParameter("name");
+		String m = request.getParameter("mail");
+		String pw1 = request.getParameter("password1");
+		String pw2 = request.getParameter("password2");
+		String at = request.getParameter("authority");
+		AccountsBean ab=new AccountsBean(ai,n,m,pw1,at);
+		session.setAttribute("accounts", ab);
 		
 		response.sendRedirect("Accounts0043");
-//		doGet(request, response);
+
+		
+				}else {
+					request.setAttribute("errors", af.getErrors());
+					doGet(request, response);
+				}
 	}
 
 }

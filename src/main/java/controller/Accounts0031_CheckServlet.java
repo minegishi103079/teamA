@@ -7,11 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.services.AccountsService_2;
 import util.CommonUtil;
-import validation.AccountsFormCheck;
 
 /**
  * Servlet implementation class Accounts0031_CheckServlet
@@ -34,29 +32,8 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		AccountsFormCheck af = new AccountsFormCheck();
-		if(af.validate(request)) {
-		HttpSession session = request.getSession();
-
-		request.setCharacterEncoding("UTF-8");
-		AccountsService_2 as = new AccountsService_2();
-		String n = request.getParameter("name");
-		String m = request.getParameter("mail");
-		String pw1 = request.getParameter("password1");
-		String pw2 = request.getParameter("password2");
-		int at = Integer.parseInt(request.getParameter("authority"));
-
-		request.setAttribute("name", n);
-		request.setAttribute("mail", m);
-		request.setAttribute("password1", pw1);
-		request.setAttribute("password2", pw2);
-		request.setAttribute("authority", at);
-
 		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request, response);
-				}else {
-					request.setAttribute("errors", af.getErrors());
-					request.getRequestDispatcher("Accounts0030").forward(request, response);
-				}
+		
 	}
 
 	/**

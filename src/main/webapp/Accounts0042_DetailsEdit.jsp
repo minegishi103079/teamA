@@ -14,11 +14,18 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
+<c:if test="${ not empty errors }">
+		<div class="alert alert-danger" role="alert">
+			<c:forEach var="error" items="${ errors }">
+				<c:out value="${ error }" />
+			</c:forEach>
+		</div>
+	</c:if>
 
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント詳細編集画面</h1>
-			<form class="form" action="Accounts0043" method="get">
+			<form class="form" action="Accounts0042" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
