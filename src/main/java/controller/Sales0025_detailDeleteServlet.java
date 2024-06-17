@@ -49,7 +49,6 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 		SaleService_2 s2 = new SaleService_2();
 		s2.salesDelete(request.getParameter("sale_id"));
 		
-		
 		response.sendRedirect("Sales0021");
 		
 	}

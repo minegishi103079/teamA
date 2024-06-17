@@ -31,15 +31,6 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ほかのページから戻ってくる。
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		// 検索結果画面から詳細ボタンが押される。
 		
 		request.setCharacterEncoding("UTF-8");
@@ -50,6 +41,15 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 		request.setAttribute("sales", sale);
 		
 		request.getRequestDispatcher("/Sales0022_saleDetail.jsp").forward(request, response);
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+		
 	}
 
 }

@@ -87,7 +87,6 @@
             </div>
 
             <div class="row d-flex justify-content-center mt-2">
-
                 <div class="col-auto">
                 	<form class="" action="Sales0023" method="get" id="edit">
                     	<button type="submit" class="btn btn-primary" name="sale_id" 
@@ -103,7 +102,6 @@
                 <div class="col-auto">
                     <a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
                 </div>
-                
             </div>
 
         </div>

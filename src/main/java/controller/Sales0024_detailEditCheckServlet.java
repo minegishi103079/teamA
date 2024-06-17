@@ -51,7 +51,6 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 		SalesService ss = new SalesService();
 		ss.salesUpdate(request);
 		
-		
 		response.sendRedirect("Sales0021");
 	}
 
