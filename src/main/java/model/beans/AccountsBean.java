@@ -5,6 +5,9 @@ import lombok.Data;
 
 @Data @AllArgsConstructor
 public class AccountsBean {
+	public AccountsBean() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 	private int account_id;
 	private String name;
 	private String mail;
