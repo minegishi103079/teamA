@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.beans.AccountsBean;
 import model.services.RegistrationService;
 import validation.AccountsFormCheck;
 
@@ -59,13 +60,12 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
 		String pw2 = request.getParameter("password2");
-		int at = Integer.parseInt(request.getParameter("authority"));
+		String at = request.getParameter("authority");
 		
-		session.setAttribute("name", n);
-		session.setAttribute("mail", m);
-		session.setAttribute("password1", pw1);
-		session.setAttribute("password2", pw2);
-		session.setAttribute("authority", at);
+		AccountsBean ab=new AccountsBean(0,n,m,pw1,at);
+		
+		session.setAttribute("accounts", ab);
+		
 		
 		response.sendRedirect("Accounts0031");
 		
