@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.SaleService_2;
 
@@ -53,6 +54,8 @@ public class Sales0011_checkServlet extends HttpServlet {
 						Integer.parseInt(request.getParameter("unit_price")),
 						Integer.parseInt(request.getParameter("sale_number")),
 						request.getParameter("note"));
+		HttpSession session = request.getSession();
+		session.removeAttribute("sales");
 		
 		response.sendRedirect("Sales0010");
 	}
