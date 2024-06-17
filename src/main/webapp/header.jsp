@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 		<a class="navbar-brand" href="#">物品売上管理システム</a>
@@ -17,16 +19,16 @@
 								aria-current="page" href="C0020">ダッシュボード</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="Sales0010">売上登録</a></li>
+							<li class="nav-item"><a class="nav-link" <c:if test="${status == 1}" > active </c:if>href="Sales0010">売上登録</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="Sales0020">売上検索</a></li>
+							<li class="nav-item"><a class="nav-link" <c:if test="${status == 2}" >active</c:if> href="Sales0020">売上検索</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="Accounts0030">アカウント登録</a></li>
+							<li class="nav-item"><a class="nav-link"<c:if test="${status == 3}" >active</c:if> href="Accounts0030">アカウント登録</a></li>
 						</div>
 						<div class="p-1 ms-auto">
-							<li class="nav-item"><a class="nav-link" href="Accounts0040">アカウント検索</a></li>
+							<li class="nav-item"><a class="nav-link" <c:if test="${status == 4}" >active</c:if> href="Accounts0040">アカウント検索</a></li>
 						</div>
 <!-- 	            	<div class="p-1 ms-auto position-absolute end-0">
 		            		<li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>

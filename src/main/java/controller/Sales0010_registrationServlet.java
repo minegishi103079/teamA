@@ -30,6 +30,9 @@ public class Sales0010_registrationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String status = request.getParameter("status");
+		request.setAttribute("status", "1");	// nav
+		
 		RegistrationService rs=new RegistrationService();
 		request.setCharacterEncoding("UTF-8");
 		rs.accounts();

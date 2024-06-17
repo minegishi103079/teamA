@@ -32,6 +32,9 @@ public class Sales0020_searchInputServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String status = request.getParameter("status");
+		request.setAttribute("status", "2");	// nav
+		
 		
 		// 検索画面に来た段階で、検索結果のセッションを消す。
 		HttpSession session = request.getSession();

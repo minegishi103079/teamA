@@ -31,7 +31,10 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		String status = request.getParameter("status");
+		request.setAttribute("status", "4");	// nav
+		
+		
 		HttpSession session = request.getSession();
 		session.removeAttribute("accountlist");
 		this.getServletContext().getRequestDispatcher("/Accounts0040_SerchInput.jsp").forward(request,response);
