@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.AccountsService_2;
 import util.CommonUtil;
@@ -32,6 +33,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request, response);
 		
 	}
@@ -50,6 +52,8 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 					request.getParameter("mail"),
 					request.getParameter("password1"),
 					CommonUtil.str_Int(request.getParameter("authority")));
+			HttpSession session = request.getSession();
+			session.removeAttribute("accounts");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

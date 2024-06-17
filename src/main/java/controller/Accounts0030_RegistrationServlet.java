@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.RegistrationService;
 import validation.AccountsFormCheck;
 
 /**
@@ -38,11 +37,6 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		RegistrationService rs=new RegistrationService();
-		rs.accounts();
-		
-		request.setAttribute("accounts", rs.accounts());
-		
 		this.getServletContext().getRequestDispatcher("/Accounts0030_Registration.jsp").forward(request,response);
 	}
 
@@ -51,11 +45,12 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		AccountsFormCheck af = new AccountsFormCheck();
 		if(af.validate(request)) {
 		HttpSession session = request.getSession();
 
-		request.setCharacterEncoding("UTF-8");
+		
 		String n = request.getParameter("name");
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
