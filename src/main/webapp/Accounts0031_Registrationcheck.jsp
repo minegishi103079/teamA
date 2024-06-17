@@ -19,7 +19,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウントを登録してよろしいですか</h1>
-			<form class="form" action="Accounts0031_CheckServlet" method="post">
+			<form class="form" action="Accounts0031" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
@@ -102,7 +102,7 @@
 
 					<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit">OK</button>
-					  <a class="btn btn-light" href="Accounts0030_RegistrationServlet">キャンセル</a>
+					  <a class="btn btn-light" href="Accounts0030">キャンセル</a>
 					</div>
 				</div>
 

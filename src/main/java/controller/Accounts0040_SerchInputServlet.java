@@ -15,7 +15,7 @@ import validation.AccountsFormCheck;
 /**
  * Servlet implementation class Accounts0040_SerchInputServlet
  */
-@WebServlet("/Accounts0040_SerchInputServlet")
+@WebServlet("/Accounts0040")
 public class Accounts0040_SerchInputServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -54,7 +54,7 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 					// 検索結果をbeanに入れる
 					session.setAttribute("search", CommonUtil.request_AcoountSearchBean(request));
-					response.sendRedirect("Accounts0041_SerchResult");
+					response.sendRedirect("Accounts0041");
 					
 				}else {
 					request.setAttribute("errors", af.getErrors());

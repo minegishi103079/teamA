@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント検索条件入力</h1>
-			<form class="form" action="Accounts0040_SerchInputServlet" method="post">
+			<form class="form" action="Accounts0040" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -66,7 +66,7 @@
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit">🔍検索</button>
-					  <a class="btn btn-light" href="Accounts0040_SerchInputServlet">クリア</a>
+					  <a class="btn btn-light" href="Accounts0040">クリア</a>
 					</div>
 
 			</form>

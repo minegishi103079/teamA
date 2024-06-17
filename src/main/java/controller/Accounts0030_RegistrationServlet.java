@@ -14,7 +14,7 @@ import model.services.RegistrationService;
 /**
  * Servlet implementation class Sales0030_AccountsRegistrationServlet
  */
-@WebServlet("/Accounts0030_RegistrationServlet")
+@WebServlet("/Accounts0030")
 public class Accounts0030_RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,7 +47,7 @@ public class Accounts0030_RegistrationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("Accounts0031_CheckServlet");
+		response.sendRedirect("Accounts0031");
 	}
 
 }

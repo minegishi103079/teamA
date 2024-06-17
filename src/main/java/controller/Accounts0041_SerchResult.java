@@ -15,7 +15,7 @@ import model.services.AccountsService_2;
 /**
  * Servlet implementation class Accounts0041_SerchResult
  */
-@WebServlet("/Accounts0041_SerchResult")
+@WebServlet("/Accounts0041")
 public class Accounts0041_SerchResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

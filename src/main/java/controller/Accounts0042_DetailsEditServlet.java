@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Accounts0042_DetailsEdit
  */
-@WebServlet("/Accounts0042_DetailsEditServlet")
+@WebServlet("/Accounts0042")
 public class Accounts0042_DetailsEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -37,7 +37,7 @@ public class Accounts0042_DetailsEditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.sendRedirect("Accounts0043_DetailsEditCheckServlet");
+		response.sendRedirect("Accounts0043");
 //		doGet(request, response);
 	}
 

@@ -13,7 +13,7 @@ import model.services.AccountsService_2;
 /**
  * Servlet implementation class Accounts0044_DetailsEditdeleteServlet
  */
-@WebServlet("/Accounts0044_DetailsEditdeleteServlet")
+@WebServlet("/Accounts0044")
 public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,7 +50,7 @@ public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
 		as2.accountsDelete(request.getParameter("account_id"));
 				
 				
-		response.sendRedirect("Accounts0041_SerchResult");
+		response.sendRedirect("Accounts0041");
 	}
 
 }

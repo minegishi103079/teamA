@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント詳細編集画面</h1>
-			<form class="form" action="Accounts0043_DetailsEditCheckServlet" method="post">
+			<form class="form" action="Accounts0043" method="post">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -83,7 +83,7 @@
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					  <button class="btn btn-primary" type="submit">✓OK</button>
-					  <a class="btn btn-light" href="Accounts0041_SerchResult">キャンセル</a>
+					  <a class="btn btn-light" href="Accounts0041">キャンセル</a>
 				</div>
 			</form>
 		</div>

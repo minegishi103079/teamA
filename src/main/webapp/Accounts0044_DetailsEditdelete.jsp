@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント詳細削除確認</h1>
-			<form class="form" action="Accounts0044_DetailsEditdeleteServlet" method="post" id="decide">
+			<form class="form" action="Accounts0044" method="post" id="decide">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
@@ -95,7 +95,7 @@
 						value="<c:out value="${accounts.getAccount_id() }"></c:out>" form="decide">✓OK</button>
 					</div>
 					<div class="col-auto">
-						<form method="post" action="Accounts0041_SerchResult" id="cancel">
+						<form method="post" action="Accounts0041" id="cancel">
 							<button type="submit" class="btn btn-light" name="account_id" 
 							value="<c:out value="${accounts.getAccount_id() }"></c:out>" form="cancel">キャンセル</button>
 						</form>

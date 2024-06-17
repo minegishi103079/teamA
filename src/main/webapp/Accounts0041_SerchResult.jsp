@@ -8,7 +8,7 @@
 <head>
 	<meta http-quiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-	<title>アカウント検索結果表示</title>
+	<title></title>
 </head>
 <body>
 
@@ -26,9 +26,9 @@
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<form method="get" action="Accounts0042_DetailsEditServlet" id="edit">
+				<form method="get" action="Accounts0042" id="edit">
 				</form>
-				<form method="get" action="Accounts0044_DetailsEditdeleteServlet" id="delete">
+				<form method="get" action="Accounts0044" id="delete">
 				</form>
 					<c:forEach var="accountslist" items="${accountlist}">
 						<tr>

@@ -25,7 +25,7 @@
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウント登録</h1>
-			<form class="form" action="Accounts0031_CheckServlet" method="get">
+			<form class="form" action="Accounts0031" method="get">
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">

@@ -16,7 +16,7 @@ import validation.AccountsFormCheck;
 /**
  * Servlet implementation class Accounts0031_CheckServlet
  */
-@WebServlet("/Accounts0031_CheckServlet")
+@WebServlet("/Accounts0031")
 public class Accounts0031_CheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -55,7 +55,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request, response);
 				}else {
 					request.setAttribute("errors", af.getErrors());
-					request.getRequestDispatcher("Accounts0030_RegistrationServlet").forward(request, response);
+					request.getRequestDispatcher("Accounts0030").forward(request, response);
 				}
 	}
 
@@ -64,7 +64,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		// TODO Auto-generated method stub
 		AccountsService_2 as = new AccountsService_2();
 
 		try {
@@ -76,7 +76,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("Accounts0030_RegistrationServlet");
+		response.sendRedirect("Accounts0030");
 	}
 
 }
