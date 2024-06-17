@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class C0020_DashbordServlet
  */
 @WebServlet("/C0020")
-public class C0020_DashboardServlet extends HttpServlet {
+public class C0020_dashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public C0020_DashboardServlet() {
+    public C0020_dashboardServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +28,7 @@ public class C0020_DashboardServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/Dashboard.jsp").forward(request, response);
+		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
 	}
 
 	/**

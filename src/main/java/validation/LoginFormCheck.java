@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
+import model.beans.AccountsBean;
 import util.DbUtil;
 
-public class LoginCheck {
+public class LoginFormCheck {
 	
 	private ArrayList<String> errors = new ArrayList<>();
-	private String password;
+	private AccountsBean account;
 
 	public boolean validate(HttpServletRequest req) {
 
@@ -86,7 +87,7 @@ public class LoginCheck {
 	
 	//アカウントテーブル存在チェック
 	private boolean accountExist(String str) {
-		String sql = "select count(*), password from accounts where mail = ?";
+		String sql = "select count(*), * from accounts where mail = ?";
 		
 		try( 
 				Connection con = DbUtil.open();
@@ -96,7 +97,13 @@ public class LoginCheck {
 			ResultSet rs = ps.executeQuery();
 			rs.next();
 			if (rs.getInt("count(*)") > 0) {
-				password = rs.getString("password");
+				account = new AccountsBean(
+						rs.getInt("account_id"), 
+						rs.getString("name"), 
+						rs.getString("mail"),
+						rs.getString("password"),
+						rs.getString("authority")
+						);
 				return true;
 			}
 			
@@ -111,7 +118,7 @@ public class LoginCheck {
 	//パスワードチェック
 	private boolean passSame(String str1) {
 		
-		if (!(str1.equals(password))) {
+		if (!( str1.equals( account.getPassword() ) )) {
 			errors.add("パスワードとパスワード（確認）の入力内容が異なっています。");
 			return false;
 		}
