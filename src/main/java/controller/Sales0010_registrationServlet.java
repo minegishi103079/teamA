@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import form.ListBean;
 import model.beans.SalesBean;
 import model.services.RegistrationService;
+import util.CommonUtil;
 import validation.SalesFormCheck;
 
 /**
@@ -77,7 +79,13 @@ public class Sales0010_registrationServlet extends HttpServlet {
 			cn=rs.categoryName(request.getParameter("category_id"));
 			
 			SalesBean sb=new SalesBean(date,ai,ci,tn,up,sn,n);
-			session.setAttribute("sales",sb);
+			try{
+				ListBean lb=new ListBean(0,CommonUtil.str_LocalDate(date),ai,ci,tn,up,sn,n,nm,cn);
+				session.setAttribute("sales",lb);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
 			/*session.setAttribute("sale_date",date);
 			request.setAttribute("account_id",ai);
 			request.setAttribute("category_id",ci);
