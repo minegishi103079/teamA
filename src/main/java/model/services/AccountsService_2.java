@@ -32,7 +32,7 @@ public class AccountsService_2 {
 	}
 
 	//アカウント更新
-	public void accountsUpdate(String na,String ma, String pa, int au) {
+	public void accountsUpdate(String na,String ma, String pa, int au, int ai) {
 		String sql = "update accounts set name=?,mail=?,password=?,authority=? where account_id=?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
@@ -41,6 +41,8 @@ public class AccountsService_2 {
 			ps.setString(2, ma);
 			ps.setString(3, pa);
 			ps.setInt(4, au);
+			ps.setInt(5, ai);
+			
 
 			ps.executeUpdate();
 

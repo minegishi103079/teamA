@@ -33,7 +33,7 @@ public class Accounts0042_DetailsEditServlet extends HttpServlet {
 request.setCharacterEncoding("UTF-8");
 		
 		AccountsService_2 as = new AccountsService_2();
-		request.setAttribute("accounts", as.AccountsDetailSales("account_id"));
+		request.setAttribute("accounts", as.AccountsDetailSales(request.getParameter("account_id")));
 								
 		
 		request.getRequestDispatcher("/Accounts0042_DetailsEdit.jsp").forward(request, response);
