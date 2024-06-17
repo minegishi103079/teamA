@@ -8,6 +8,9 @@ import lombok.Data;
 @Data @AllArgsConstructor
 public class SalesBean {
 	
+	public SalesBean(String date, int ai, int ci, String tn, int up, int sn, String n) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 	private int sale_id;
 	private LocalDate sale_date;
 	private int account_id;
