@@ -35,8 +35,7 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		request.getRequestDispatcher("/Sales0024_detailEditCheck.jsp").forward(request, response);
-//		HttpSession session = request.getSession();
-//		session.removeAttribute("sales");
+		
 		
 	}
 

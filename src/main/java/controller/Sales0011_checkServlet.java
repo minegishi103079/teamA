@@ -45,8 +45,6 @@ public class Sales0011_checkServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-//		String bt[]=request.getParameterValues("button");
-//		request.setAttribute("button",bt);
 		request.setCharacterEncoding("UTF-8");
 		SaleService_2 s2=new SaleService_2();
 		
