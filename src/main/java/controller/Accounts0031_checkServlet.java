@@ -16,13 +16,13 @@ import model.services.AccountsService_2;
  * Servlet implementation class Accounts0031_CheckServlet
  */
 @WebServlet("/Accounts0031")
-public class Accounts0031_CheckServlet extends HttpServlet {
+public class Accounts0031_checkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Accounts0031_CheckServlet() {
+	public Accounts0031_checkServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,7 +34,7 @@ public class Accounts0031_CheckServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		this.getServletContext().getRequestDispatcher("/Accounts0031_Registrationcheck.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/Accounts0031_registrationcheck.jsp").forward(request, response);
 		
 	}
 

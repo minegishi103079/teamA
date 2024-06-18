@@ -16,13 +16,13 @@ import model.services.AccountsService_2;
  * Servlet implementation class Accounts0041_SerchResult
  */
 @WebServlet("/Accounts0041")
-public class Accounts0041_SerchResult extends HttpServlet {
+public class Accounts0041_serchResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0041_SerchResult() {
+    public Accounts0041_serchResult() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +52,7 @@ public class Accounts0041_SerchResult extends HttpServlet {
 		
 		//request.setAttribute("Accounts", as2.selectAll());
 		
-		request.getRequestDispatcher("/Accounts0041_SerchResult.jsp").forward(request, response);
+		request.getRequestDispatcher("/Accounts0041_serchResult.jsp").forward(request, response);
 	}
 
 	/**

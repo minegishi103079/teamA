@@ -16,13 +16,13 @@ import validation.AccountsFormCheck;
  * Servlet implementation class Accounts0040_SerchInputServlet
  */
 @WebServlet("/Accounts0040")
-public class Accounts0040_SerchInputServlet extends HttpServlet {
+public class Accounts0040_serchInputServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0040_SerchInputServlet() {
+    public Accounts0040_serchInputServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,7 +37,7 @@ public class Accounts0040_SerchInputServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.removeAttribute("accountlist");
-		this.getServletContext().getRequestDispatcher("/Accounts0040_SerchInput.jsp").forward(request,response);
+		this.getServletContext().getRequestDispatcher("/Accounts0040_serchInput.jsp").forward(request,response);
 	}
 
 	/**

@@ -15,13 +15,13 @@ import util.CommonUtil;
  * Servlet implementation class Accounts0043_DetailsEditCheckServlet
  */
 @WebServlet("/Accounts0043")
-public class Accounts0043_DetailsEditCheckServlet extends HttpServlet {
+public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0043_DetailsEditCheckServlet() {
+    public Accounts0043_detailsEditCheckServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +34,7 @@ public class Accounts0043_DetailsEditCheckServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		
-		request.getRequestDispatcher("/Accounts0043_DetailsEditCheck.jsp").forward(request, response);
+		request.getRequestDispatcher("/Accounts0043_detailsEditCheck.jsp").forward(request, response);
 	}
 
 	/**

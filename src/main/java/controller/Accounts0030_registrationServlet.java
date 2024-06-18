@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
 import validation.AccountsFormCheck;
 
 /**
- * Servlet implementation class Accounts0042_DetailsEdit
+ * Servlet implementation class Sales0030_AccountsRegistrationServlet
  */
-@WebServlet("/Accounts0042")
-public class Accounts0042_DetailsEditServlet extends HttpServlet {
+@WebServlet("/Accounts0030")
+public class Accounts0030_registrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0042_DetailsEditServlet() {
+    public Accounts0030_registrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,13 +32,12 @@ public class Accounts0042_DetailsEditServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-request.setCharacterEncoding("UTF-8");
+		String status = request.getParameter("status");
+		request.setAttribute("status", "3");	// nav
 		
-		AccountsService_2 as = new AccountsService_2();
-		request.setAttribute("accounts", as.AccountsDetailSales(request.getParameter("account_id")));
-								
+		request.setCharacterEncoding("UTF-8");
 		
-		request.getRequestDispatcher("/Accounts0042_DetailsEdit.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/Accounts0030_registration.jsp").forward(request,response);
 	}
 
 	/**
@@ -47,28 +45,30 @@ request.setCharacterEncoding("UTF-8");
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		AccountsFormCheck af = new AccountsFormCheck();
 		request.setCharacterEncoding("UTF-8");
+		AccountsFormCheck af = new AccountsFormCheck();
 		if(af.validate(request)) {
 		HttpSession session = request.getSession();
 
-		AccountsService_2 as = new AccountsService_2();
-		int ai=Integer.parseInt(request.getParameter("account_id"));
+		
 		String n = request.getParameter("name");
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
 		String pw2 = request.getParameter("password2");
 		String at = request.getParameter("authority");
-		AccountsBean ab=new AccountsBean(ai,n,m,pw1,at);
+		
+		AccountsBean ab=new AccountsBean(0,n,m,pw1,at);
+		
 		session.setAttribute("accounts", ab);
 		
-		response.sendRedirect("Accounts0043");
-
+		
+		response.sendRedirect("Accounts0031");
 		
 				}else {
 					request.setAttribute("errors", af.getErrors());
 					doGet(request, response);
 				}
+		
 	}
 
 }

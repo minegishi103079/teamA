@@ -14,13 +14,13 @@ import model.services.AccountsService_2;
  * Servlet implementation class Accounts0044_DetailsEditdeleteServlet
  */
 @WebServlet("/Accounts0044")
-public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
+public class Accounts0044_detailsEditdeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Accounts0044_DetailsEditdeleteServlet() {
+    public Accounts0044_detailsEditdeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +35,7 @@ public class Accounts0044_DetailsEditdeleteServlet extends HttpServlet {
 		request.setAttribute("accounts", as2.AccountsDetailSales(request.getParameter("account_id")) );
 		
 		
-		request.getRequestDispatcher("/Accounts0044_DetailsEditdelete.jsp").forward(request, response);
+		request.getRequestDispatcher("/Accounts0044_detailsEditdelete.jsp").forward(request, response);
 	}
 
 	/**
