@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import form.ListBean;
 import form.SearchResultBean;
 import model.beans.AccountsBean;
+import model.beans.SalesBean;
 import model.services.RegistrationService;
 
 public class CommonUtil {
@@ -98,7 +99,78 @@ public class CommonUtil {
 		return new AccountsBean(account_id,name,mail,password,authority);
 	}
 	
+	public static AccountsBean request_AcoountsBean(HttpServletRequest request) {
+		int account_id=0;
+		try {
+			account_id = CommonUtil.str_Int(request.getParameter("account_id"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String name = request.getParameter("name");
+		String mail = request.getParameter("mail");
+		String password = request.getParameter("password");
+		String authority = request.getParameter("authority");
+		
+		return new AccountsBean(account_id,name,mail,password,authority);
+	}
 	
+	public static SalesBean request_SalesBean(HttpServletRequest request) {
+		int sale_id=0;
+		try {
+			sale_id = CommonUtil.str_Int(request.getParameter("sale_id"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		LocalDate sale_date=null;
+		try {
+			sale_date = CommonUtil.str_LocalDate(request.getParameter("sale_date"));
+		} catch (Exception e1) {
+			// TODO 自動生成された catch ブロック
+			e1.printStackTrace();
+		}
+
+		int account_id=0;
+		try {
+			sale_id = CommonUtil.str_Int(request.getParameter("account_id"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		int category_id=0;
+		try {
+			sale_id = CommonUtil.str_Int(request.getParameter("category_id"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String trade_name = request.getParameter("trade_name");
+		
+		int unit_price=0;
+		try {
+			sale_id = CommonUtil.str_Int(request.getParameter("unit_price_id"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		int sale_number=0;
+		try {
+			sale_id = CommonUtil.str_Int(request.getParameter("sale_number"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String note = request.getParameter("note");
+		
+		return new SalesBean(sale_id,sale_date,account_id,category_id,trade_name,unit_price,sale_number,note);
+	}
+	
+//	CommonUtil.str_LocalDate(request.getParameter("sale_date")),
+//	str_Int(request.getParameter("account_id")),
+//	str_Int(request.getParameter("category_id")),
+//	request.getParameter("trade_name"),
+//	str_Int(request.getParameter("unit_price")),
+//	str_Int(request.getParameter("sale_number")),
+//	request.getParameter("note"),
 	
 	
 	

@@ -164,15 +164,7 @@ public class SalesService {
 	public void salesUpdate(HttpServletRequest request) {
 		SaleService_2 s2 = new SaleService_2();
 		try {
-			s2.salesUpdate(request.getParameter("sale_date"), 
-					CommonUtil.str_Int(request.getParameter("account_id")), 
-					CommonUtil.str_Int(request.getParameter("category_id")), 
-					request.getParameter("trade_name"), 
-					CommonUtil.str_Int(request.getParameter("unit_price")), 
-					CommonUtil.str_Int(request.getParameter("sale_number")), 
-					request.getParameter("note"), 
-					CommonUtil.str_Int(request.getParameter("sale_id")) 
-					);
+			s2.salesUpdate(CommonUtil.request_SalesBean(request));
 			
 		} catch (Exception e) {
 			e.printStackTrace();

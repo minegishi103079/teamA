@@ -48,11 +48,7 @@ public class Accounts0043_DetailsEditCheckServlet extends HttpServlet {
 
 		try {
 
-			as.accountsUpdate(request.getParameter("name"),
-					request.getParameter("mail"),
-					request.getParameter("password1"),
-					CommonUtil.str_Int(request.getParameter("authority")),
-					CommonUtil.str_Int(request.getParameter("account_id")));
+			as.accountsUpdate(CommonUtil.request_AcoountsBean(request));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

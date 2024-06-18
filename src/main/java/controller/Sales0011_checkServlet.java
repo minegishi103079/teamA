@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.services.SaleService_2;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class Sales0011check_Servlet
@@ -47,13 +48,9 @@ public class Sales0011_checkServlet extends HttpServlet {
 //		request.setAttribute("button",bt);
 		request.setCharacterEncoding("UTF-8");
 		SaleService_2 s2=new SaleService_2();
-		s2.salesInsert(request.getParameter("sale_date"),
-						Integer.parseInt(request.getParameter("account_id")),
-						Integer.parseInt(request.getParameter("category_id")),
-						request.getParameter("trade_name"),
-						Integer.parseInt(request.getParameter("unit_price")),
-						Integer.parseInt(request.getParameter("sale_number")),
-						request.getParameter("note"));
+		
+		
+		s2.salesInsert(CommonUtil.request_SalesBean(request));
 		HttpSession session = request.getSession();
 		session.removeAttribute("sales");
 		

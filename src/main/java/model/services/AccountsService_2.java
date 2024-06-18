@@ -13,16 +13,15 @@ import util.DbUtil;
 public class AccountsService_2 {
 	
 	//アカウント追加
-	public void accountsInsert(String na,String ma, String pa, int au) {
+	public void accountsInsert(AccountsBean bean) {
 		String sql = "INSERT into accounts(name,mail,password,authority) VALUES(?,?,?,?)";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 
-			ps.setString(1, na);
-			ps.setString(2, ma);
-			ps.setString(3, pa);
-			ps.setInt(4, au);
-			
+			ps.setString(1, bean.getName());
+			ps.setString(2, bean.getMail() );
+			ps.setString(3, bean.getPassword());
+			ps.setString(4, bean.getAuthority());
 
 			ps.executeUpdate();
 
@@ -32,16 +31,16 @@ public class AccountsService_2 {
 	}
 
 	//アカウント更新
-	public void accountsUpdate(String na,String ma, String pa, int au, int ai) {
+	public void accountsUpdate(AccountsBean bean) {
 		String sql = "update accounts set name=?,mail=?,password=?,authority=? where account_id=?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 
-			ps.setString(1, na);
-			ps.setString(2, ma);
-			ps.setString(3, pa);
-			ps.setInt(4, au);
-			ps.setInt(5, ai);
+			ps.setString(1, bean.getName());
+			ps.setString(2, bean.getMail() );
+			ps.setString(3, bean.getPassword());
+			ps.setString(4, bean.getAuthority());
+			ps.setInt(5, bean.getAccount_id());
 			
 
 			ps.executeUpdate();
@@ -147,29 +146,29 @@ public class AccountsService_2 {
 			
 			return accounts;
 		}
-		
-		
-		
-		
-		
-//		String date1 = bean.getDate1();
-//		String date2 = bean.getDate2();
-//		String account = bean.getAccount();
-//		String category = bean.getCategory();
-//		String trade = bean.getTrade();
-//		String note = bean.getNote();
-//		sql += "where sale_date >= '"+ date1 +"' ";
-//		if (!date2.isEmpty())
-//			sql += "and sale_date <= '"+ date2 +"' ";
-//		if (!account.isEmpty())
-//			sql += "and s.account_id = '"+ account +"' ";
-//		if (!category.isEmpty())
-//			sql += "and s.category_id = '"+ category +"' ";
-//		sql += "and trade_name like '%"+ trade +"%' ";
-//		sql += "and note like '%"+ note+"%' ";
-//		
-//		
-//		return result_AllList(sql);
-
-
 }
+		
+		
+		
+		
+		
+//		public void accountsInsert(String na,String ma, String pa, int au) {
+//		String sql = "INSERT into accounts(name,mail,password,authority) VALUES(?,?,?,?)";
+//		try (Connection conn = DbUtil.open();
+//				PreparedStatement ps = conn.prepareStatement(sql);) {
+//
+//			ps.setString(1, na);
+//			ps.setString(2, ma);
+//			ps.setString(3, pa);
+//			ps.setInt(4, au);
+//			
+//
+//			ps.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//
+//}
