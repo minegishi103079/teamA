@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
+import lombok.Getter;
 import model.beans.AccountsBean;
 import util.DbUtil;
-
+@Getter
 public class LoginFormCheck {
+	
 	
 	private ArrayList<String> errors = new ArrayList<>();
 	private AccountsBean account;

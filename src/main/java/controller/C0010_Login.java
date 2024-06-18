@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
 import model.services.LoginService;
+import validation.LoginFormCheck;
 
 /**
  * Servlet implementation class C0010_Login
@@ -41,6 +42,11 @@ public class C0010_Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		LoginFormCheck lf = new LoginFormCheck();
+		
+		if(lf.validate(request)) {
 		HttpSession session = request.getSession();
 		
 		String mail = request.getParameter("mail");
@@ -49,12 +55,16 @@ public class C0010_Login extends HttpServlet {
 		
 		if(bean == null) {
 			doGet(request, response);
-		}else if(bean != null){
+		}else {
 			session.setAttribute("bean", bean);
 			
 			response.sendRedirect("C0020");
-			//this.getServletContext().getRequestDispatcher("/TodolistServlet").forward(request, response);
+		}}else {
+			request.setAttribute("errors", lf.getErrors());
+			doGet(request, response);
 		}
+		
+		
 	}
 
 }
