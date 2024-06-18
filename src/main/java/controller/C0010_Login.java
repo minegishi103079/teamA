@@ -52,7 +52,7 @@ public class C0010_Login extends HttpServlet {
 		}else if(bean != null){
 			session.setAttribute("bean", bean);
 			
-			response.sendRedirect("/C0020");
+			response.sendRedirect("C0020");
 			//this.getServletContext().getRequestDispatcher("/TodolistServlet").forward(request, response);
 		}
 	}

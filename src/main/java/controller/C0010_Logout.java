@@ -31,7 +31,7 @@ public class C0010_Logout extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		session.invalidate();
 		
-		response.sendRedirect("/C0010_Login");
+		response.sendRedirect("C0010_Login");
 	}
 
 	/**
