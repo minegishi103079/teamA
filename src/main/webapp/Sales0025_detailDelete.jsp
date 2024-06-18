@@ -17,7 +17,6 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container-fluid">
-		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上詳細削除確認</h1>
 			<form action="Sales0025" method="post" id="decide">
@@ -117,7 +116,4 @@
 </body>
 
 </html>
-
-<!--valueの中身
-form actionとOKとキャンセルボタンのリンク先の指定  -->
 

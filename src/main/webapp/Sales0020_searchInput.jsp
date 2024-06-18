@@ -21,12 +21,7 @@
 		</div>
 	</c:if>
 
-
-
 	<div class="container-fluid">
-
-<!-- 
-		<div class="position-absolute top-50 start-50 translate-middle col-10">-->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上検索条件入力</h1>
 			
@@ -125,10 +120,3 @@
 	</div>
 </body>
 </html>
-
-
-<!-- 
-・チェックのエラーメッセージ（販売日、件数）
-・検索、クリアボタンのリンクの指定　→完了
-・nameは適当なのでわかりやすいものに変更したほうがいいかも　→完了
- -->

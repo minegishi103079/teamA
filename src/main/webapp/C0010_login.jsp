@@ -17,7 +17,6 @@
 			</c:forEach>
 		</div>
 	</c:if>
-	
 <form name="form" action="C0010_login" method="post">
 	<div class="row mt-5">
 		<div class="position-relative">

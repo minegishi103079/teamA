@@ -15,7 +15,6 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container-fluid">
-		<!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>売上登録確認</h1>
 			<form class="was-validated" action="Sales0011" method="post">
@@ -111,5 +110,3 @@
 </body>
 
 </html>
-
-<!-- エラーメッセージは未完了--!>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 
 
 	<div class="container-fluid">
@@ -38,37 +38,42 @@
 						<label for="varidationTextarea" class="col-form-label">メールアドレス</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail" placeholder="メールアドレス">
+						<input type="email" class="form-control" name="mail"
+							placeholder="メールアドレス">
 					</div>
 				</div>
 
-                <div class="row g-3 align-items-center">
+				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">権限</label>
 					</div>
 					<div class="col-6 p-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio1" value="0">
-                            <label class="form-check-label" for="inlineRadio1">権限なし</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio2" value="1">
-                            <label class="form-check-label" for="inlineRadio2">売上閲覧</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio3" value="2">
-                            <label class="form-check-label" for="inlineRadio3">売上担当</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="authority" id="inlineRadio4" value="3">
-                            <label class="form-check-label" for="inlineRadio4">管理者</label>
-                          </div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="authority"
+								id="inlineRadio1" value="0"> <label
+								class="form-check-label" for="inlineRadio1">権限なし</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="authority"
+								id="inlineRadio2" value="1"> <label
+								class="form-check-label" for="inlineRadio2">売上閲覧</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="authority"
+								id="inlineRadio3" value="2"> <label
+								class="form-check-label" for="inlineRadio3">売上担当</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="authority"
+								id="inlineRadio4" value="3"> <label
+								class="form-check-label" for="inlineRadio4">管理者</label>
+						</div>
 					</div>
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					  <button class="btn btn-primary" type="submit">🔍検索</button>
-					  <a class="btn btn-light" href="Accounts0040">クリア</a>
-					</div>
+					<button class="btn btn-primary" type="submit">🔍検索</button>
+					<a class="btn btn-light" href="Accounts0040">クリア</a>
+				</div>
 
 
 			</form>
