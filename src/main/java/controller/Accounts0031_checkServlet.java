@@ -34,6 +34,8 @@ public class Accounts0031_checkServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+		request.setAttribute("page", "3");
+		
 		this.getServletContext().getRequestDispatcher("/Accounts0031_registrationCheck.jsp").forward(request, response);
 		
 	}

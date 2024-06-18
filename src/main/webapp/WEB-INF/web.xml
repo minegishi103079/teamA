@@ -51,4 +51,30 @@
 
 
 
+  <filter>
+    <filter-name>active4</filter-name>
+    <filter-class>Active4</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>active4</filter-name>
+    <url-pattern>/Accounts0040/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>active4</filter-name>
+    <url-pattern>/Accounts0041/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>active4</filter-name>
+    <url-pattern>/Accounts0042/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>active4</filter-name>
+    <url-pattern>/Accounts0043/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>active4</filter-name>
+    <url-pattern>/Accounts0044/*</url-pattern>
+  </filter-mapping>
+
+
 </web-app>

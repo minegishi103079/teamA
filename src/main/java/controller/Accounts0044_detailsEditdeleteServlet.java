@@ -43,14 +43,12 @@ public class Accounts0044_detailsEditdeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
 		
 		// 削除の処理をする
 		AccountsService_2 as2 = new AccountsService_2();
 		as2.accountsDelete(request.getParameter("account_id"));
-				
-				
+		
+		
 		response.sendRedirect("Accounts0041");
 	}
 

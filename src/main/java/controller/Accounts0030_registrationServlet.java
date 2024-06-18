@@ -33,8 +33,7 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String status = request.getParameter("status");
-		request.setAttribute("status", "3");	// nav
+		request.setAttribute("page", "3");
 		
 		request.setCharacterEncoding("UTF-8");
 		

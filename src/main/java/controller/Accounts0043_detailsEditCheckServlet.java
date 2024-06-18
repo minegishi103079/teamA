@@ -47,7 +47,6 @@ public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 		AccountsService_2 as = new AccountsService_2();
 
 		try {
-
 			as.accountsUpdate(CommonUtil.request_AcoountsBean(request));
 		} catch (Exception e) {
 			e.printStackTrace();

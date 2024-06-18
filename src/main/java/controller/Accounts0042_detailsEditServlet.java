@@ -64,10 +64,10 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		response.sendRedirect("Accounts0043");
 
 		
-				}else {
-					request.setAttribute("errors", af.getErrors());
-					doGet(request, response);
-				}
+		}else {
+			request.setAttribute("errors", af.getErrors());
+			doGet(request, response);
+		}
 	}
 
 }
