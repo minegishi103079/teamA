@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
+import model.services.LoginService;
 
 /**
- * Servlet implementation class C0020_DashbordServlet
+ * Servlet implementation class C0010_Login
  */
-@WebServlet("/C0020")
-public class C0020_dashboardServlet extends HttpServlet {
+@WebServlet("/C0010_Login")
+public class C0010_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public C0020_dashboardServlet() {
+    public C0010_Login() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,19 +31,30 @@ public class C0020_dashboardServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		AccountsBean bean = (AccountsBean)session.getAttribute("bean");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html:charset=UTF-8");
 		
-		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/C0010_login.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		HttpSession session = request.getSession();
+		
+		String mail = request.getParameter("mail");
+		String password = request.getParameter("password");
+		AccountsBean bean = LoginService.logincheck(mail, password);
+		
+		if(bean == null) {
+			doGet(request, response);
+		}else if(bean != null){
+			session.setAttribute("bean", bean);
+			
+			response.sendRedirect("/C0020");
+			//this.getServletContext().getRequestDispatcher("/TodolistServlet").forward(request, response);
+		}
 	}
 
 }

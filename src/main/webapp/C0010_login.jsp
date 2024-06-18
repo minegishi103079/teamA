@@ -9,7 +9,16 @@
 <title>login</title>
 </head>
 <body class="bg-light">
-<form class="was-validated" name="form" action="TodologinServlet" method="post">
+
+<c:if test="${ not empty errors }">
+		<div class="alert alert-danger" role="alert">
+			<c:forEach var="error" items="${ errors }">
+				<c:out value="${ error }" />
+			</c:forEach>
+		</div>
+	</c:if>
+	
+<form name="form" action="C0010_Login" method="post">
 	<div class="row mt-5">
 		<div class="position-relative">
 			<div class="nav justify-content-center">

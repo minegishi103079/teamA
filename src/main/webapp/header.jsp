@@ -36,7 +36,7 @@
  -->				
 					</ul>
 					<div class="p-1 ms-auto">
-                        <li class="nav-item d-flex justify-content-end"><a class="nav-link" href="#">ログアウト</a></li>
+                        <li class="nav-item d-flex justify-content-end"><a class="nav-link" href="Coo10_Logout">ログアウト</a></li>
                     </div> 	
 				</div>
 		</div>

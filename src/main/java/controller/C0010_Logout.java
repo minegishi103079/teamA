@@ -9,19 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.beans.AccountsBean;
-
 /**
- * Servlet implementation class C0020_DashbordServlet
+ * Servlet implementation class C0010_Logout
  */
-@WebServlet("/C0020")
-public class C0020_dashboardServlet extends HttpServlet {
+@WebServlet("/C0010_Logout")
+public class C0010_Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public C0020_dashboardServlet() {
+    public C0010_Logout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,19 +28,17 @@ public class C0020_dashboardServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		AccountsBean bean = (AccountsBean)session.getAttribute("bean");
+		HttpSession session = request.getSession(true);
+		session.invalidate();
 		
-		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
+		response.sendRedirect("/C0010_Login");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
