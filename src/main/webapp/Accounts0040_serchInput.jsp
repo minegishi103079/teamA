@@ -24,7 +24,7 @@
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">氏名
-							<button type="button" class="btn btn-secondary btn-sm">部分一致</button>
+							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
