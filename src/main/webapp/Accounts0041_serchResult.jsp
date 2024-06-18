@@ -18,11 +18,11 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">操作</th>
-					<th scope="col">No</th>
-					<th scope="col">氏名</th>
-					<th scope="col">メールアドレス</th>
-					<th scope="col">権限</th>
+					<th scope style="width:15%">操作</th>
+					<th scope style="width:10%">No</th>
+					<th scope style="width:25%">氏名</th>
+					<th scope style="width:25%">メールアドレス</th>
+					<th scope style="width:auto">権限</th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
