@@ -64,7 +64,7 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 			// 受け取ったデータをListBeanに入れて渡す
 			HttpSession session = request.getSession();
 			session.setAttribute("sales", CommonUtil.request_ListBean(request));
-//			request.setAttribute("sales", CommonUtil.request_ListBean(request));
+
 			
 			response.sendRedirect("Sales0024");
 		} else {
