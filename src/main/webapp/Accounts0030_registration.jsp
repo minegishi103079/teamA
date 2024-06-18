@@ -107,7 +107,7 @@
 
 
 				<div class="mx-auto p-2" style="width: 100px;">
-					<button type="submit" class="btn btn-primary" href="Accounts0031_Registrationcheck.jsp">✓登録</button>
+					<button type="submit" class="btn btn-primary" href="Accounts0031_registrationcheck.jsp">✓登録</button>
 				</div>
 
 			</form>

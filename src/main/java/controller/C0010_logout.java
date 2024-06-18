@@ -12,14 +12,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class C0010_Logout
  */
-@WebServlet("/C0010_Logout")
-public class C0010_Logout extends HttpServlet {
+@WebServlet("/C0010_logout")
+public class C0010_logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public C0010_Logout() {
+    public C0010_logout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +31,7 @@ public class C0010_Logout extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		session.invalidate();
 		
-		response.sendRedirect("C0010_Login");
+		response.sendRedirect("C0010_login");
 	}
 
 	/**

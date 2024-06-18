@@ -16,14 +16,14 @@ import validation.LoginFormCheck;
 /**
  * Servlet implementation class C0010_Login
  */
-@WebServlet("/C0010_Login")
-public class C0010_Login extends HttpServlet {
+@WebServlet("/C0010_login")
+public class C0010_login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public C0010_Login() {
+    public C0010_login() {
         super();
         // TODO Auto-generated constructor stub
     }
