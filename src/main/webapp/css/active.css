@@ -2,5 +2,9 @@
 
 [active]{
         background-color:#E0E0E0;
-        /* opacity: 0.6; */
+/*         opacity: 0.6; */
     }
+.active {
+    background-color:#E0E0E0;
+    opacity: 0.9;
+}

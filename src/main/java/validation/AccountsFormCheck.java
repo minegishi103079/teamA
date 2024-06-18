@@ -54,7 +54,7 @@ public class AccountsFormCheck {
 	
 	//氏名長さチェック
 	private boolean nameLength(String str) {
-		if (str.length() > 100) {
+		if (str.length() > 20) {
 			errors.add("氏名の指定が長すぎます。");
 			return false;
 		}
@@ -72,7 +72,7 @@ public class AccountsFormCheck {
 	
 	//メールアドレス長さチェック
 	private boolean mailLength(String str) {
-		if (str.length() > 30) {
+		if (str.length() > 100) {
 			errors.add("メールアドレスの指定が長すぎます。");
 			return false;
 		}
@@ -106,7 +106,7 @@ public class AccountsFormCheck {
 	
 	//パスワード長さチェック
 	private boolean passLength(String str) {
-		if (str.length() > 100) {
+		if (str.length() > 30) {
 			errors.add("パスワードが長すぎます。");
 			return false;
 		}
