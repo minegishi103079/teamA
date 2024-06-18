@@ -117,7 +117,9 @@ public class LoginFormCheck {
 		
 	//パスワードチェック
 	private boolean passSame(String str1) {
-		
+		if (account == null) {
+			return false;
+		}
 		if (!( str1.equals( account.getPassword() ) )) {
 			errors.add("パスワードとパスワード（確認）の入力内容が異なっています。");
 			return false;
