@@ -29,6 +29,7 @@ public class Sales0023_detailEditServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -36,6 +37,7 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 		
 		
 		// Detailからsale_idを受け取って、salesというListBeanにして再びセットする。
+		
 		
 		
 		request.setCharacterEncoding("UTF-8");

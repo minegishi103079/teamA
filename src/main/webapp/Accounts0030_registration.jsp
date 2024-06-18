@@ -12,6 +12,7 @@
 </head>
 <body>
 
+
 <jsp:include page="header.jsp"></jsp:include>
 
 	<c:if test="${ not empty errors }">

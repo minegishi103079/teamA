@@ -40,6 +40,7 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 		System.out.println();
 		request.setAttribute("sales", sale);
 		
+		
 		request.getRequestDispatcher("/Sales0022_saleDetail.jsp").forward(request, response);
 		
 	}

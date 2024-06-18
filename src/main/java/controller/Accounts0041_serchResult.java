@@ -42,16 +42,6 @@ public class Accounts0041_serchResult extends HttpServlet {
 		request.setAttribute("accountlist", as2.searchResultList(bean));
 		
 		
-		//request.getRequestDispatcher("/Sales0021_SearchResult.jsp").forward(request, response);
-		
-		
-		
-		
-		
-		
-		
-		//request.setAttribute("Accounts", as2.selectAll());
-		
 		request.getRequestDispatcher("/Accounts0041_serchResult.jsp").forward(request, response);
 	}
 

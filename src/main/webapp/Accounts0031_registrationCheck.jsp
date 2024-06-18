@@ -16,6 +16,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 
+
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
 			<h1>アカウントを登録してよろしいですか</h1>

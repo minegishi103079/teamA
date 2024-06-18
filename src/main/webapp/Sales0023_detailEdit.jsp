@@ -22,6 +22,7 @@
 			</c:forEach>
 		</div>
 	</c:if>
+	
 
     <div class="container-fluid">
         <!-- <div class="position-absolute top-50 start-50 translate-middle col-10"> -->

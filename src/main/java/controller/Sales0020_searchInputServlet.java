@@ -48,6 +48,7 @@ public class Sales0020_searchInputServlet extends HttpServlet {
 		
 		request.getRequestDispatcher("/Sales0020_searchInput.jsp").forward(request, response);
 		
+		
 	}
 
 	/**

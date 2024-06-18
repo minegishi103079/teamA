@@ -30,10 +30,7 @@
 						<div class="pt-2 pb-2 p-1 ms-auto<c:if test="${status == 4}" > active</c:if>">
 							<li class="nav-item"><a class="nav-link" href="Accounts0040">アカウント検索</a></li>
 						</div>
-<!-- 	            	<div class="p-1 ms-auto position-absolute end-0">
-		            		<li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
-		            	</div> 		
- -->				
+
 					</ul>
 					<div class="pt-2 pb-2 p-1 ms-auto">
                         <li class="nav-item d-flex justify-content-end"><a class="nav-link" href="C0010_logout">ログアウト</a></li>

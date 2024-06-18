@@ -109,6 +109,7 @@
 					  <button class="btn btn-primary" type="submit" name="account_id" value="<c:out value="${accounts.getAccount_id() }"></c:out>">✓更新</button>
 					  <a class="btn btn-light" href="Accounts0041">キャンセル</a>
 				</div>
+				
 			</form>
 		</div>
 	</div>

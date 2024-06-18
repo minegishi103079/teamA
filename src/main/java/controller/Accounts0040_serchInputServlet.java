@@ -63,10 +63,7 @@ public class Accounts0040_serchInputServlet extends HttpServlet {
 					request.setAttribute("errors", af.getErrors());
 					doGet(request, response);
 				}
-				
-			
-		// TODO Auto-generated method stub
-		//response.sendRedirect("Accounts0041_SerchResultServlet");
 	}
 
 }
+//

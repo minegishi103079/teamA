@@ -86,6 +86,7 @@ public class Sales0010_registrationServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+			
 			/*session.setAttribute("sale_date",date);
 			request.setAttribute("account_id",ai);
 			request.setAttribute("category_id",ci);

@@ -12,6 +12,7 @@
 <title>売上詳細編集確認</title>
 </head>
 
+
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 

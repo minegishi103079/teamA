@@ -33,7 +33,7 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		AccountsService_2 as = new AccountsService_2();
 		request.setAttribute("accounts", as.AccountsDetailSales(request.getParameter("account_id")));
@@ -41,7 +41,6 @@ request.setCharacterEncoding("UTF-8");
 		
 		request.getRequestDispatcher("/Accounts0042_detailsEdit.jsp").forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -127,6 +127,7 @@
                 </div>
 
 
+
 				<div class="mx-auto p-2" style="width: 100px;">
 					<button type="submit" class="btn btn-primary">✓登録</button>
 				</div>
