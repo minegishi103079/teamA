@@ -37,6 +37,7 @@ public class LoginFormCheck {
 	
 	//メールアドレス必須入力チェック
 		private boolean mailEmpty(String str) {
+			str = str != null? str: "";
 			if (str.isEmpty()) {
 				errors.add("メールアドレスを入力して下さい。");
 				return false;
@@ -46,8 +47,8 @@ public class LoginFormCheck {
 	
 	//メールアドレス長さチェック
 	private boolean mailLength(String str) {
-		if (str.length() > 30) {
-			errors.add("メールアドレスの指定が長すぎます。");
+		if (str.length() > 100) {
+			errors.add("メールアドレスが長すぎます。");
 			return false;
 		}
 		return true;
@@ -71,6 +72,7 @@ public class LoginFormCheck {
 	
 	//パスワード必須入力チェック
 	private boolean passEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("パスワードを入力して下さい。");
 			return false;
@@ -80,7 +82,7 @@ public class LoginFormCheck {
 	
 	//パスワード長さチェック
 	private boolean passLength(String str) {
-		if (str.length() > 100) {
+		if (str.length() > 30) {
 			errors.add("パスワードが長すぎます。");
 			return false;
 		}
@@ -89,7 +91,7 @@ public class LoginFormCheck {
 	
 	//アカウントテーブル存在チェック
 	private boolean accountExist(String str) {
-		String sql = "select count(*), * from accounts where mail = ?";
+		String sql = "select *, count(*) from accounts where mail = ?";
 		
 		try( 
 				Connection con = DbUtil.open();
@@ -112,6 +114,7 @@ public class LoginFormCheck {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		errors.add("アカウントが存在しません。");
 		return false;
 		
 		
@@ -123,7 +126,7 @@ public class LoginFormCheck {
 			return false;
 		}
 		if (!( str1.equals( account.getPassword() ) )) {
-			errors.add("パスワードとパスワード（確認）の入力内容が異なっています。");
+			errors.add("メールアドレス、パスワードを正しく入力して下さい。");
 			return false;
 		}
 		return true;
