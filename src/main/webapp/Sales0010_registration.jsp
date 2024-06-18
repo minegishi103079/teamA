@@ -122,8 +122,7 @@
                         <label for="note" class="col-form-label">備考</label>
                     </div>
                     <div class="col-6 p-2">
-                        <textarea class="form-control" id="note" name="note" placeholder="備考" required><c:out value="${sales.getNote()}"></c:out>
-                        </textarea>
+                        <textarea class="form-control" id="note" name="note" placeholder="備考" required><c:out value="${sales.getNote()}"></c:out></textarea>
                     </div>
                 </div>
 
