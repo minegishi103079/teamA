@@ -8,6 +8,7 @@
 <head>
 <meta http-quiv="Content-Type" content="text/html;" charset="UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/active.css" type="text/css">
 <title>アカウント登録</title>
 </head>
 <body>

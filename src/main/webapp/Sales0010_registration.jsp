@@ -5,6 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/active.css" type="text/css">
 <meta charset="UTF-8">
 <title>売上登録</title>
 </head>

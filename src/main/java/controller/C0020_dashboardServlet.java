@@ -30,7 +30,7 @@ public class C0020_dashboardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
+		request.setAttribute("page", "0");
 		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
 	}
 
