@@ -35,7 +35,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select bg-secondary-subtle" name="account_id" readonly>
-							<option value="<c:out value="${saleInsert.getAccount_id()}"></c:out>"><c:out value="${sales.getName()}"></c:out></option>
+							<option value="<c:out value="${saleInsert.getAccount_id()}"></c:out>"><c:out value="${saleInsert.getName()}"></c:out></option>
 						</select>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select bg-secondary-subtle" name="category_id" readonly>
-							<option value="<c:out value="${saleInsert.getCategory_id()}"></c:out>"><c:out value="${sales.getCategory_name()}"></c:out></option>
+							<option value="<c:out value="${saleInsert.getCategory_id()}"></c:out>"><c:out value="${saleInsert.getCategory_name()}"></c:out></option>
 						</select>
 					</div>
 				</div>
