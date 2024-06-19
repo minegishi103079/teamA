@@ -122,7 +122,6 @@
     <filter-name>authority2</filter-name>
     <url-pattern>/Sales0011/*</url-pattern>
   </filter-mapping>
-  <filter-mapping>
 <filter-mapping>
     <filter-name>authority2</filter-name>
     <url-pattern>/Sales0023/*</url-pattern>
