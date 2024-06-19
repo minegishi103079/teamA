@@ -35,8 +35,17 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		
+		
+		
 		AccountsService_2 as = new AccountsService_2();
-		request.setAttribute("accounts", as.AccountsDetailSales(request.getParameter("account_id")));
+		
+		AccountsBean ab = as.AccountsDetailSales(request.getParameter("account_id"));
+		
+		if(ab == null) {
+			response.sendRedirect("Accounts0041");
+			return;
+		}
+		request.setAttribute("accounts", ab);
 								
 		
 		request.getRequestDispatcher("/Accounts0042_detailsEdit.jsp").forward(request, response);
