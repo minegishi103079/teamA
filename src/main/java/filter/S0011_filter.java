@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.beans.SalesBean;
+import form.ListBean;
 
 /**
  * Servlet Filter implementation class S0011_filter
@@ -48,7 +48,7 @@ public class S0011_filter extends HttpFilter implements Filter {
 		
 		HttpSession session = req.getSession();
 		
-		SalesBean sb = (SalesBean)session.getAttribute("saleInsert");
+		ListBean sb = (ListBean)session.getAttribute("saleInsert");
 		if(path.equals("/Sales0011")) {
 			if(sb == null) {
 				res.sendRedirect("Sales0010");
