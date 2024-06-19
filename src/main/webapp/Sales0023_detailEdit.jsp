@@ -145,7 +145,7 @@
 							value="<c:out value="${sales.getSale_id() }"></c:out>">✓更新</button>
 					</div>
 					<div class="col-auto">
-						<a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
+						<a type="submit" class="btn btn-light" href="Sales0022">キャンセル</a>
 					</div>
 				</div>
 			</form>
