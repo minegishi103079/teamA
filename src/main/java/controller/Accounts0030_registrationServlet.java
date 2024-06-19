@@ -54,7 +54,6 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 		String n = request.getParameter("name");
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
-		String pw2 = request.getParameter("password2");
 		String at = request.getParameter("authority");
 		
 		AccountsBean ab=new AccountsBean(0,n,m,pw1,at);

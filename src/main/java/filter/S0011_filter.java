@@ -49,7 +49,6 @@ public class S0011_filter extends HttpFilter implements Filter {
 		HttpSession session = req.getSession();
 		
 		SalesBean sb = (SalesBean)session.getAttribute("saleInsert");
-		System.out.println(sb);
 		if(path.equals("/Sales0011")) {
 			if(sb == null) {
 				res.sendRedirect("Sales0010");

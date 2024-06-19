@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import form.ListBean;
-import model.beans.SalesBean;
 import model.services.RegistrationService;
 import util.CommonUtil;
 import validation.SalesFormCheck;
@@ -76,7 +75,6 @@ public class Sales0010_registrationServlet extends HttpServlet {
 			nm=rs.accountsName(request.getParameter("account_id"));
 			cn=rs.categoryName(request.getParameter("category_id"));
 			
-			SalesBean sb=new SalesBean(date,ai,ci,tn,up,sn,n);
 			try{
 				ListBean lb=new ListBean(0,CommonUtil.str_LocalDate(date),ai,ci,tn,up,sn,n,nm,cn);
 				session.setAttribute("saleInsert",lb);
