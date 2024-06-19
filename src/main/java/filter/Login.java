@@ -48,7 +48,7 @@ public class Login extends HttpFilter implements Filter {
 
 	      String path= httpRequest.getServletPath();
 
-		if(!path.equals("/C0010_login")) {
+		if(!path.equals("/C0010_login")&&!path.startsWith("/css")) {
 			var obj=httpRequest.getSession().getAttribute("bean");
 			if(obj==null) {
 				httpResponse.sendRedirect("C0010_login");
