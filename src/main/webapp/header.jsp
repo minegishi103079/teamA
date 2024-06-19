@@ -38,8 +38,9 @@
 			</ul>
 			<div class="pt-2 pb-2 p-1 ms-auto">
 				<li class="nav-item d-flex justify-content-end"><a
-					class="nav-link" href="C0010_Logout">ログアウト</a></li>
+					class="nav-link" href="C0010_logout">ログアウト</a></li>
 			</div>
+			
 		</div>
 	</div>
 </nav>

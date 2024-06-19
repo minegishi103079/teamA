@@ -35,6 +35,7 @@ public class C0010_logout extends HttpServlet {
 		response.sendRedirect("C0010_login");
 	}
 
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
