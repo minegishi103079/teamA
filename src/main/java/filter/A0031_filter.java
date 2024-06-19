@@ -50,7 +50,7 @@ public class A0031_filter extends HttpFilter implements Filter {
 			
 			HttpSession session = req.getSession();
 			
-			AccountsBean ab = (AccountsBean)session.getAttribute("search");
+			AccountsBean ab = (AccountsBean)session.getAttribute("accountInsert");
 			
 			if (path.equals("/Accounts0031")){
 				if(ab==null) {
