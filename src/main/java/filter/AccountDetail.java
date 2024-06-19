@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet Filter implementation class SaleDetail
+ * Servlet Filter implementation class AccountDetail
  */
 @WebFilter("/*")
-public class SaleDetail extends HttpFilter implements Filter {
+public class AccountDetail extends HttpFilter implements Filter {
        
     /**
      * @see HttpFilter#HttpFilter()
      */
-    public SaleDetail() {
+    public AccountDetail() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,17 +43,16 @@ public class SaleDetail extends HttpFilter implements Filter {
 
 		String path = req.getServletPath();
 		
-		String sale_id = req.getParameter("sale_id");
+		String account_id = req.getParameter("account_id");
 		//System.out.println(sb);
 		
-		if(path.equals("/Sales0022") ||path.equals("/Sales0023") || path.equals("/Sales0024") || path.equals("/Sales0025")) {
-			if(sale_id == null) {
-				res.sendRedirect("Sales0021");
+		if(path.equals("/Accounts0042") ||path.equals("/Accounts0043") || path.equals("/Accounts0044")) {
+			if(account_id == null) {
+				res.sendRedirect("Accounts0041");
 				return;
 			}
 		}
 			chain.doFilter(request, response);
-			
 	}
 
 	/**
