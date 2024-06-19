@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import form.ListBean;
 import model.services.RegistrationService;
 import model.services.SalesService;
 import util.CommonUtil;
@@ -43,7 +44,12 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		SalesService ss = new SalesService();
-		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
+		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
+		if (sale == null) {
+			response.sendRedirect("Sales0021");
+			return;
+		}
+		request.setAttribute("sales", sale);
 		
 		RegistrationService rs = new RegistrationService();
 		request.setAttribute("accountlist", rs.accounts());

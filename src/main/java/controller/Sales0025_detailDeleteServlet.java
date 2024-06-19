@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import form.ListBean;
 import model.services.SaleService_2;
 import model.services.SalesService;
 
@@ -33,8 +34,23 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-			
+		
+		// S0024でセッションを取得した後、削除に飛んでくる。
+//		HttpSession session = request.getSession();
+//		if (session.getAttribute("sales") != null) {
+//			session.removeAttribute("sales");
+//			response.sendRedirect("Sales0021");
+//			return;
+//		}
+//		
 		SalesService ss = new SalesService();
+		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
+		if (sale == null) {
+			response.sendRedirect("Sales0021");
+			return;
+		}
+		request.setAttribute("sales", sale);
+		
 		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
 		

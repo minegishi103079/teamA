@@ -8,15 +8,17 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import form.ListBean;
 
 /**
  * Servlet Filter implementation class SaleDetail
  */
-@WebFilter("/*")
+//@WebFilter("/*")
 public class SaleDetail extends HttpFilter implements Filter {
        
     /**
@@ -42,16 +44,29 @@ public class SaleDetail extends HttpFilter implements Filter {
 		var res = (HttpServletResponse) response;
 
 		String path = req.getServletPath();
+		HttpSession session = req.getSession();
 		
 		String sale_id = req.getParameter("sale_id");
+		String sales = req.getParameter("sales");
+		
+		if(sale_id == null) {
+			try {
+				sale_id = String.valueOf( ( (ListBean)session.getAttribute("sales") ).getSale_id() ) ;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
 		//System.out.println(sb);
 		
-		if(path.equals("/Sales0022") ||path.equals("/Sales0023") || path.equals("/Sales0024") || path.equals("/Sales0025")) {
+//		if(path.equals("/Sales0022") ||path.equals("/Sales0023") || path.equals("/Sales0024") || path.equals("/Sales0025")) {
 			if(sale_id == null) {
-				res.sendRedirect("Sales0021");
-				return;
+				if(sales == null) {
+					res.sendRedirect("Sales0021");
+					return;
+				}
 			}
-		}
+//		}
 			chain.doFilter(request, response);
 			
 	}

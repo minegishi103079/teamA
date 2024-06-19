@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.SalesService;
 
@@ -34,6 +35,14 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = request.getSession();
+		if (session.getAttribute("sales")==null) {
+			response.sendRedirect("Sales0023");
+			return;
+		}
+			
+		
+		
 		request.getRequestDispatcher("/Sales0024_detailEditCheck.jsp").forward(request, response);
 		
 		
@@ -48,7 +57,10 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		SalesService ss = new SalesService();
+		
 		ss.salesUpdate(request);
+		HttpSession session = request.getSession();
+		session.removeAttribute("sales");
 		
 		response.sendRedirect("Sales0021");
 	}

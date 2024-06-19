@@ -160,7 +160,14 @@
     <url-pattern>/Accounts0044/*</url-pattern>
   </filter-mapping>
   
-  
+<!--  <filter>-->
+<!--    <filter-name>SaleDetail</filter-name>-->
+<!--    <filter-class>filter.SaleDetail</filter-class>-->
+<!--  </filter>-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>SaleDetail</filter-name>-->
+<!--    <url-pattern>/Sales0024/*</url-pattern>-->
+<!--  </filter-mapping>-->
   
   
 </web-app>

@@ -36,8 +36,13 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		SalesService ss = new SalesService();
+		
+		// 不正なsale_idだった時に検索結果に戻す
 		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
-		System.out.println();
+		if (sale == null) {
+			response.sendRedirect("Sales0021");
+			return;
+		}
 		request.setAttribute("sales", sale);
 		
 		
