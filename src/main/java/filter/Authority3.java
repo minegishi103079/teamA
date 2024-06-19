@@ -17,15 +17,15 @@ import javax.servlet.http.HttpSession;
 import model.beans.AccountsBean;
 
 /**
- * Servlet Filter implementation class Authority1
+ * Servlet Filter implementation class Authority3
  */
-@WebFilter("/Authority1")
-public class Authority1 extends HttpFilter implements Filter {
+@WebFilter("/Authority3")
+public class Authority3 extends HttpFilter implements Filter {
        
     /**
      * @see HttpFilter#HttpFilter()
      */
-    public Authority1() {
+    public Authority3() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,7 +51,7 @@ public class Authority1 extends HttpFilter implements Filter {
 		AccountsBean ab = (AccountsBean)session.getAttribute("bean");
 		String authority = ab.getAuthority();
 		
-		if(authority.equals("1") || authority.equals("2") || authority.equals("3") ) {
+		if(authority.equals("3") ) {
 			chain.doFilter(request, response);
 			return;
 		}else{
