@@ -59,7 +59,7 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 		
 		AccountsBean ab=new AccountsBean(0,n,m,pw1,at);
 		
-		session.setAttribute("accounts", ab);
+		session.setAttribute("accountInsert", ab);
 		
 		
 		response.sendRedirect("Accounts0031");

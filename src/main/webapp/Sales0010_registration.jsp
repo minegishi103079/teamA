@@ -35,7 +35,7 @@
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control"
 							name="sale_date" placeholder="yyyy/mm/dd"
-							value="<c:out value="${sales.getSale_date() }"></c:out>" required>
+							value="<c:out value="${saleInsert.getSale_date() }"></c:out>" required>
 					</div>
 				</div>
 
@@ -48,12 +48,12 @@
 					<div class="col-6 p-2">
 						<select class="form-select" name="account_id" id="account"
 							required>
-							<c:if test="${ empty sales.getAccount_id()}">
+							<c:if test="${ empty saleInsert.getAccount_id()}">
 								<option value="" selected>選択してください</option>
 							</c:if>
 							<c:forEach var="accounts" items="${accountlist}">
 								<option value="<c:out value="${accounts.getAccount_id()}"></c:out>"
-									<c:if test="${accounts.getAccount_id() eq sales.getAccount_id()}"> selected</c:if>
+									<c:if test="${accounts.getAccount_id() eq saleInsert.getAccount_id()}"> selected</c:if>
 								>
 									<c:out value="${accounts.getName()}"></c:out>
 								</option>
@@ -71,12 +71,12 @@
 					<div class="col-6 p-2">
 						<select class="form-select" name="category_id" id="category"
 							required>
-							<c:if test="${ empty sales.getCategory_id()}">
+							<c:if test="${ empty saleInsert.getCategory_id()}">
 								<option value="" selected>選択してください</option>
 							</c:if>
 							<c:forEach var="categories" items="${categories}">
 								<option value="<c:out value="${categories.getCategory_id()}"/>"
-									<c:if test="${categories.getCategory_id() eq sales.getCategory_id()}"> selected</c:if>
+									<c:if test="${categories.getCategory_id() eq saleInsert.getCategory_id()}"> selected</c:if>
 								>
 									<c:out value="${categories.getCategory_name()}"></c:out>
 								</option>
@@ -94,7 +94,7 @@
 					<div class="col-6 p-2">
 						<input type="textarea" id="trade" class="form-control"
 							name="trade_name"
-							value="<c:out value="${sales.getTrade_name()}"></c:out>"
+							value="<c:out value="${saleInsert.getTrade_name()}"></c:out>"
 							placeholder="商品名" required>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 					<div class="col-3 p-2">
 						<input type="textarea" id="unit" class="form-control"
 							name="unit_price"
-							value="<c:out value="${sales.getUnit_price()}"></c:out>"
+							value="<c:out value="${saleInsert.getUnit_price()}"></c:out>"
 							placeholder="単価" required>
 					</div>
 				</div>
@@ -122,7 +122,7 @@
 					<div class="col-3 p-2">
 						<input type="textarea" id="num" class="form-control"
 							name="sale_number"
-							value="<c:out value="${sales.getSale_number()}"></c:out>"
+							value="<c:out value="${saleInsert.getSale_number()}"></c:out>"
 							placeholder="個数" required>
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control" id="note" name="note"
-							placeholder="備考"><c:out value="${sales.getNote()}"></c:out></textarea>
+							placeholder="備考"><c:out value="${saleInsert.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 				<div class="mx-auto p-2" style="width: 100px;">

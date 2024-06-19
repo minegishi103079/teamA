@@ -51,7 +51,7 @@ public class Sales0011_checkServlet extends HttpServlet {
 		
 		s2.salesInsert(CommonUtil.request_SalesBean(request));
 		HttpSession session = request.getSession();
-		session.removeAttribute("sales");
+		session.removeAttribute("saleInsert");
 		
 		response.sendRedirect("Sales0010");
 	}

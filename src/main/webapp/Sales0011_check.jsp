@@ -24,7 +24,7 @@
 						<label for="varidationTextarea" class="col-form-label">販売日</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="date" value="<c:out value="${sales.getSale_date() }"></c:out>" 
+						<input type="date" value="<c:out value="${saleInsert.getSale_date() }"></c:out>" 
 							id="validationTextarea" class="col-4 form-control bg-secondary-subtle" name="sale_date" readonly>
 					</div>
 				</div>
@@ -35,7 +35,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select bg-secondary-subtle" name="account_id" readonly>
-							<option value="<c:out value="${sales.getAccount_id()}"></c:out>"><c:out value="${sales.getName()}"></c:out></option>
+							<option value="<c:out value="${saleInsert.getAccount_id()}"></c:out>"><c:out value="${sales.getName()}"></c:out></option>
 						</select>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select bg-secondary-subtle" name="category_id" readonly>
-							<option value="<c:out value="${sales.getCategory_id()}"></c:out>"><c:out value="${sales.getCategory_name()}"></c:out></option>
+							<option value="<c:out value="${saleInsert.getCategory_id()}"></c:out>"><c:out value="${sales.getCategory_name()}"></c:out></option>
 						</select>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 						<label for="varidationTextarea" class="col-form-label">商品名</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea"  value="<c:out value="${sales.getTrade_name()}"></c:out>" id="validationTextarea"
+						<input type="textarea"  value="<c:out value="${saleInsert.getTrade_name()}"></c:out>" id="validationTextarea"
 							class="form-control bg-secondary-subtle" name="trade_name" readonly>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 						<label for="varidationTextarea" class="col-form-label">単価</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea"  value="<c:out value="${sales.getUnit_price()}"></c:out>" id="validationTextarea"
+						<input type="textarea"  value="<c:out value="${saleInsert.getUnit_price()}"></c:out>" id="validationTextarea"
 							class="form-control bg-secondary-subtle" name="unit_price" readonly>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 						<label for="varidationTextarea" class="col-form-label">個数</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea"  value="<c:out value="${sales.getSale_number()}"></c:out>" id="validationTextarea"
+						<input type="textarea"  value="<c:out value="${saleInsert.getSale_number()}"></c:out>" id="validationTextarea"
 							class="form-control bg-secondary-subtle" name="sale_number" readonly>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 						<label for="varidationTextarea" class="col-form-label">小計</label>
 					</div>
 					<div class="col-3 p-2">
-						<input type="textarea" value="<c:out value="${sales.getUnit_price() * sales.getSale_number() }"></c:out>" id="validationTextarea"
+						<input type="textarea" value="<c:out value="${saleInsert.getUnit_price() * saleInsert.getSale_number() }"></c:out>" id="validationTextarea"
 							class="form-control bg-secondary-subtle" name=""  readonly>
 					</div>
 				</div>
@@ -96,7 +96,7 @@
 					</div>
 					<div class="col-6 p-2 ">
 						<textarea class="form-control bg-secondary-subtle" id="Textarea" rows="3"
-							name="note" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
+							name="note" readonly><c:out value="${saleInsert.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 			

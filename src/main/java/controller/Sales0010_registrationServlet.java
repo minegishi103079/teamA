@@ -79,7 +79,7 @@ public class Sales0010_registrationServlet extends HttpServlet {
 			SalesBean sb=new SalesBean(date,ai,ci,tn,up,sn,n);
 			try{
 				ListBean lb=new ListBean(0,CommonUtil.str_LocalDate(date),ai,ci,tn,up,sn,n,nm,cn);
-				session.setAttribute("sales",lb);
+				session.setAttribute("saleInsert",lb);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}

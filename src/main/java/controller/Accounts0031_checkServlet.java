@@ -60,7 +60,7 @@ public class Accounts0031_checkServlet extends HttpServlet {
 
 			as.accountsInsert(ab);
 			HttpSession session = request.getSession();
-			session.removeAttribute("accounts");
+			session.removeAttribute("accountInsert");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
