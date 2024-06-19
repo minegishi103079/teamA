@@ -17,15 +17,15 @@ import javax.servlet.http.HttpSession;
 import model.beans.AccountsBean;
 
 /**
- * Servlet Filter implementation class Authority2
+ * Servlet Filter implementation class A0031_filter
  */
-@WebFilter("/Authority2")
-public class Authority2 extends HttpFilter implements Filter {
+@WebFilter("/*")
+public class A0031_filter extends HttpFilter implements Filter {
        
     /**
      * @see HttpFilter#HttpFilter()
      */
-    public Authority2() {
+    public A0031_filter() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,23 +41,24 @@ public class Authority2 extends HttpFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		var req = (HttpServletRequest) request;
-		var res = (HttpServletResponse) response;
+		// TODO Auto-generated method stub
+		// place your code here
+			var req = (HttpServletRequest) request;
+			var res = (HttpServletResponse) response;
 
-		String path = req.getServletPath();
-		
-		HttpSession session = req.getSession();
-		
-		AccountsBean ab = (AccountsBean)session.getAttribute("bean");
-		String authority = ab.getAuthority();
-		
-		if(authority.equals("2") || authority.equals("3") ) {
-			chain.doFilter(request, response);
+			String path = req.getServletPath();
 			
-			return;
-		}else{
-			res.sendRedirect("C0020");
-		}
+			HttpSession session = req.getSession();
+			
+			AccountsBean ab = (AccountsBean)session.getAttribute("accounts");
+			
+			if (path.equals("/Accounts0031")){
+				if(ab==null) {
+					res.sendRedirect("Accounts0030");
+					return;
+				}
+			}
+				chain.doFilter(request, response);
 	}
 
 	/**

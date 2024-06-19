@@ -14,18 +14,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.beans.AccountsBean;
+import model.beans.SalesBean;
 
 /**
- * Servlet Filter implementation class Authority2
+ * Servlet Filter implementation class S0011_filter
  */
-@WebFilter("/Authority2")
-public class Authority2 extends HttpFilter implements Filter {
+@WebFilter("*")
+public class S0011_filter extends HttpFilter implements Filter {
        
     /**
      * @see HttpFilter#HttpFilter()
      */
-    public Authority2() {
+    public S0011_filter() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,16 +48,16 @@ public class Authority2 extends HttpFilter implements Filter {
 		
 		HttpSession session = req.getSession();
 		
-		AccountsBean ab = (AccountsBean)session.getAttribute("bean");
-		String authority = ab.getAuthority();
-		
-		if(authority.equals("2") || authority.equals("3") ) {
+		SalesBean sb = (SalesBean)session.getAttribute("saleInsert");
+		System.out.println(sb);
+		if(path.equals("/Sales0011")) {
+			if(sb == null) {
+				res.sendRedirect("Sales0010");
+				return;
+			}
+		}
 			chain.doFilter(request, response);
 			
-			return;
-		}else{
-			res.sendRedirect("C0020");
-		}
 	}
 
 	/**
