@@ -108,7 +108,7 @@ public class CommonUtil {
 		}
 		String name = request.getParameter("name");
 		String mail = request.getParameter("mail");
-		String password = request.getParameter("password");
+		String password = request.getParameter("password1");
 		String authority = request.getParameter("authority");
 		
 		return new AccountsBean(account_id,name,mail,password,authority);
@@ -131,14 +131,14 @@ public class CommonUtil {
 
 		int account_id=0;
 		try {
-			sale_id = CommonUtil.str_Int(request.getParameter("account_id"));
+			account_id = CommonUtil.str_Int(request.getParameter("account_id"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		int category_id=0;
 		try {
-			sale_id = CommonUtil.str_Int(request.getParameter("category_id"));
+			category_id = CommonUtil.str_Int(request.getParameter("category_id"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -147,14 +147,14 @@ public class CommonUtil {
 		
 		int unit_price=0;
 		try {
-			sale_id = CommonUtil.str_Int(request.getParameter("unit_price_id"));
+			unit_price = CommonUtil.str_Int(request.getParameter("unit_price"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		int sale_number=0;
 		try {
-			sale_id = CommonUtil.str_Int(request.getParameter("sale_number"));
+			sale_number = CommonUtil.str_Int(request.getParameter("sale_number"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

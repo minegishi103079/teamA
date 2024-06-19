@@ -117,7 +117,7 @@ public class AccountsService_2 {
 	}
 		
 		
-		// 売上削除詳細
+		// アカウント詳細
 		public AccountsBean AccountsDetailSales(String account_id) {
 			String sql = "SELECT * FROM accounts WHERE account_id = ?";
 			AccountsBean accounts = null;

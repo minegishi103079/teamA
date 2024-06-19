@@ -37,7 +37,7 @@ public class Accounts0041_serchResult extends HttpServlet {
 		HttpSession session = request.getSession();
 		AccountsService_2 as2 = new AccountsService_2();
 		// sessionから検索結果をまとめたもの ＝ beanを受け取る
-		AccountsBean bean = (AccountsBean)session.getAttribute("search");
+		AccountsBean bean = (AccountsBean)session.getAttribute("accountSearch");
 		// beanをもとにリストを作成し、requestにセットする。
 		request.setAttribute("accountlist", as2.searchResultList(bean));
 		

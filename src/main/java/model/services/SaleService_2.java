@@ -20,7 +20,7 @@ public class SaleService_2 {
 			ps.setInt(3, bean.getCategory_id());
 			ps.setString(4, bean.getTrade_name());
 			ps.setInt(5, bean.getUnit_price());
-			ps.setInt(6, bean.getSale_id());
+			ps.setInt(6, bean.getSale_number());
 			ps.setString(7, bean.getNote());
 
 			ps.executeUpdate();
@@ -41,7 +41,7 @@ public class SaleService_2 {
 			ps.setInt(3, bean.getCategory_id());
 			ps.setString(4, bean.getTrade_name());
 			ps.setInt(5, bean.getUnit_price());
-			ps.setInt(6, bean.getSale_id());
+			ps.setInt(6, bean.getSale_number());
 			ps.setString(7, bean.getNote());
 			ps.setInt(8, bean.getSale_id());
 

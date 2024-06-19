@@ -48,13 +48,13 @@
 					<div class="col-6 p-2">
 						<select class="form-select" name="account_id" id="account"
 							required>
-							<option value="<c:out value="${sales.getAccount_id()}"></c:out>"
-								selected>
-								<c:out value="${sales.getName()}"></c:out>
-							</option>
-							<c:forEach var="accounts" items="${accounts}">
-								<option
-									value="<c:out value="${accounts.getAccount_id()}"></c:out>">
+							<c:if test="${ empty sales.getAccount_id()}">
+								<option value="" selected>選択してください</option>
+							</c:if>
+							<c:forEach var="accounts" items="${accountlist}">
+								<option value="<c:out value="${accounts.getAccount_id()}"></c:out>"
+									<c:if test="${accounts.getAccount_id() eq sales.getAccount_id()}"> selected</c:if>
+								>
 									<c:out value="${accounts.getName()}"></c:out>
 								</option>
 							</c:forEach>
@@ -71,12 +71,13 @@
 					<div class="col-6 p-2">
 						<select class="form-select" name="category_id" id="category"
 							required>
-							<option value="<c:out value="${sales.getCategory_id()}"></c:out>"
-								selected>
-								<c:out value="${sales.getCategory_name()}"></c:out>
-							</option>
+							<c:if test="${ empty sales.getCategory_id()}">
+								<option value="" selected>選択してください</option>
+							</c:if>
 							<c:forEach var="categories" items="${categories}">
-								<option value="<c:out value="${categories.getCategory_id()}"/>">
+								<option value="<c:out value="${categories.getCategory_id()}"/>"
+									<c:if test="${categories.getCategory_id() eq sales.getCategory_id()}"> selected</c:if>
+								>
 									<c:out value="${categories.getCategory_name()}"></c:out>
 								</option>
 							</c:forEach>
@@ -132,8 +133,7 @@
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control" id="note" name="note"
-							placeholder="備考" required><c:out
-								value="${sales.getNote()}"></c:out></textarea>
+							placeholder="備考"><c:out value="${sales.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 				<div class="mx-auto p-2" style="width: 100px;">

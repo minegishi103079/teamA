@@ -46,7 +46,7 @@
 						<label for="Textarea" class="col-form-label">パスワード</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password"
+						<input type="password" class="form-control" name="password1"
 							value="<c:out value="${accounts.getPassword()}"></c:out>"
 							placeholder="パスワード" disabled>
 					</div>
@@ -56,7 +56,7 @@
 						<label for="Textarea" class="col-form-label">パスワード(確認)</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="password" class="form-control" name="password"
+						<input type="password" class="form-control" name="password2"
 							value="<c:out value="${accounts.getPassword()}"></c:out>"
 							placeholder="パスワード(確認)" disabled>
 					</div>

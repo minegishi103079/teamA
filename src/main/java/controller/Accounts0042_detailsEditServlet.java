@@ -51,12 +51,10 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		if(af.validate(request)) {
 		HttpSession session = request.getSession();
 
-		AccountsService_2 as = new AccountsService_2();
 		int ai=Integer.parseInt(request.getParameter("account_id"));
 		String n = request.getParameter("name");
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
-		String pw2 = request.getParameter("password2");
 		String at = request.getParameter("authority");
 		AccountsBean ab=new AccountsBean(ai,n,m,pw1,at);
 		session.setAttribute("accounts", ab);

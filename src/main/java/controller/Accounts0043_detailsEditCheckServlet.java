@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.services.AccountsService_2;
 import util.CommonUtil;
@@ -48,6 +49,8 @@ public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 
 		try {
 			as.accountsUpdate(CommonUtil.request_AcoountsBean(request));
+			HttpSession session = request.getSession();
+			session.removeAttribute("accounts");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

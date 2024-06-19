@@ -36,8 +36,8 @@ public class Sales0020_searchInputServlet extends HttpServlet {
 		
 		// 検索画面に来た段階で、検索結果のセッションを消す。
 		HttpSession session = request.getSession();
-		if (session.getAttribute("salelist") != null) {
-			session.removeAttribute("salelist");
+		if (session.getAttribute("search") != null) {
+			session.removeAttribute("search");
 		}
 		
 		RegistrationService rs=new RegistrationService();

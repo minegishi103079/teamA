@@ -33,7 +33,7 @@ public class Accounts0040_serchInputServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		session.removeAttribute("accountlist");
+		session.removeAttribute("accountSearch");
 		this.getServletContext().getRequestDispatcher("/Accounts0040_serchInput.jsp").forward(request,response);
 	}
 
@@ -53,7 +53,7 @@ public class Accounts0040_serchInputServlet extends HttpServlet {
 					
 					HttpSession session = request.getSession();
 					// 検索結果をbeanに入れる
-					session.setAttribute("search", CommonUtil.request_AcoountSearchBean(request));
+					session.setAttribute("accountSearch", CommonUtil.request_AcoountSearchBean(request));
 					response.sendRedirect("Accounts0041");
 					
 				}else {

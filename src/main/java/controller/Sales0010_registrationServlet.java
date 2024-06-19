@@ -41,7 +41,7 @@ public class Sales0010_registrationServlet extends HttpServlet {
 		rs.accounts();
 		rs.categories();
 		
-		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("accountlist", rs.accounts());
 		request.setAttribute("categories", rs.categories());
 		
 		this.getServletContext().getRequestDispatcher("/Sales0010_registration.jsp").forward(request,response);
