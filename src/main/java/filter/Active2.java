@@ -1,3 +1,5 @@
+package filter;
+
 
 
 import java.io.IOException;
@@ -12,15 +14,15 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 
 /**
- * Servlet Filter implementation class Active4
+ * Servlet Filter implementation class Active2
  */
-@WebFilter("/Active4")
-public class Active4 extends HttpFilter implements Filter {
+@WebFilter("/Active2")
+public class Active2 extends HttpFilter implements Filter {
        
     /**
      * @see HttpFilter#HttpFilter()
      */
-    public Active4() {
+    public Active2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,7 +41,7 @@ public class Active4 extends HttpFilter implements Filter {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		request.setAttribute("page", "4");
+		request.setAttribute("page", "2");
 		chain.doFilter(request, response);
 	}
 

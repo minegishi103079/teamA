@@ -21,19 +21,23 @@
 				</div>
 				<div
 					class="pt-2 pb-2 p-1 ms-auto<c:if test="${page eq '1'}" > active</c:if>">
-					<li class="nav-item"><a class="nav-link" href="Sales0010">売上登録</a></li>
+					<li class="nav-item"><a class="nav-link<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if>" 
+					href="Sales0010">売上登録</a></li>
 				</div>
 				<div
 					class="pt-2 pb-2 p-1 ms-auto<c:if test="${page eq '2'}" > active</c:if>">
-					<li class="nav-item"><a class="nav-link" href="Sales0020">売上検索</a></li>
+					<li class="nav-item"><a class="nav-link<c:if test="${bean.getAuthority() eq '0' }"> disabled</c:if>" 
+					href="Sales0020">売上検索</a></li>
 				</div>
 				<div
 					class="pt-2 pb-2 p-1 ms-auto<c:if test="${page eq '3'}" > active</c:if>">
-					<li class="nav-item"><a class="nav-link" href="Accounts0030">アカウント登録</a></li>
+					<li class="nav-item"><a class="nav-link<c:if test="${bean.getAuthority() != '3' }"> disabled</c:if>" 
+					href="Accounts0030">アカウント登録</a></li>
 				</div>
 				<div
 					class="pt-2 pb-2 p-1 ms-auto<c:if test="${page eq '4'}" > active</c:if>">
-					<li class="nav-item"><a class="nav-link" href="Accounts0040">アカウント検索</a></li>
+					<li class="nav-item"><a class="nav-link<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if>" 
+					href="Accounts0040">アカウント検索</a></li>
 				</div>
 			</ul>
 			<div class="pt-2 pb-2 p-1 ms-auto">

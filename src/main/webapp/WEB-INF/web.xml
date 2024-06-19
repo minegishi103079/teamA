@@ -7,7 +7,7 @@
 
   <filter>
     <filter-name>active1</filter-name>
-    <filter-class>CurrentActiveFilter</filter-class>
+    <filter-class>filter.Active1</filter-class>
   </filter>
 
   <filter-mapping>
@@ -22,7 +22,7 @@
   
   <filter>
     <filter-name>active2</filter-name>
-    <filter-class>Active2</filter-class>
+    <filter-class>filter.Active2</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>active2</filter-name>
@@ -53,7 +53,7 @@
 
   <filter>
     <filter-name>active4</filter-name>
-    <filter-class>Active4</filter-class>
+    <filter-class>filter.Active4</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>active4</filter-name>
@@ -75,5 +75,35 @@
     <filter-name>active4</filter-name>
     <url-pattern>/Accounts0044/*</url-pattern>
   </filter-mapping>
-	  
+  
+  
+  
+  <filter>
+    <filter-name>authority3</filter-name>
+    <filter-class>filter.Authority3</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>authority3</filter-name>
+    <url-pattern>/Accounts0030/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>authority3</filter-name>
+    <url-pattern>/Accounts0031/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>authority3</filter-name>
+    <url-pattern>/Accounts0042/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>authority3</filter-name>
+    <url-pattern>/Accounts0043/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>authority3</filter-name>
+    <url-pattern>/Accounts0044/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  
 </web-app>

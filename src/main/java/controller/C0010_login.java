@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.LoginService;
 import validation.LoginFormCheck;
 
 /**
@@ -47,19 +46,21 @@ public class C0010_login extends HttpServlet {
 		LoginFormCheck lf = new LoginFormCheck();
 		
 		if(lf.validate(request)) {
-		HttpSession session = request.getSession();
-		
-		String mail = request.getParameter("mail");
-		String password = request.getParameter("password");
-		AccountsBean bean = LoginService.logincheck(mail, password);
-		
-		if(bean == null) {
-			doGet(request, response);
-		}else {
-			session.setAttribute("bean", bean);
+			HttpSession session = request.getSession();
 			
-			response.sendRedirect("C0020");
-		}}else {
+	//		String mail = request.getParameter("mail");
+	//		String password = request.getParameter("password");
+	//		AccountsBean bean = LoginService.logincheck(mail, password);
+			AccountsBean bean = lf.getAccount();
+			
+			if(bean == null) {
+				doGet(request, response);
+			}else {
+				session.setAttribute("bean", bean);
+				response.sendRedirect("C0020");
+			}
+			
+		}else {
 			request.setAttribute("errors", lf.getErrors());
 			doGet(request, response);
 		}
