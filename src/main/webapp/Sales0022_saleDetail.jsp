@@ -75,15 +75,16 @@
 			<div class="row d-flex justify-content-center mt-2">
 				<div class="col-auto">
 					<form class="" action="Sales0023" method="get" id="edit">
-						<button type="submit" class="btn btn-primary" name="sale_id"
-							value="<c:out value="${sales.getSale_id() }"></c:out>" for="edit">✓編集</button>
+						<button type="submit" class="btn btn-primary" name="sale_id" for="edit"
+							value="<c:out value="${sales.getSale_id() }"></c:out>"
+							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >✓編集</button>
 					</form>
 				</div>
 				<div class="col-auto">
 					<form class="" action="Sales0025" method="get" id="delete">
-						<button type="submit" class="btn btn-danger" name="sale_id"
+						<button type="submit" class="btn btn-danger" name="sale_id" for="delete"
 							value="<c:out value="${sales.getSale_id() }"></c:out>"
-							for="delete">×削除</button>
+							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >×削除</button>
 					</form>
 				</div>
 				<div class="col-auto">
