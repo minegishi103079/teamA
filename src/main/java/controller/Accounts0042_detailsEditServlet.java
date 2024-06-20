@@ -36,17 +36,19 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		
-		
-		AccountsService_2 as = new AccountsService_2();
-		
-		AccountsBean ab = as.AccountsDetailSales(request.getParameter("account_id"));
-		
-		if(ab == null) {
-			response.sendRedirect("Accounts0041");
-			return;
+		HttpSession session = request.getSession();
+		if (session.getAttribute("accounts") == null) {
+			AccountsService_2 as = new AccountsService_2();
+			AccountsBean ab = as.AccountsDetailSales(request.getParameter("account_id"));
+			
+			if(ab == null) {
+				response.sendRedirect("Accounts0041");
+				return;
+			}
+			
+			request.setAttribute("accounts", ab);
 		}
-		request.setAttribute("accounts", ab);
-								
+		
 		
 		request.getRequestDispatcher("/Accounts0042_detailsEdit.jsp").forward(request, response);
 	}

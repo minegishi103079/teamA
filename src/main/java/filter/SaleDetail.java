@@ -11,9 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import form.ListBean;
 
 /**
  * Servlet Filter implementation class SaleDetail
@@ -42,31 +39,12 @@ public class SaleDetail extends HttpFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		var req = (HttpServletRequest) request;
 		var res = (HttpServletResponse) response;
-
-		String path = req.getServletPath();
-		HttpSession session = req.getSession();
 		
-		String sale_id = req.getParameter("sale_id");
-		String sales = req.getParameter("sales");
-		
-		if(sale_id == null) {
-			try {
-				sale_id = String.valueOf( ( (ListBean)session.getAttribute("sales") ).getSale_id() ) ;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
+		// 飛ぶ前のページを確認する。直接URL指定だとnullになる。
+		if (req.getHeader("REFERER") == null) {
+			res.sendRedirect("Sales0021");
+			return;
 		}
-		//System.out.println(sb);
-		
-//		if(path.equals("/Sales0022") ||path.equals("/Sales0023") || path.equals("/Sales0024") || path.equals("/Sales0025")) {
-			if(sale_id == null) {
-				if(sales == null) {
-					res.sendRedirect("Sales0021");
-					return;
-				}
-			}
-//		}
 			chain.doFilter(request, response);
 			
 	}

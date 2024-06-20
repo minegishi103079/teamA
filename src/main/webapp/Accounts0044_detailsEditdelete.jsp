@@ -104,11 +104,7 @@
 						form="decide">✓OK</button>
 				</div>
 				<div class="col-auto">
-					<form method="post" action="Accounts0041" id="cancel">
-						<button type="submit" class="btn btn-light" name="account_id"
-							value="<c:out value="${accounts.getAccount_id() }"></c:out>"
-							form="cancel">キャンセル</button>
-					</form>
+					<a class="btn btn-light" href="Accounts0041">キャンセル</a>
 				</div>
 			</div>
 			</form>

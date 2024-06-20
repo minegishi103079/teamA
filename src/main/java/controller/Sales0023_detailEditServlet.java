@@ -36,20 +36,20 @@ public class Sales0023_detailEditServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		// Detailからsale_idを受け取って、salesというListBeanにして再びセットする。
-		
-		
-		
 		request.setCharacterEncoding("UTF-8");
 		
-		SalesService ss = new SalesService();
-		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
-		if (sale == null) {
-			response.sendRedirect("Sales0021");
-			return;
+		// 確認画面に行くときのセッションが残っている。
+		HttpSession session = request.getSession();
+		if (session.getAttribute("sales") == null) {
+			SalesService ss = new SalesService();
+			ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
+			if (sale == null) {
+				response.sendRedirect("Sales0021");
+				return;
+			}
+			request.setAttribute("sales", sale);
 		}
-		request.setAttribute("sales", sale);
 		
 		RegistrationService rs = new RegistrationService();
 		request.setAttribute("accountlist", rs.accounts());

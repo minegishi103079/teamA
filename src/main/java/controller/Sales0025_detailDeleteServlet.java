@@ -35,14 +35,6 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		// S0024でセッションを取得した後、削除に飛んでくる。
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("sales") != null) {
-//			session.removeAttribute("sales");
-//			response.sendRedirect("Sales0021");
-//			return;
-//		}
-//		
 		SalesService ss = new SalesService();
 		ListBean sale = ss.salesDetailSales(request.getParameter("sale_id"));
 		if (sale == null) {
@@ -50,8 +42,6 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 			return;
 		}
 		request.setAttribute("sales", sale);
-		
-		request.setAttribute("sales", ss.salesDetailSales(request.getParameter("sale_id")) );
 		
 		
 		request.getRequestDispatcher("/Sales0025_detailDelete.jsp").forward(request, response);

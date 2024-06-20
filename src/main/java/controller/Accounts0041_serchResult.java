@@ -35,6 +35,7 @@ public class Accounts0041_serchResult extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
+		session.removeAttribute("accounts");	// 43のセッションを消しておく
 		AccountsService_2 as2 = new AccountsService_2();
 		// sessionから検索結果をまとめたもの ＝ beanを受け取る
 		AccountsBean bean = (AccountsBean)session.getAttribute("accountSearch");

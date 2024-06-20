@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import form.ListBean;
 import model.services.SalesService;
@@ -34,6 +35,9 @@ public class Sales0022_saleDetailServlet extends HttpServlet {
 		// 検索結果画面から詳細ボタンが押される。
 		
 		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("sales");
 		
 		SalesService ss = new SalesService();
 		

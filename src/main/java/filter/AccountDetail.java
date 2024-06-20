@@ -8,7 +8,6 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class AccountDetail
  */
-@WebFilter("/*")
 public class AccountDetail extends HttpFilter implements Filter {
        
     /**
@@ -41,16 +39,9 @@ public class AccountDetail extends HttpFilter implements Filter {
 		var req = (HttpServletRequest) request;
 		var res = (HttpServletResponse) response;
 
-		String path = req.getServletPath();
-		
-		String account_id = req.getParameter("account_id");
-		//System.out.println(sb);
-		
-		if(path.equals("/Accounts0042") ||path.equals("/Accounts0043") || path.equals("/Accounts0044")) {
-			if(account_id == null) {
-				res.sendRedirect("Accounts0041");
-				return;
-			}
+		if (req.getHeader("REFERER") == null) {
+			res.sendRedirect("Accounts0041");
+			return;
 		}
 			chain.doFilter(request, response);
 	}

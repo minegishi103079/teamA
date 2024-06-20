@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.beans.AccountsBean;
 import model.services.AccountsService_2;
 
 /**
@@ -33,8 +34,13 @@ public class Accounts0044_detailsEditdeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		AccountsService_2 as2 = new AccountsService_2();
-		request.setAttribute("accounts", as2.AccountsDetailSales(request.getParameter("account_id")) );
 		
+		AccountsBean ab = as2.AccountsDetailSales(request.getParameter("account_id"));
+		if(ab == null) {
+			response.sendRedirect("Accounts0041");
+			return;
+		}
+		request.setAttribute("accounts", ab );
 		
 		request.getRequestDispatcher("/Accounts0044_detailsEditdelete.jsp").forward(request, response);
 	}

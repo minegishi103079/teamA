@@ -1,9 +1,12 @@
 package validation;
 
+import java.security.MessageDigest;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,7 +17,6 @@ import model.beans.AccountsBean;
 import util.DbUtil;
 @Getter
 public class LoginFormCheck {
-	
 	
 	private ArrayList<String> errors = new ArrayList<>();
 	private AccountsBean account;
@@ -131,7 +133,33 @@ public class LoginFormCheck {
 		}
 		return true;
 	}
+	
+	private static void hash(String password) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			byte[] salt = new byte[16];
+            SecureRandom random = new SecureRandom();
+            random.nextBytes(salt);
+            md.update(salt);
+			md.update(password.getBytes());
+		    byte[] hashBytes = md.digest();
+		    String hash = Base64.getEncoder().encodeToString(hashBytes);
+		    System.out.println(hash);
+//		    StringBuffer sb = new StringBuffer();
+//			byte[] cipherBytes = md.digest(password.getBytes());
+//
+//			for (int i=0; i<cipherBytes.length; i++) {
+//				sb.append(String.format("%02x", cipherBytes[i]&0xff));
+//			}
+//		    System.out.println(sb.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+	}
+	
+	
+	
 }
 	
 	
