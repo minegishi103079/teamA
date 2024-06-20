@@ -93,7 +93,7 @@
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio" name="authority"
 								id="inlineRadio1" value="0"
-								<c:if test="${accountInsert.getAuthority()==0}">checked</c:if>>
+								<c:if test="${ empty accountInsert || accountInsert.getAuthority()==0 }">checked</c:if>>
 							<label class="form-check-label" for="inlineRadio1">権限なし</label>
 						</div>
 						<div class="form-check form-check-inline">

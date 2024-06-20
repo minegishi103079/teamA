@@ -31,6 +31,7 @@ public class LoginFormCheck {
 		boolean g = passLength(req.getParameter("password"));
 		boolean h = accountExist(req.getParameter("mail"));
 		boolean i = passSame(req.getParameter("password"));
+//		boolean i = hashPassCheck(req.getParameter("password"));
 
 		boolean result =  c && d && e && f && g && h && i ;
 
@@ -143,8 +144,8 @@ public class LoginFormCheck {
             md.update(salt);
 			md.update(password.getBytes());
 		    byte[] hashBytes = md.digest();
-		    String hash = Base64.getEncoder().encodeToString(hashBytes);
-		    System.out.println(hash);
+		    String hashpass = Base64.getEncoder().encodeToString(hashBytes);
+		    System.out.println(hashpass);
 //		    StringBuffer sb = new StringBuffer();
 //			byte[] cipherBytes = md.digest(password.getBytes());
 //
@@ -158,7 +159,33 @@ public class LoginFormCheck {
 		
 	}
 	
-	
+	private boolean hashPassCheck(String str) {
+		String sql = "select * from hash where account_id = ?";
+		
+		try (Connection conn = DbUtil.open();
+				PreparedStatement ps = conn.prepareStatement(sql);) {
+			ps.setInt(1, account.getAccount_id());
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			
+			
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			String salt = rs.getString("salt");
+			String hash = str + salt;
+			md.update(hash.getBytes());
+		    byte[] hashBytes = md.digest();
+		    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
+		    
+		    if (hashpassword.equals(rs.getString("hashpassword"))) {
+		    	return true;
+		    }
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("ハッシュ化がうまくいってません");
+		return false;
+	}
 	
 }
 	

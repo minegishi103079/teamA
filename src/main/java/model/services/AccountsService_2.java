@@ -1,10 +1,13 @@
 package model.services;
 
+import java.security.MessageDigest;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import model.beans.AccountsBean;
 import util.CommonUtil;
@@ -24,6 +27,7 @@ public class AccountsService_2 {
 			ps.setString(4, bean.getAuthority());
 
 			ps.executeUpdate();
+//			hashInsert(bean);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -44,6 +48,7 @@ public class AccountsService_2 {
 			
 
 			ps.executeUpdate();
+//			hashInsert(bean);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -146,29 +151,61 @@ public class AccountsService_2 {
 			
 			return accounts;
 		}
+		
+		
+		
+		private void hashInsert(AccountsBean bean) {
+			String sql = "INSERT INTO hash (account_id, hashpassword, salt) "
+					+ "VALUES (?, ?, ?)";
+			try (Connection conn = DbUtil.open();
+					PreparedStatement ps = conn.prepareStatement(sql);) {
+				
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				SecureRandom random = new SecureRandom();
+				String salt = String.valueOf(random.nextDouble());
+				String hash = bean.getPassword() + salt;
+				md.update(hash.getBytes());
+			    byte[] hashBytes = md.digest();
+			    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
+				
+			    String id = "";
+			    if (bean.getAccount_id() == 0) {
+			    	id = accountsSelectID(bean.getMail());
+			    } else {
+			    	id = String.valueOf(bean.getAccount_id());
+			    }
+				
+				ps.setString(1, id );
+				ps.setString(2, hashpassword );
+				ps.setString(3, salt);
+
+				ps.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		private String accountsSelectID(String mail) {
+			String sql = "select account_id from accounts where mail = ?";
+			
+			String id = "";
+			try (
+					Connection con = DbUtil.open();
+					PreparedStatement ps = con.prepareStatement(sql);
+			){
+				ps.setString(1, mail);
+				ResultSet rs = ps.executeQuery();
+				while(rs.next()) {
+					id = rs.getString("account_id");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return id;
+		}
+		
 }
-		
-		
-		
-		
-		
-//		public void accountsInsert(String na,String ma, String pa, int au) {
-//		String sql = "INSERT into accounts(name,mail,password,authority) VALUES(?,?,?,?)";
-//		try (Connection conn = DbUtil.open();
-//				PreparedStatement ps = conn.prepareStatement(sql);) {
-//
-//			ps.setString(1, na);
-//			ps.setString(2, ma);
-//			ps.setString(3, pa);
-//			ps.setInt(4, au);
-//			
-//
-//			ps.executeUpdate();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//
-//}
+
+
