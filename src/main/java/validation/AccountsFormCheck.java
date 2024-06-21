@@ -1,5 +1,8 @@
 package validation;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import lombok.Getter;
+import util.DbUtil;
 
 @Getter
 
@@ -139,6 +143,31 @@ public class AccountsFormCheck {
 		}
 		return true;
 	}
+	
+	
+	//メールアドレス重複チェック
+	private boolean mailDuplication(String mail) {
+		String sql = "select count(*) from accounts where mail = ?";
+		try (
+				Connection con = DbUtil.open();
+				PreparedStatement ps = con.prepareStatement(sql);
+		){
+			ps.setString(1, mail);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				if (rs.getInt("count(*)") > 0) {
+					errors.add("すでに登録されているメールアドレスです");
+					return false;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	
+	
 
 }
 

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.beans.SalesBean;
 import model.services.SaleService_2;
 import util.CommonUtil;
 
@@ -48,10 +49,16 @@ public class Sales0011_checkServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		SaleService_2 s2=new SaleService_2();
 		
-		
-		s2.salesInsert(CommonUtil.request_SalesBean(request));
 		HttpSession session = request.getSession();
+		SalesBean sb = CommonUtil.request_SalesBean(request);
+		if (!sb.equals((SalesBean)session.getAttribute("saleCheck"))) {
+			doGet(request, response);
+			return;
+		}
+		
+		s2.salesInsert(sb);
 		session.removeAttribute("saleInsert");
+		session.removeAttribute("saleCheck");
 		
 		response.sendRedirect("Sales0010");
 	}

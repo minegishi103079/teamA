@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
 import model.services.AccountsService_2;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class Accounts0031_CheckServlet
@@ -48,18 +49,22 @@ public class Accounts0031_checkServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		AccountsService_2 as = new AccountsService_2();
 		
-		AccountsBean ab = new AccountsBean(
-				0,
-				request.getParameter("name"),
-				request.getParameter("mail"),
-				request.getParameter("password1"),
-				request.getParameter("authority"));
-			
+//		AccountsBean ab = new AccountsBean(
+//				0,
+//				request.getParameter("name"),
+//				request.getParameter("mail"),
+//				request.getParameter("password1"),
+//				request.getParameter("authority"));
+		HttpSession session = request.getSession();
+		AccountsBean ab = CommonUtil.request_AcoountsBean(request);
+		if (!ab.equals((AccountsBean)session.getAttribute("accountInsert"))) {
+			doGet(request, response);
+			return;
+		}
 
 		try {
 
 			as.accountsInsert(ab);
-			HttpSession session = request.getSession();
 			session.removeAttribute("accountInsert");
 		} catch (Exception e) {
 			e.printStackTrace();

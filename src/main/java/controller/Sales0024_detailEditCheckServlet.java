@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.beans.SalesBean;
 import model.services.SalesService;
+import util.CommonUtil;
 
 /**
  * Servlet implementation class Sales0024_Servlet
@@ -51,9 +53,16 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 		
 		SalesService ss = new SalesService();
 		
-		ss.salesUpdate(request);
 		HttpSession session = request.getSession();
+		SalesBean sb = CommonUtil.request_SalesBean(request);
+		if (!sb.equals((SalesBean)session.getAttribute("salesCheck"))) {
+			doGet(request, response);
+			return;
+		}
+		
+		ss.salesUpdate(request);
 		session.removeAttribute("sales");
+		session.removeAttribute("salesCheck");
 		
 		response.sendRedirect("Sales0021");
 	}

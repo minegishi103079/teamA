@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.beans.AccountsBean;
 import model.services.AccountsService_2;
 import util.CommonUtil;
 
@@ -46,10 +47,16 @@ public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 //		doGet(request, response);
 		request.setCharacterEncoding("UTF-8");
 		AccountsService_2 as = new AccountsService_2();
+		
+		HttpSession session = request.getSession();
+		AccountsBean ab = CommonUtil.request_AcoountsBean(request);
+		if (!ab.equals((AccountsBean)session.getAttribute("accounts"))) {
+			doGet(request, response);
+			return;
+		}
 
 		try {
-			as.accountsUpdate(CommonUtil.request_AcoountsBean(request));
-			HttpSession session = request.getSession();
+			as.accountsUpdate(ab);
 			session.removeAttribute("accounts");
 		} catch (Exception e) {
 			e.printStackTrace();
