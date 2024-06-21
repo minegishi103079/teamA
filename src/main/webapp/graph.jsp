@@ -16,7 +16,21 @@
 
 <div class="col-6">
  <canvas id="lineChart"></canvas>
-  <script src="monthlySale.js"></script>
+ <script type="text/javascript">
+  var a1 = 100;
+  var a2 = 100;
+  var a3 = 100;
+  var a4 = 100;
+  var a5 = 100;
+  var a6 = 100;
+  var a7 = 100;
+  var a8 = 100;
+  var a9 = 100;
+  var a10 = 100;
+  var a11 = 100;
+  var a12 = 100;
+</script>
+  <script src="js/monthlySale.js"></script>
   
 </div>
 

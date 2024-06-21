@@ -1,12 +1,15 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.services.SalesService;
 
 /**
  * Servlet implementation class C0020_DashbordServlet
@@ -31,6 +34,10 @@ public class C0020_dashboardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		request.setAttribute("page", "0");
+		SalesService ss = new SalesService();
+		ArrayList<Integer> list = ss.salesMonthly();
+		request.setAttribute("monthly", list);
+		
 		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
 	}
 

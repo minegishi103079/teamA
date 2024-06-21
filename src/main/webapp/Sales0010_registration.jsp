@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.time.LocalDate"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control"
 							name="sale_date" placeholder="yyyy/mm/dd"
-							value="<c:out value="${saleInsert.getSale_date() }"></c:out>" required>
+							value="<c:if test="${empty saleInsert }"><c:out value="${LocalDate.now() }" /></c:if><c:out value="${saleInsert.getSale_date() }"></c:out>" required>
 					</div>
 				</div>
 
