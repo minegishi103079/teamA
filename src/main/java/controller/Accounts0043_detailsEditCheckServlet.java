@@ -34,7 +34,11 @@ public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		
+		HttpSession session = request.getSession();
+		if (session.getAttribute("accounts") == null) {
+			response.sendRedirect("Accounts0042");
+			return;
+		}
 		
 		request.getRequestDispatcher("/Accounts0043_detailsEditCheck.jsp").forward(request, response);
 	}
