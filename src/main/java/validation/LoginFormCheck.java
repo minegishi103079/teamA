@@ -50,6 +50,7 @@ public class LoginFormCheck {
 	
 	//メールアドレス長さチェック
 	private boolean mailLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 100) {
 			errors.add("メールアドレスが長すぎます。");
 			return false;
@@ -85,6 +86,7 @@ public class LoginFormCheck {
 	
 	//パスワード長さチェック
 	private boolean passLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 30) {
 			errors.add("パスワードが長すぎます。");
 			return false;

@@ -49,6 +49,7 @@ public class AccountsFormCheck {
 	
 	//氏名必須入力チェック
 	private boolean nameEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("氏名を入力して下さい。");
 			return false;
@@ -58,6 +59,7 @@ public class AccountsFormCheck {
 	
 	//氏名長さチェック
 	private boolean nameLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 20) {
 			errors.add("氏名の指定が長すぎます。");
 			return false;
@@ -67,6 +69,7 @@ public class AccountsFormCheck {
 	
 	//メールアドレス必須入力チェック
 		private boolean mailEmpty(String str) {
+			str = str != null? str: "";
 			if (str.isEmpty()) {
 				errors.add("メールアドレスを入力して下さい。");
 				return false;
@@ -76,6 +79,7 @@ public class AccountsFormCheck {
 	
 	//メールアドレス長さチェック
 	private boolean mailLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 100) {
 			errors.add("メールアドレスの指定が長すぎます。");
 			return false;
@@ -101,6 +105,7 @@ public class AccountsFormCheck {
 	
 	//パスワード必須入力チェック
 	private boolean passEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("パスワードを入力して下さい。");
 			return false;
@@ -110,6 +115,7 @@ public class AccountsFormCheck {
 	
 	//パスワード長さチェック
 	private boolean passLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 30) {
 			errors.add("パスワードが長すぎます。");
 			return false;
@@ -119,6 +125,7 @@ public class AccountsFormCheck {
 	
 	//パスワード（確認）必須入力チェック
 	private boolean passCheckEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("パスワード（確認）を入力して下さい。");
 			return false;

@@ -55,6 +55,7 @@ public class SalesFormCheck {
 
 	//販売日必須入力チェック
 	private boolean dateEmpty(String str) {
+		str = str != null? str: "";
 		if (str.isEmpty()) {
 			errors.add("販売日を入力して下さい。");
 			return false;
@@ -108,6 +109,7 @@ public class SalesFormCheck {
 
 	//商品名長さチェック
 	private boolean nameLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 100) {
 			errors.add("商品名が長すぎます。");
 			return false;
@@ -127,6 +129,7 @@ public class SalesFormCheck {
 
 	//単価長さチェック
 	private boolean priceLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 10) {
 			errors.add("単価が長すぎます。");
 			return false;
@@ -157,6 +160,7 @@ public class SalesFormCheck {
 
 	//個数長さチェック
 	private boolean saleNumberLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 10) {
 			errors.add("個数が長すぎます。");
 			return false;
@@ -177,6 +181,7 @@ public class SalesFormCheck {
 
 	//備考長さチェック
 	private boolean noteLength(String str) {
+		str = str != null? str: "";
 		if (str.length() > 400) {
 			errors.add("備考が長すぎます。");
 			return false;
@@ -271,8 +276,11 @@ public class SalesFormCheck {
 		String sql = "select count(*) from sales s ";
 		String date1 = request.getParameter("date1");
 		String date2 = request.getParameter("date2");
+		date2 = date2 != null? date2: "";
 		String account = request.getParameter("account_id");
+		account = account != null? account: "";
 		String category = request.getParameter("category_id");
+		category = category != null? category: "";
 		String trade = request.getParameter("trade_name");
 		String note = request.getParameter("note");
 

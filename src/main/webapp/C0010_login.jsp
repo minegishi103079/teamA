@@ -24,8 +24,8 @@
 				<div class="card bg-light border-0 p-4">
 					<div class="card-body">
 						<h3>物品売上管理システム</h3>
-						<input type="email" class="form-control"id="exampleFormControlInput1" name="mail" placeholder="メールアドレス"> 
-						<input type="password" id="inputPassword5" class="form-control mt-2" name="password" placeholder="パスワード">
+						<input type="email" class="form-control"id="exampleFormControlInput1" name="mail" placeholder="メールアドレス" required> 
+						<input type="password" id="inputPassword5" class="form-control mt-2" name="password" placeholder="パスワード" required>
 						<div class="d-grid gap-2 mt-2">
 							<button type="submit" class="btn btn-primary">ログイン</button>
 						</div>

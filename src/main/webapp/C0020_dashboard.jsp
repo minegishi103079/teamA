@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	
-	<div class="m-5 col-auto">
+	<div class="m-5 col-auto" style="width: 600px; height: auto;">
 
  <script type="text/javascript">
   var a1 = <c:out value="${monthly.get(0)}" />;
