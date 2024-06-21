@@ -59,7 +59,7 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		AccountsFormCheck af = new AccountsFormCheck();
 		request.setCharacterEncoding("UTF-8");
-		if(af.validate(request)) {
+		if(af.validate3(request)) {
 		HttpSession session = request.getSession();
 
 		int ai=Integer.parseInt(request.getParameter("account_id"));

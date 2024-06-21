@@ -28,9 +28,8 @@ public class AccountsFormCheck {
 		boolean g = passLength(req.getParameter("password1"));
 		boolean h = passCheckEmpty(req.getParameter("password2"));
 		boolean i = passSame1(req.getParameter("password1"),req.getParameter("password2"));
-		boolean j = passSame2(req.getParameter("password1"),req.getParameter("password2"));
 
-		boolean result = a && b && c && d && e && f && g && h && i && j;
+		boolean result = a && b && c && d && e && f && g && h && i;
 
 		return result;
 	}
@@ -44,6 +43,23 @@ public class AccountsFormCheck {
 		
 		return result;
 		
+	}
+	
+	public boolean validate3(HttpServletRequest req) {
+
+		boolean a = nameEmpty(req.getParameter("name"));
+		boolean b = nameLength(req.getParameter("name"));
+		boolean c = mailEmpty(req.getParameter("mail"));
+		boolean d = mailLength(req.getParameter("mail"));
+		boolean e = mailFormat(req.getParameter("mail"));
+		boolean f = passEmpty(req.getParameter("password1"));
+		boolean g = passLength(req.getParameter("password1"));
+		boolean h = passCheckEmpty(req.getParameter("password2"));
+		boolean j = passSame2(req.getParameter("password1"),req.getParameter("password2"));
+
+		boolean result = a && b && c && d && e && f && g && h && j;
+
+		return result;
 	}
 	
 	
