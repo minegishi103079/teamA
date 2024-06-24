@@ -20,23 +20,31 @@ public class SalesFormCheck {
 
 	public boolean validate(HttpServletRequest req) {
 
-		boolean a = dateEmpty(req.getParameter("sale_date"));
-		boolean b = dateFormat(req.getParameter("sale_date"));
-		boolean c = accountEmpty(req.getParameter("account_id"));
-		boolean d = categoryEmpty(req.getParameter("category_id"));
-		boolean e = nameEmpty(req.getParameter("trade_name"));
-		boolean f = nameLength(req.getParameter("trade_name"));
-		boolean g = priceEmpty(req.getParameter("unit_price"));
-		boolean h = priceFormat(req.getParameter("unit_price"));
-		boolean i = priceLength(req.getParameter("unit_price"));
-		boolean j = saleNumberEmpty(req.getParameter("sale_number"));
-		boolean k = saleNumberFormat(req.getParameter("sale_number"));
-		boolean l = saleNumberLength(req.getParameter("sale_number"));
-		boolean m = noteLength(req.getParameter("note"));
-		boolean n = accountExist(req.getParameter("account_id"));
-		boolean o = categoryExist(req.getParameter("category_id"));
+//		boolean a = dateEmpty(req.getParameter("sale_date"));
+//		boolean b = dateFormat(req.getParameter("sale_date"));
+//		boolean c = accountEmpty(req.getParameter("account_id"));
+//		boolean d = categoryEmpty(req.getParameter("category_id"));
+//		boolean e = nameEmpty(req.getParameter("trade_name"));
+//		boolean f = nameLength(req.getParameter("trade_name"));
+//		boolean g = priceEmpty(req.getParameter("unit_price"));
+//		boolean h = priceFormat(req.getParameter("unit_price"));
+//		boolean i = priceLength(req.getParameter("unit_price"));
+//		boolean j = saleNumberEmpty(req.getParameter("sale_number"));
+//		boolean k = saleNumberFormat(req.getParameter("sale_number"));
+//		boolean l = saleNumberLength(req.getParameter("sale_number"));
+		boolean a = dateCheck(req.getParameter("sale_date"));
+		boolean b = accountEmpty(req.getParameter("account_id"));
+		boolean c = categoryEmpty(req.getParameter("category_id"));
+		boolean d = nameCheck(req.getParameter("trade_name"));
+		
+		
+		boolean e =priceCheck(req.getParameter("unit_price"));
+		boolean f = saleNumberCheck(req.getParameter("sale_number"));
+		boolean g = noteLength(req.getParameter("note"));
+		boolean h = accountExist(req.getParameter("account_id"));
+		boolean i = categoryExist(req.getParameter("category_id"));
 
-		boolean result = a && b && c && d && e && f && g && h && i && j && k && l && m && n && o;
+		boolean result = a && b && c && d && e && f && g && h && i;
 
 		return result;
 	}
@@ -51,6 +59,13 @@ public class SalesFormCheck {
 
 		return result;
 
+	}
+	//販売日統括チェック
+	private boolean dateCheck(String date) {
+		if(dateEmpty(date)) {
+			return dateFormat(date);
+		}
+		return false;
 	}
 
 	//販売日必須入力チェック
@@ -96,6 +111,14 @@ public class SalesFormCheck {
 		}
 		return true;
 	}
+	
+	//商品名統括チェック
+	private boolean nameCheck(String name) {
+		if(nameEmpty(name)) {
+			return nameLength(name);
+		}
+		return false;
+	}
 
 	//商品名必須入力チェック
 	private boolean nameEmpty(String str) {
@@ -115,6 +138,14 @@ public class SalesFormCheck {
 			return false;
 		}
 		return true;
+	}
+	
+	//単価統括チェック
+	private boolean priceCheck(String price) {
+		if(priceEmpty(price)) {
+			return priceLength(price) & priceFormat(price);
+		}
+		return false;
 	}
 
 	//単価必須入力チェック
@@ -148,6 +179,14 @@ public class SalesFormCheck {
 		return true;
 	}
 
+	//個数統括チェック
+	private boolean saleNumberCheck(String saleNumber) {
+		if(saleNumberEmpty(saleNumber)) {
+			return saleNumberFormat(saleNumber) & saleNumberLength(saleNumber);
+		}
+		return false;
+	}
+	
 	//個数必須入力チェック
 	private boolean saleNumberEmpty(String str) {
 		str = str != null? str: "";
