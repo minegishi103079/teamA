@@ -35,7 +35,7 @@
 				<form method="post" action="Sales0022">
 					<c:forEach var="saleslist" items="${salelist}">
 						<tr>
-							<td><button type ="submit" class="btn btn-primary text-nowrap" name="sale_id" value="${saleslist.getSale_id() }"> 編集 </button</td>
+							<td><button type ="submit" class="btn btn-primary text-nowrap" name="sale_id" value="${saleslist.getSale_id() }"> 詳細 </button</td>
 							<td><c:out value="${saleslist.getSale_id()}" /></td>
 							<td><c:out value="${CommonUtil.localDateFormat( saleslist.getSale_date() )}" /></td>
 							<td><c:out value="${saleslist.getName()}" /></td>
