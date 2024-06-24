@@ -12,5 +12,13 @@ authority int not null default'0'
 
 ・テスト用データ作成
 insert into accounts 
-(name, mail, password) values ('田中', 'test@test', 'test');
+(name, mail, password) values ('田中', 'test@test.com', 'test');
 
+insert into accounts 
+(name, mail, password,authority) values ('土生', 'habu@michiaki.com', 'habu',3);
+
+insert into accounts 
+(name, mail, password,authority) values ('笠原', 'kasahara@kimi.com', 'kasahara',2);
+
+insert into accounts 
+(name, mail, password,authority) values ('峰岸', 'minegishi@yui.com', 'minegishi',1);

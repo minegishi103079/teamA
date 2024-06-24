@@ -1,0 +1,19 @@
+・テーブル作成時
+create table categories (
+category_id int primary key auto_increment not null,
+category_name varchar(50) not null,
+active_flg int not null default 1
+);
+
+
+・テスト用データ作成
+insert into categories 
+(category_name) values ('fruits');
+
+insert into categories 
+(category_name) values ('vegetables');
+
+・削除
+DELETE FROM categories WHERE category_id = 2;
+
+

@@ -18,3 +18,5 @@ values
 ('2024-06-10', 1, 1, 'orange', 500, 1, 'test');
 
 
+・データカウント
+SELECT COUNT(*) FROM sales WHERE account_id =2;

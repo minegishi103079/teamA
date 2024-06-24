@@ -1,0 +1,11 @@
+CREATE TABLE hash (
+    account_id INT PRIMARY KEY,
+    hashpassword VARCHAR(64) NOT NULL,
+    salt VARCHAR(32) NOT NULL
+);
+
+
+
+
+INSERT INTO hash (account_id, hashpassword, salt)
+VALUES (1, 'exampleUser', 0.057041169400588565);
