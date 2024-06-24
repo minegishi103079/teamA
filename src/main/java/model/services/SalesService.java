@@ -8,8 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.servlet.http.HttpServletRequest;
-
+import form.CategorizedSales;
 import form.ListBean;
 import form.SearchResultBean;
 import model.beans.SalesBean;
@@ -54,42 +53,42 @@ public class SalesService {
 	}
 
 	// saleの中身をアカウント・カテゴリーとつなげて全部出す。
-	public ArrayList<ListBean> salesSelectAll() {
-		String sql = "SELECT * FROM sales s "
-				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
-				+ "LEFT JOIN categories c ON s.category_id = c.category_id";
-
-		return salesResultAllList(sql);
-	}
+//	public ArrayList<ListBean> salesSelectAll() {
+//		String sql = "SELECT * FROM sales s "
+//				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+//				+ "LEFT JOIN categories c ON s.category_id = c.category_id";
+//
+//		return salesResultAllList(sql);
+//	}
 
 	// 検索結果のrequestを受け取って、当てはまるデータをArrayListで返す
-	public ArrayList<ListBean> salesSearchResult(HttpServletRequest request) {
-		String sql = "select * from sales s "
-				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
-				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
-
-		// 条件に当てはまるデータを絞り込むために、whereで記述すべきことを追加していく。
-		String date1 = request.getParameter("date1");
-		String date2 = request.getParameter("date2");
-		String account = request.getParameter("account_id");
-		String category = request.getParameter("category_id");
-		String trade = request.getParameter("trade_name");
-		String note = request.getParameter("note");
-		// 何もないとき（''）にエラーが出るものは、空白ではsqlに追加しないようにする。
-		sql += "where sale_date >= '" + date1 + "' ";
-		if (!date2.isEmpty())
-			sql += "and sale_date <= '" + date2 + "' ";
-		if (!account.isEmpty())
-			sql += "and account_id = '" + account + "' ";
-		if (!category.isEmpty())
-			sql += "and category_id = '" + category + "' ";
-		sql += "and trade_name like '%" + trade + "%' ";
-		sql += "and note like '%" + note + "%' ";
-
-		// 完成したsqlを実行してもらって、ArrayListを受け取る。
-		return salesResultAllList(sql);
-
-	}
+//	public ArrayList<ListBean> salesSearchResult(HttpServletRequest request) {
+//		String sql = "select * from sales s "
+//				+ "LEFT JOIN accounts a ON s.account_id = a.account_id "
+//				+ "LEFT JOIN categories c ON s.category_id = c.category_id ";
+//
+//		// 条件に当てはまるデータを絞り込むために、whereで記述すべきことを追加していく。
+//		String date1 = request.getParameter("date1");
+//		String date2 = request.getParameter("date2");
+//		String account = request.getParameter("account_id");
+//		String category = request.getParameter("category_id");
+//		String trade = request.getParameter("trade_name");
+//		String note = request.getParameter("note");
+//		// 何もないとき（''）にエラーが出るものは、空白ではsqlに追加しないようにする。
+//		sql += "where sale_date >= '" + date1 + "' ";
+//		if (!date2.isEmpty())
+//			sql += "and sale_date <= '" + date2 + "' ";
+//		if (!account.isEmpty())
+//			sql += "and account_id = '" + account + "' ";
+//		if (!category.isEmpty())
+//			sql += "and category_id = '" + category + "' ";
+//		sql += "and trade_name like '%" + trade + "%' ";
+//		sql += "and note like '%" + note + "%' ";
+//
+//		// 完成したsqlを実行してもらって、ArrayListを受け取る。
+//		return salesResultAllList(sql);
+//
+//	}
 
 	// 検索結果をページをまたいで受け取るときに、編集などがあった場合にリストの形では渡せない（編集が適用されないため）
 	// Sessionにはリクエストのデータを入れてあげる。一つ一つ記述するのは長くなるので、一つにまとめられるBeanに入れる。
@@ -156,7 +155,7 @@ public class SalesService {
 //
 //	}
 
-	public ArrayList<Integer> salesMonthly() {
+	public ArrayList<Integer> salesSelectMonthly() {
 		String sql = "SELECT * FROM sales where sale_date between '2024-01-01' and '2024-12-31'";
 
 		ArrayList<Integer> month = new ArrayList<>();
@@ -213,6 +212,33 @@ public class SalesService {
 		
 		return month;
 	}
+	
+	public ArrayList<CategorizedSales> salesSelectCategory() {
+		String sql = "SELECT s.category_id, c.category_name, sum(unit_price*sale_number) FROM sales s "
+				+ "LEFT JOIN categories c ON s.category_id = c.category_id  "
+				+ "GROUP BY s.category_id ORDER BY s.category_id";
+		
+		ArrayList<CategorizedSales> list = new ArrayList<>();
+
+		try (
+				Connection con = DbUtil.open();
+				PreparedStatement ps = con.prepareStatement(sql);) {
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				CategorizedSales cs = new CategorizedSales(
+						rs.getInt("category_id"),
+						rs.getString("category_name"),
+						rs.getInt("sum(unit_price*sale_number)"));
+				list.add(cs);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+	
+	
 	
 	//売上追加
 		public void salesInsert(SalesBean bean) {
