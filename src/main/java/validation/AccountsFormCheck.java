@@ -62,6 +62,17 @@ public class AccountsFormCheck {
 		return result;
 	}
 	
+	private boolean nameCheck(String name) {
+		nameEmpty(name);
+		if(nameEmpty(name)) {
+			return nameLength(name);
+//			if(nameLength(name)) {
+//			return true;
+//			}
+		}
+		return false;
+	}
+	
 	
 	//氏名必須入力チェック
 	private boolean nameEmpty(String str) {
