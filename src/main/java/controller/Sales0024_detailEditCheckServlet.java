@@ -64,7 +64,7 @@ public class Sales0024_detailEditCheckServlet extends HttpServlet {
 			return;
 		}
 		
-		ss.salesUpdate(request);
+		ss.salesUpdate(sb);
 		session.removeAttribute("sales");
 		session.removeAttribute("salesCheck");
 		
