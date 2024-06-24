@@ -60,6 +60,13 @@ public class Sales0011_checkServlet extends HttpServlet {
 		session.removeAttribute("saleInsert");
 		session.removeAttribute("saleCheck");
 		
+		try {
+			session.setAttribute("a","売上登録が完了しました");
+			session.removeAttribute("saleInsert");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		response.sendRedirect("Sales0010");
 	}
 }

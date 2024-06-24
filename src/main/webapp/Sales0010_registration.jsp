@@ -20,6 +20,17 @@
 			</c:forEach>
 		</div>
 	</c:if>
+	
+	<c:if test="${ not empty a }">
+	<div class="alert alert-primary alert-dismissible fade show d-flex align-items-center justify-content-center" role="alert">
+	
+		<c:out value="${ a }" />
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+						
+					
+	</c:if>
+
 
 	<div class="container-fluid mt-3">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
