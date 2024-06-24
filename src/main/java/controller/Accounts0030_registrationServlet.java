@@ -38,6 +38,8 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		this.getServletContext().getRequestDispatcher("/Accounts0030_registration.jsp").forward(request,response);
+		HttpSession session = request.getSession();
+		session.removeAttribute("a");
 	}
 
 	/**
@@ -46,6 +48,7 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+		
 		AccountsFormCheck af = new AccountsFormCheck();
 		if(af.validate(request)) {
 		HttpSession session = request.getSession();
@@ -58,14 +61,14 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 		
 		AccountsBean ab=new AccountsBean(0,n,m,pw1,at);
 		
+		
 		session.setAttribute("accountInsert", ab);
 		response.sendRedirect("Accounts0031");
-		
-				}else {
-					request.setAttribute("errors", af.getErrors());
-					doGet(request, response);
-				}
-		
+		} else {
+			request.setAttribute("errors", af.getErrors());
+			doGet(request, response);
+		}
+
 	}
 
 }
