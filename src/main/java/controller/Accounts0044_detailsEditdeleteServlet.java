@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
+import model.services.AccountsService;
 
 /**
  * Servlet implementation class Accounts0044_DetailsEditdeleteServlet
@@ -33,9 +33,9 @@ public class Accounts0044_detailsEditdeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		AccountsService_2 as2 = new AccountsService_2();
+		AccountsService as = new AccountsService();
 		
-		AccountsBean ab = as2.AccountsDetailSales(request.getParameter("account_id"));
+		AccountsBean ab = as.AccountsDetailSales(request.getParameter("account_id"));
 		if(ab == null) {
 			response.sendRedirect("Accounts0041");
 			return;
@@ -51,8 +51,8 @@ public class Accounts0044_detailsEditdeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 削除の処理をする
-		AccountsService_2 as2 = new AccountsService_2();
-		as2.accountsDelete(request.getParameter("account_id"));
+		AccountsService as = new AccountsService();
+		as.accountsDelete(request.getParameter("account_id"));
 		
 		
 		response.sendRedirect("Accounts0041");

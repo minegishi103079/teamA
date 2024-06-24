@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import form.ListBean;
-import model.services.SaleService_2;
 import model.services.SalesService;
 
 /**
@@ -52,8 +51,8 @@ public class Sales0025_detailDeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 削除の処理をする
-		SaleService_2 s2 = new SaleService_2();
-		s2.salesDelete(request.getParameter("sale_id"));
+		SalesService ss = new SalesService();
+		ss.salesDelete(request.getParameter("sale_id"));
 		
 		response.sendRedirect("Sales0021");
 		

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
+import model.services.AccountsService;
 import util.CommonUtil;
 
 /**
@@ -47,7 +47,7 @@ public class Accounts0031_checkServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		AccountsService_2 as = new AccountsService_2();
+		AccountsService as = new AccountsService();
 		
 //		AccountsBean ab = new AccountsBean(
 //				0,

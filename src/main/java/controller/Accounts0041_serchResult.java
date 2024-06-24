@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
+import model.services.AccountsService;
 
 /**
  * Servlet implementation class Accounts0041_SerchResult
@@ -36,11 +36,11 @@ public class Accounts0041_serchResult extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.removeAttribute("accounts");	// 43のセッションを消しておく
-		AccountsService_2 as2 = new AccountsService_2();
+		AccountsService as = new AccountsService();
 		// sessionから検索結果をまとめたもの ＝ beanを受け取る
 		AccountsBean bean = (AccountsBean)session.getAttribute("accountSearch");
 		// beanをもとにリストを作成し、requestにセットする。
-		request.setAttribute("accountlist", as2.searchResultList(bean));
+		request.setAttribute("accountlist", as.searchResultList(bean));
 		
 		
 		request.getRequestDispatcher("/Accounts0041_serchResult.jsp").forward(request, response);

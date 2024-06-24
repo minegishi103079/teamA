@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
+import model.services.AccountsService;
 import validation.AccountsFormCheck;
 
 /**
@@ -38,7 +38,7 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		if (session.getAttribute("accounts") == null) {
-			AccountsService_2 as = new AccountsService_2();
+			AccountsService as = new AccountsService();
 			AccountsBean ab = as.AccountsDetailSales(request.getParameter("account_id"));
 			
 			if(ab == null) {

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.AccountsBean;
-import model.services.AccountsService_2;
+import model.services.AccountsService;
 import util.CommonUtil;
 
 /**
@@ -50,7 +50,7 @@ public class Accounts0043_detailsEditCheckServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
 		request.setCharacterEncoding("UTF-8");
-		AccountsService_2 as = new AccountsService_2();
+		AccountsService as = new AccountsService();
 		
 		HttpSession session = request.getSession();
 		AccountsBean ab = CommonUtil.request_AcoountsBean(request);

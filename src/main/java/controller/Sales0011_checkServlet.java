@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.beans.SalesBean;
-import model.services.SaleService_2;
+import model.services.SalesService;
 import util.CommonUtil;
 
 /**
@@ -47,7 +47,7 @@ public class Sales0011_checkServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		request.setCharacterEncoding("UTF-8");
-		SaleService_2 s2=new SaleService_2();
+		SalesService ss =new SalesService();
 		
 		HttpSession session = request.getSession();
 		SalesBean sb = CommonUtil.request_SalesBean(request);
@@ -56,7 +56,7 @@ public class Sales0011_checkServlet extends HttpServlet {
 			return;
 		}
 		
-		s2.salesInsert(sb);
+		ss.salesInsert(sb);
 		session.removeAttribute("saleInsert");
 		session.removeAttribute("saleCheck");
 		

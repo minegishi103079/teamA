@@ -13,7 +13,7 @@ import model.beans.AccountsBean;
 import util.CommonUtil;
 import util.DbUtil;
 
-public class AccountsService_2 {
+public class AccountsService {
 	
 	//アカウント追加
 	public void accountsInsert(AccountsBean bean) {
