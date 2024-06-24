@@ -84,6 +84,7 @@ public class Sales0010_registrationServlet extends HttpServlet {
 			}
 			
 			
+			
 			response.sendRedirect("Sales0011");
 			
 			// 検索結果をbeanに入れる
