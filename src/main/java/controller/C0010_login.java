@@ -18,7 +18,6 @@ import validation.LoginFormCheck;
 @WebServlet("/C0010_login")
 public class C0010_login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -48,9 +47,6 @@ public class C0010_login extends HttpServlet {
 		if(lf.validate(request)) {
 			HttpSession session = request.getSession();
 			
-	//		String mail = request.getParameter("mail");
-	//		String password = request.getParameter("password");
-	//		AccountsBean bean = LoginService.logincheck(mail, password);
 			AccountsBean bean = lf.getAccount();
 			
 			if(bean == null) {
