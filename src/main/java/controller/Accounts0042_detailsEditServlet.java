@@ -67,6 +67,12 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
 		String at = request.getParameter("authority");
+		
+		if(!(at.equals(1) || at.equals(2) || at.equals(3) )) {
+			at = "0";
+		}
+		
+		
 		AccountsBean ab=new AccountsBean(ai,n,m,pw1,at);
 		session.setAttribute("accounts", ab);
 		
