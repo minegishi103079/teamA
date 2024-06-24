@@ -25,49 +25,49 @@
 
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">販売日</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">販売日</div>
 				<div class="col-6">
 					<c:out value="${CommonUtil.localDateFormat(sales.getSale_date()) }"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">担当</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">担当</div>
 				<div class="col-6">
 					<c:out value="${sales.getName()}"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">商品カテゴリー</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">商品カテゴリー</div>
 				<div class="col-6">
 					<c:out value="${sales.getCategory_name()}"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">商品名</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">商品名</div>
 				<div class="col-6">
 					<c:out value="${sales.getTrade_name()}"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">単価</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">単価</div>
 				<div class="col-6">
 					<c:out value="${sales.getUnit_price()}"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">個数</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">個数</div>
 				<div class="col-6">
 					<c:out value="${sales.getSale_number()}"></c:out>
 				</div>
 			</div>
 
 			<div class="row g-3 align-items-center p-3">
-				<div class="col-4 d-flex flex-row-reverse">備考</div>
+				<div class="col-4 d-flex flex-row-reverse fw-bold">備考</div>
 				<div class="col-6">
 					<c:out value="${sales.getNote()}"></c:out>
 				</div>

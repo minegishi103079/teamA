@@ -96,7 +96,7 @@ public class LoginFormCheck {
 	
 	//アカウントテーブル存在チェック
 	private boolean accountExist(String str) {
-		String sql = "select *, count(*) from accounts where mail = ?";
+		String sql = "select *, count(*) from accounts where authority != 4 and mail = ?";
 		
 		try( 
 				Connection con = DbUtil.open();

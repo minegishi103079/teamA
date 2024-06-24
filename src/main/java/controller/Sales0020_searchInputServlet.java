@@ -41,7 +41,7 @@ public class Sales0020_searchInputServlet extends HttpServlet {
 		}
 		
 		RegistrationService rs=new RegistrationService();
-		request.setAttribute("accounts", rs.accounts());
+		request.setAttribute("accounts", rs.accounts2());
 		request.setAttribute("categories", rs.categories());
 		
 		request.getRequestDispatcher("/Sales0020_searchInput.jsp").forward(request, response);

@@ -12,6 +12,33 @@ import util.DbUtil;
 
 public class RegistrationService {
 	public ArrayList<AccountsBean> accounts(){
+		String sql="select * from accounts where authority != 4";
+		ArrayList<AccountsBean>ab=new ArrayList<>();
+		//try-with-resources
+		//()内のリソースを自動的にクローズする
+		try (
+			Connection con=DbUtil.open();
+			PreparedStatement stmt = con.prepareStatement(sql);
+		){
+			//PreparedStatementがクローズされるタイミングでクローズ
+			ResultSet rs =stmt.executeQuery();
+			while(rs.next()) {
+				AccountsBean ac=new AccountsBean(
+						rs.getInt("account_id"),
+						rs.getString("name"),
+						rs.getString("mail"),
+						rs.getString("password"),
+						rs.getString("authority")
+						);
+				ab.add(ac);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}return ab;
+		
+	}
+	
+	public ArrayList<AccountsBean> accounts2(){
 		String sql="select * from accounts";
 		ArrayList<AccountsBean>ab=new ArrayList<>();
 		//try-with-resources
