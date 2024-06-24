@@ -35,8 +35,10 @@ public class C0020_dashboardServlet extends HttpServlet {
 		
 		request.setAttribute("page", "0");
 		SalesService ss = new SalesService();
-		ArrayList<Integer> list = ss.salesMonthly();
+		ArrayList<Integer> list = ss.salesSelectMonthly();
 		request.setAttribute("monthly", list);
+		request.setAttribute("category", ss.salesSelectCategory());
+		
 		
 		request.getRequestDispatcher("/C0020_dashboard.jsp").forward(request, response);
 	}

@@ -21,11 +21,9 @@ public class AccountsFormCheck {
 //登録
 		boolean a = nameCheck(req.getParameter("name"));
 		boolean b = mailCheck(req.getParameter("mail"));
-		boolean c = password1Check(req.getParameter("password1"));
-		boolean d = password2Check(req.getParameter("password2"));
-		boolean e = passSame1(req.getParameter("password1"),req.getParameter("password2"));
+		boolean c = password1Check(req.getParameter("password1"),req.getParameter("password2"));
 
-		boolean result = a && b && c && d && e;
+		boolean result = a && b && c ;
 		return result;
 	}
 //検索	
@@ -44,11 +42,9 @@ public class AccountsFormCheck {
 
 		boolean a = nameCheck(req.getParameter("name"));
 		boolean b = mailCheck(req.getParameter("mail"));
-		boolean c = password1Check(req.getParameter("password1"));
-		boolean d = password2Check(req.getParameter("password2"));
-		boolean f = passSame2(req.getParameter("password1"),req.getParameter("password2"));
+		boolean c = password2Check(req.getParameter("password1"), req.getParameter("password2"));
 
-		boolean result = a && b && c && d && f;
+		boolean result = a && b && c;
 
 		return result;
 	}
@@ -67,16 +63,16 @@ public class AccountsFormCheck {
 		return false;
 	}
 	
-	private boolean password1Check(String password1) {
-		if(passEmpty(password1)) {
-			return passLength(password1);
+	private boolean password1Check(String password1,String password2) {
+		if(passEmpty(password1) &passCheckEmpty(password2)) {
+			return passLength(password1) & passLength(password2) & passSame1(password1, password2);
 		}
 		return false;
 	}
 	
-	private boolean password2Check(String password2) {
-		if(passCheckEmpty(password2)) {
-			return passLength(password2);
+	private boolean password2Check(String password1,String password2) {
+		if(passEmpty(password1) &passCheckEmpty(password2)) {
+			return passLength(password1) & passLength(password2) & passSame2(password1, password2);
 		}
 		return false;
 	}
