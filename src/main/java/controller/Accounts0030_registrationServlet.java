@@ -58,8 +58,9 @@ public class Accounts0030_registrationServlet extends HttpServlet {
 		String m = request.getParameter("mail");
 		String pw1 = request.getParameter("password1");
 		String at = request.getParameter("authority");
+		at = at != null ? at: "";
 		
-		if(!(at.equals(1) || at.equals(2) || at.equals(3) )) {
+		if(!(at.equals("1") || at.equals("2") || at.equals("3") )) {
 			at = "0";
 		}
 		

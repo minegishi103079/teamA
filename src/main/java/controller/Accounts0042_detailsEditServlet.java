@@ -68,7 +68,9 @@ public class Accounts0042_detailsEditServlet extends HttpServlet {
 		String pw1 = request.getParameter("password1");
 		String at = request.getParameter("authority");
 		
-		if(!(at.equals(1) || at.equals(2) || at.equals(3) )) {
+		at = at != null ? at: "";
+		
+		if(!(at.equals("1") || at.equals("2") || at.equals("3") )) {
 			at = "0";
 		}
 		
