@@ -20,18 +20,6 @@ public class SalesFormCheck {
 
 	public boolean validate(HttpServletRequest req) {
 
-//		boolean a = dateEmpty(req.getParameter("sale_date"));
-//		boolean b = dateFormat(req.getParameter("sale_date"));
-//		boolean c = accountEmpty(req.getParameter("account_id"));
-//		boolean d = categoryEmpty(req.getParameter("category_id"));
-//		boolean e = nameEmpty(req.getParameter("trade_name"));
-//		boolean f = nameLength(req.getParameter("trade_name"));
-//		boolean g = priceEmpty(req.getParameter("unit_price"));
-//		boolean h = priceFormat(req.getParameter("unit_price"));
-//		boolean i = priceLength(req.getParameter("unit_price"));
-//		boolean j = saleNumberEmpty(req.getParameter("sale_number"));
-//		boolean k = saleNumberFormat(req.getParameter("sale_number"));
-//		boolean l = saleNumberLength(req.getParameter("sale_number"));
 		boolean a = dateCheck(req.getParameter("sale_date"));
 		boolean b = accountEmpty(req.getParameter("account_id"));
 		boolean c = categoryEmpty(req.getParameter("category_id"));
