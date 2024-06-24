@@ -55,14 +55,14 @@ public class AccountsService {
 		}
 	}
 
-	//アカウント削除
+	//アカウント削除でauthorityを４にして表示ができないようにする
 	public void accountsDelete(String id) {
-		String sql = "delete from accounts where account_id = ?";
+		String sql = "update from accounts set authority = 4 where account_id = ?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 
 			ps.setInt(1, CommonUtil.str_Int(id));
-
+			
 			ps.executeUpdate();
 
 		} catch (Exception e) {
@@ -116,7 +116,7 @@ public class AccountsService {
 			sql += "and mail = '"+ mail +"' ";
 		if (authority != null)
 			sql += "and authority = '"+ authority +"' ";
-		
+			sql += "and authority != '"+ 4 +"' ";
 		
 		return accountsResultAllList(sql);
 	}
