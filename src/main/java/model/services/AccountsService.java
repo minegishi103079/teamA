@@ -57,7 +57,7 @@ public class AccountsService {
 
 	//アカウント削除でauthorityを４にして表示ができないようにする
 	public void accountsDelete(String id) {
-		String sql = "update from accounts set authority = 4 where account_id = ?";
+		String sql = "update accounts set authority = 4 where account_id = ?";
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 
