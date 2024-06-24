@@ -58,7 +58,7 @@ public class AccountsFormCheck {
 	
 	private boolean mailCheck(String mail) {
 		if(mailEmpty(mail)) {
-				return mailLength(mail)&mailFormat(mail);
+				return mailLength(mail)&mailFormat(mail)&mailDuplication(mail);
 		}
 		return false;
 	}

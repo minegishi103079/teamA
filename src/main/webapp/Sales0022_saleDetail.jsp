@@ -84,7 +84,7 @@
 					<form class="" action="Sales0025" method="get" id="delete">
 						<button type="submit" class="btn btn-danger" name="sale_id" for="delete"
 							value="<c:out value="${sales.getSale_id() }"></c:out>"
-							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >×削除</button>
+							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >✕削除</button>
 					</form>
 				</div>
 				<div class="col-auto">

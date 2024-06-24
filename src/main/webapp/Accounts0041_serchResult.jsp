@@ -35,9 +35,9 @@
 						<tr>
 						
 							<td><button type ="submit" class="btn btn-primary text-nowrap" name="account_id" form="edit" 
-								value="${accountslist.getAccount_id() }"<c:if test="${bean.getAuthority() != '3' }"> disabled</c:if>> 編集</button>
+								value="${accountslist.getAccount_id() }"<c:if test="${bean.getAuthority() != '3' }"> disabled</c:if>> ✓編集</button>
 							<button type ="submit" class="btn btn-danger text-nowrap" name="account_id" form="delete" 
-								value="${accountslist.getAccount_id() }"<c:if test="${bean.getAuthority() != '3' }"> disabled</c:if>> ×削除</button></td>
+								value="${accountslist.getAccount_id() }"<c:if test="${bean.getAuthority() != '3' }"> disabled</c:if>> ✕削除</button></td>
 							<td><c:out value="${accountslist.getAccount_id()}" /></td> 
 							<td><c:out value="${accountslist.getName()}" /></td>
 							<td><c:out value="${accountslist.getMail()}" /></td>
