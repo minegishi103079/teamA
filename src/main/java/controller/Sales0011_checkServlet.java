@@ -61,8 +61,8 @@ public class Sales0011_checkServlet extends HttpServlet {
 		session.removeAttribute("saleCheck");
 		
 		try {
-			session.setAttribute("a","売上登録が完了しました");
-			session.removeAttribute("saleInsert");
+			session.setAttribute("s","売上登録が完了しました");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

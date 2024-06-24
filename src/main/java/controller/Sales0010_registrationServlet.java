@@ -44,6 +44,8 @@ public class Sales0010_registrationServlet extends HttpServlet {
 		request.setAttribute("categories", rs.categories());
 		
 		this.getServletContext().getRequestDispatcher("/Sales0010_registration.jsp").forward(request,response);
+		HttpSession session = request.getSession();
+		session.removeAttribute("s");
 	}
 
 	/**

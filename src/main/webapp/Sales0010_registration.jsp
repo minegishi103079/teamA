@@ -21,10 +21,10 @@
 		</div>
 	</c:if>
 	
-	<c:if test="${ not empty a }">
+	<c:if test="${ not empty s }">
 	<div class="alert alert-primary alert-dismissible fade show d-flex align-items-center justify-content-center" role="alert">
 	
-		<c:out value="${ a }" />
+		<c:out value="${ s }" />
 		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 						
