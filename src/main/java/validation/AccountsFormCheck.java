@@ -18,22 +18,17 @@ public class AccountsFormCheck {
 	private ArrayList<String> errors = new ArrayList<>();
 
 	public boolean validate(HttpServletRequest req) {
+//登録
+		boolean a = nameCheck(req.getParameter("name"));
+		boolean b = mailCheck(req.getParameter("mail"));
+		boolean c = password1Check(req.getParameter("password1"));
+		boolean d = password2Check(req.getParameter("password2"));
+		boolean e = passSame1(req.getParameter("password1"),req.getParameter("password2"));
 
-		boolean a = nameEmpty(req.getParameter("name"));
-		boolean b = nameLength(req.getParameter("name"));
-		boolean c = mailEmpty(req.getParameter("mail"));
-		boolean d = mailLength(req.getParameter("mail"));
-		boolean e = mailFormat(req.getParameter("mail"));
-		boolean f = passEmpty(req.getParameter("password1"));
-		boolean g = passLength(req.getParameter("password1"));
-		boolean h = passCheckEmpty(req.getParameter("password2"));
-		boolean i = passSame1(req.getParameter("password1"),req.getParameter("password2"));
-
-		boolean result = a && b && c && d && e && f && g && h && i;
-
+		boolean result = a && b && c && d && e;
 		return result;
 	}
-	
+//検索	
 	public boolean validate2(HttpServletRequest req) {
 		
 		boolean k = nameLength(req.getParameter("name"));
@@ -44,31 +39,44 @@ public class AccountsFormCheck {
 		return result;
 		
 	}
-	
+//編集
 	public boolean validate3(HttpServletRequest req) {
 
-		boolean a = nameEmpty(req.getParameter("name"));
-		boolean b = nameLength(req.getParameter("name"));
-		boolean c = mailEmpty(req.getParameter("mail"));
-		boolean d = mailLength(req.getParameter("mail"));
-		boolean e = mailFormat(req.getParameter("mail"));
-		boolean f = passEmpty(req.getParameter("password1"));
-		boolean g = passLength(req.getParameter("password1"));
-		boolean h = passCheckEmpty(req.getParameter("password2"));
-		boolean j = passSame2(req.getParameter("password1"),req.getParameter("password2"));
+		boolean a = nameCheck(req.getParameter("name"));
+		boolean b = mailCheck(req.getParameter("mail"));
+		boolean c = password1Check(req.getParameter("password1"));
+		boolean d = password2Check(req.getParameter("password2"));
+		boolean f = passSame2(req.getParameter("password1"),req.getParameter("password2"));
 
-		boolean result = a && b && c && d && e && f && g && h && j;
+		boolean result = a && b && c && d && f;
 
 		return result;
 	}
 	
 	private boolean nameCheck(String name) {
-		nameEmpty(name);
 		if(nameEmpty(name)) {
 			return nameLength(name);
-//			if(nameLength(name)) {
-//			return true;
-//			}
+		}
+		return false;
+	}
+	
+	private boolean mailCheck(String mail) {
+		if(mailEmpty(mail)) {
+				return mailLength(mail)&mailFormat(mail);
+		}
+		return false;
+	}
+	
+	private boolean password1Check(String password1) {
+		if(passEmpty(password1)) {
+			return passLength(password1);
+		}
+		return false;
+	}
+	
+	private boolean password2Check(String password2) {
+		if(passCheckEmpty(password2)) {
+			return passLength(password2);
 		}
 		return false;
 	}
