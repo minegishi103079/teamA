@@ -65,7 +65,7 @@ public class Accounts0031_checkServlet extends HttpServlet {
 		try {
 
 			as.accountsInsert(ab);
-			session.setAttribute("a","登録完了しました");
+			session.setAttribute("a","アカウント登録が完了しました");
 			session.removeAttribute("accountInsert");
 			
 		} catch (Exception e) {
