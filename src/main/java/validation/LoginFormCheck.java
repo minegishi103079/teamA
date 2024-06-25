@@ -1,7 +1,6 @@
 package validation;
 
 import java.security.MessageDigest;
-import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,22 +19,41 @@ public class LoginFormCheck {
 	
 	private ArrayList<String> errors = new ArrayList<>();
 	private AccountsBean account;
+	private ArrayList<AccountsBean> list = new ArrayList<>();
 
 	public boolean validate(HttpServletRequest req) {
 
-
-		boolean c = mailEmpty(req.getParameter("mail"));
-		boolean d = mailLength(req.getParameter("mail"));
-		boolean e = mailFormat(req.getParameter("mail"));
-		boolean f = passEmpty(req.getParameter("password"));
-		boolean g = passLength(req.getParameter("password"));
-		boolean h = accountExist(req.getParameter("mail"));
-		boolean i = passSame(req.getParameter("password"));
-//		boolean i = hashPassCheck(req.getParameter("password"));
-
-		boolean result =  c && d && e && f && g && h && i ;
-
-		return result;
+		if (mailCheck(req.getParameter("mail")) & passCheck(req.getParameter("password"))) {
+			if (accountExist(req.getParameter("mail")))
+					return passSame(req.getParameter("password"));
+		}
+		return false;
+		
+		
+//		boolean a = mailCheck(req.getParameter("mail"));
+//		boolean f = passCheck(req.getParameter("password"));
+//		boolean h = accountExist(req.getParameter("mail"));
+//		boolean i = passSame(req.getParameter("password"));
+//		boolean k = hashPassCheck(req.getParameter("password"));
+//
+//		boolean result =  c && d && e && f && g && h && (i || k) ;
+//
+//		return result;
+	}
+	
+	
+	private boolean mailCheck(String str) {
+		if (mailEmpty(str)) {
+			return mailLength(str) & mailFormat(str);
+		}
+		return false;
+	}
+	
+	
+	private boolean passCheck(String str) {
+		if (passEmpty(str))
+			return passLength(str);
+		return false;
 	}
 	
 	//メールアドレス必須入力チェック
@@ -95,93 +113,85 @@ public class LoginFormCheck {
 	}
 	
 	//アカウントテーブル存在チェック
+	//インスタンス変数（クラス自身が持つ変数）にArrayListを追加して、複数のメールアドレスがあっても対応。
 	private boolean accountExist(String str) {
-		String sql = "select *, count(*) from accounts where authority != 4 and mail = ?";
-		
+		String sql = "select * from accounts where authority != 4 and mail = ?";
+		boolean result = false;
 		try( 
 				Connection con = DbUtil.open();
 				PreparedStatement ps = con.prepareStatement(sql);
 		){
 			ps.setString(1, str);
 			ResultSet rs = ps.executeQuery();
-			rs.next();
-			if (rs.getInt("count(*)") > 0) {
-				account = new AccountsBean(
-						rs.getInt("account_id"), 
-						rs.getString("name"), 
-						rs.getString("mail"),
-						rs.getString("password"),
-						rs.getString("authority")
-						);
-				return true;
+			while (rs.next()) {
+				if (rs.getString("name") != null) {
+					AccountsBean ab = new AccountsBean(
+							rs.getInt("account_id"), 
+							rs.getString("name"), 
+							rs.getString("mail"),
+							rs.getString("password"),
+							rs.getString("authority")
+							);
+					list.add(ab);
+					result = true;
+				}
 			}
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		errors.add("アカウントが存在しません。");
-		return false;
-		
+		if (!result)
+			errors.add("アカウントが存在しません。");
+		return result;
 		
 	}
 		
 	//パスワードチェック
 	private boolean passSame(String str1) {
-		if (account == null) {
-			return false;
-		}
-		if (!( str1.equals( account.getPassword() ) )) {
-			errors.add("メールアドレス、パスワードを正しく入力して下さい。");
-			return false;
-		}
-		return true;
-	}
-	
-	private static void hash(String password) {
-		try {
-			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			byte[] salt = new byte[16];
-            SecureRandom random = new SecureRandom();
-            random.nextBytes(salt);
-            md.update(salt);
-			md.update(password.getBytes());
-		    byte[] hashBytes = md.digest();
-		    String hashpass = Base64.getEncoder().encodeToString(hashBytes);
-		    System.out.println(hashpass);
-//		    StringBuffer sb = new StringBuffer();
-//			byte[] cipherBytes = md.digest(password.getBytes());
-//
-//			for (int i=0; i<cipherBytes.length; i++) {
-//				sb.append(String.format("%02x", cipherBytes[i]&0xff));
-//			}
-//		    System.out.println(sb.toString());
-		} catch (Exception e) {
-			e.printStackTrace();
+		boolean result = false;
+		for (AccountsBean ab: list) {
+			if (ab == null) {
+				return false;
+			}
+			if (str1.equals(ab.getPassword())) {
+				account = ab;
+//				result = hashPassCheck(str1);
+				result = true;
+			}
 		}
 		
+		if (!result) {
+			errors.add("メールアドレス、パスワードを正しく入力して下さい。");
+		}
+		return result;
 	}
 	
+	
 	private boolean hashPassCheck(String str) {
+//		String sql = "select * from hash where ";
+//		for (int i = 0; i < list.size(); i++) {
+//			if (i>=1) {
+//				sql += " or ";
+//			}
+//			sql += "account_id = "+ list.get(i).getAccount_id();
+//		}
 		String sql = "select * from hash where account_id = ?";
 		
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 			ps.setInt(1, account.getAccount_id());
 			ResultSet rs = ps.executeQuery();
-			rs.next();
-			
-			
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			String salt = rs.getString("salt");
-			String hash = str + salt;
-			md.update(hash.getBytes());
-		    byte[] hashBytes = md.digest();
-		    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
-		    
-		    if (hashpassword.equals(rs.getString("hashpassword"))) {
-		    	return true;
-		    }
-		    
+			while (rs.next()) {
+				String salt = rs.getString("salt");
+				String hash = str + salt;
+				md.update(hash.getBytes());
+			    byte[] hashBytes = md.digest();
+			    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
+			    
+			    if (hashpassword.equals(rs.getString("hashpassword"))) {
+			    	return true;
+			    }
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

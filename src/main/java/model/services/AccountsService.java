@@ -27,7 +27,7 @@ public class AccountsService {
 			ps.setString(4, bean.getAuthority());
 
 			ps.executeUpdate();
-//			hashInsert(bean);
+			hashInsert(bean);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class AccountsService {
 			
 
 			ps.executeUpdate();
-//			hashInsert(bean);
+			hashInsert(bean);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
