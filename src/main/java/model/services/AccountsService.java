@@ -48,7 +48,7 @@ public class AccountsService {
 			
 
 			ps.executeUpdate();
-			hashInsert(bean);
+			hashUpdate(bean);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,11 +72,11 @@ public class AccountsService {
 	}
 	
 	//アカウント一覧表示
-	public ArrayList<AccountsBean> accountsSelectAll() {
-		String sql = "SELECT * FROM accounts";
-		
-		return accountsResultAllList(sql);
-	}
+//	public ArrayList<AccountsBean> accountsSelectAll() {
+//		String sql = "SELECT * FROM accounts";
+//		
+//		return accountsResultAllList(sql);
+//	}
 	
 	//アカウント検索一覧表示
 	ArrayList<AccountsBean> accountsResultAllList(String sql) {
@@ -204,6 +204,35 @@ public class AccountsService {
 				e.printStackTrace();
 			}
 			return id;
+		}
+		
+		private void hashUpdate(AccountsBean bean) {
+			String sql = "update hash set hashpassword=?,salt=? where account_id=?";
+			
+			try (Connection conn = DbUtil.open();
+					PreparedStatement ps = conn.prepareStatement(sql);) {
+				
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				SecureRandom random = new SecureRandom();
+				String salt = String.valueOf(random.nextDouble());
+				String hash = bean.getPassword() + salt;
+				md.update(hash.getBytes());
+			    byte[] hashBytes = md.digest();
+			    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
+				
+			    String id = String.valueOf(bean.getAccount_id());
+			    
+				
+				ps.setString(3, id );
+				ps.setString(1, hashpassword );
+				ps.setString(2, salt);
+
+				ps.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				hashInsert(bean);
+			}
 		}
 		
 }
