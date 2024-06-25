@@ -149,8 +149,8 @@ public class AccountsFormCheck {
 	//パスワード長さチェック
 	private boolean passLength(String str) {
 		str = str != null? str: "";
-		if (str.length() > 30) {
-			errors.add("パスワードが長すぎます。");
+		if (str.length() < 8 | str.length() > 30) {
+			errors.add("パスワードは8文字以上30文字以内にしてください。");
 			return false;
 		}
 		return true;
@@ -208,7 +208,7 @@ public class AccountsFormCheck {
 	
 	//パスワードの正規表現のやつ
 	private boolean password(String password) {
-		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}");	
+		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:])");	
 	
 		 
 		// チェック対象文字列をMatcherに格納します
@@ -216,7 +216,7 @@ public class AccountsFormCheck {
 		 
 		// 判定結果を取得します
 		if (!(matcher1.matches())) {
-			errors.add("英大文字・英小文字・数字・記号(!@;:)の4種類の文字種のうち3種類を含む8文字以上パスワードにして下さい");
+			errors.add("英大文字・英小文字・数字・記号(!@;:)の4種類の文字種のうち3種類を含むパスワードにして下さい。");
 			return false;
 		}
 		return true;
