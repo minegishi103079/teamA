@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -65,14 +67,14 @@ public class AccountsFormCheck {
 	
 	private boolean password1Check(String password1,String password2) {
 		if(passEmpty(password1) &passCheckEmpty(password2)) {
-			return passLength(password1) & passLength(password2) & passSame1(password1, password2);
+			return passLength(password1) & passLength(password2) & passSame1(password1, password2)& password(password1);
 		}
 		return false;
 	}
 	
 	private boolean password2Check(String password1,String password2) {
 		if(passEmpty(password1) &passCheckEmpty(password2)) {
-			return passLength(password1) & passLength(password2) & passSame2(password1, password2);
+			return passLength(password1) & passLength(password2) & passSame2(password1, password2)&password(password1);
 		}
 		return false;
 	}
@@ -204,20 +206,19 @@ public class AccountsFormCheck {
 		return true;
 	}
 	
-//	パスワードの正規表現のやつ
-//	private boolean password(String password) {
-//		Pattern pattern1 = Pattern. compile("	
-//	^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}$
-//");
-//		 
-//		// チェック対象文字列をMatcherに格納します
-//		Matcher matcher1 = pattern1.matcher(password);
-//		 
-//		// 判定結果を取得します
-//		if (!(matcher1.matches())) {
-//			errors.add("英大文字・英小文字・数字・記号(!@;:)の4種類の文字種のうち3種類を含むパスワードにして下さい");
-//			return false;
-//		}
-//		return true;
-//	}
+	//パスワードの正規表現のやつ
+	private boolean password(String password) {
+		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}");	
+	
+		 
+		// チェック対象文字列をMatcherに格納します
+		Matcher matcher1 = pattern1.matcher(password);
+		 
+		// 判定結果を取得します
+		if (!(matcher1.matches())) {
+			errors.add("英大文字・英小文字・数字・記号(!@;:)の4種類の文字種のうち3種類を含む8文字以上パスワードにして下さい");
+			return false;
+		}
+		return true;
+	}
 }
