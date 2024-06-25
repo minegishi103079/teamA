@@ -31,19 +31,19 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">氏名
+						<label for="varidationTextarea" class="col-form-label fw-bold">氏名
 							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="textarea" id="validationTextarea"
+						<input type="textarea" id="validationTextarea "
 							class="form-control" name="name" placeholder="氏名">
 					</div>
 				</div>
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">メールアドレス</label>
+						<label for="varidationTextarea" class="col-form-label fw-bold">メールアドレス</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="email" class="form-control" name="mail"
@@ -53,7 +53,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">権限</label>
+						<label for="varidationTextarea" class="col-form-label fw-bold">権限</label>
 					</div>
 					<div class="col-6 p-2">
 						<div class="form-check form-check-inline">

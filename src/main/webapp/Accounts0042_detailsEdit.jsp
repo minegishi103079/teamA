@@ -30,7 +30,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">氏名
+						<label for="varidationTextarea" class="col-form-label fw-bold">氏名
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -43,7 +43,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">メールアドレス
+						<label for="varidationTextarea" class="col-form-label fw-bold">メールアドレス
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -56,7 +56,7 @@
 
 				<div class="row g-3">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">パスワード
+						<label for="varidationTextarea" class="col-form-label fw-bold">パスワード
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -70,7 +70,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">パスワード(確認)
+						<label for="varidationTextarea" class="col-form-label fw-bold">パスワード(確認)
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -83,7 +83,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">権限
+						<label for="varidationTextarea" class="col-form-label fw-bold">権限
 							<button type="button" class="btn btn-secondary btn-sm"
 								value="<c:out value="${accounts.getAuthority()}"></c:out>"
 								disabled>必須</button>

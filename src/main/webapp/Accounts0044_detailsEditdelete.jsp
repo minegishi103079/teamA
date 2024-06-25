@@ -23,7 +23,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="varidationTextarea" class="col-form-label">氏名</label>
+						<label for="varidationTextarea" class="col-form-label fw-bold">氏名</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="Textarea" class="form-control"
@@ -33,7 +33,7 @@
 				</div>
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="Textarea" class="col-form-label">メールアドレス</label>
+						<label for="Textarea" class="col-form-label fw-bold">メールアドレス</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="email" class="form-control" name="mail"
@@ -43,7 +43,7 @@
 				</div>
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="Textarea" class="col-form-label">パスワード</label>
+						<label for="Textarea" class="col-form-label fw-bold">パスワード</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="password" class="form-control" name="password1"
@@ -53,7 +53,7 @@
 				</div>
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="Textarea" class="col-form-label">パスワード(確認)</label>
+						<label for="Textarea" class="col-form-label fw-bold">パスワード(確認)</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="password" class="form-control" name="password2"
@@ -63,7 +63,7 @@
 				</div>
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="Textarea" class="col-form-label">権限</label>
+						<label for="Textarea" class="col-form-label fw-bold">権限</label>
 					</div>
 					<div class="col-6 p-2">
 						<div class="form-check form-check-inline">

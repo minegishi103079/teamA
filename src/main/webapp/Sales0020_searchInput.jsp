@@ -29,7 +29,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label">販売日</label>
+						<label class="col-form-label fw-bold">販売日</label>
 					</div>
 
 					<div class="col-6 p-2">
@@ -54,7 +54,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
-						<label class="col-form-label" for="account">担当</label>
+						<label class="col-form-label fw-bold" for="account">担当</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
@@ -71,7 +71,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label" for="category">商品カテゴリー</label>
+						<label class="col-form-label fw-bold" for="category">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select" aria-label="select example"
@@ -88,7 +88,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label" for="trade" >商品名
+						<label class="col-form-label fw-bold" for="trade" >商品名
 							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>
@@ -101,7 +101,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label class="col-form-label" for="note">備考
+						<label class="col-form-label fw-bold" for="note">備考
 							<button type="button" class="btn btn-secondary btn-sm" disabled>部分一致</button>
 						</label>
 					</div>

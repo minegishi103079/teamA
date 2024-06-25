@@ -39,7 +39,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="date" class="col-form-label">販売日
+						<label for="date" class="col-form-label fw-bold">販売日
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -52,7 +52,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
-						<label for="account" class="col-form-label">担当
+						<label for="account" class="col-form-label fw-bold">担当
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -75,7 +75,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="category" class="col-form-label">商品カテゴリー
+						<label for="category" class="col-form-label fw-bold">商品カテゴリー
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -98,7 +98,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="trade" class="col-form-label">商品名
+						<label for="trade" class="col-form-label fw-bold">商品名
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -112,7 +112,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="unit" class="col-form-label">単価
+						<label for="unit" class="col-form-label fw-bold">単価
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -126,7 +126,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="num" class="col-form-label">個数
+						<label for="num" class="col-form-label fw-bold">個数
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
 						</label>
 					</div>
@@ -140,7 +140,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="note" class="col-form-label">備考</label>
+						<label for="note" class="col-form-label fw-bold">備考</label>
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control" id="note" name="note"

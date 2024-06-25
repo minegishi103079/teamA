@@ -24,7 +24,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="date" class="col-form-label">販売日</label>
+						<label for="date" class="col-form-label fw-bold">販売日</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="date" id="date" class="col-4 form-control bg-secondary-subtle"
@@ -34,7 +34,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse ">
-						<label for="account" class="col-form-label">担当
+						<label for="account" class="col-form-label fw-bold">担当
 						</label>
 					</div>
 					<div class="col-6 p-2">
@@ -48,7 +48,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="category" class="col-form-label">商品カテゴリー</label>
+						<label for="category" class="col-form-label fw-bold">商品カテゴリー</label>
 					</div>
 					<div class="col-6 p-2">
 						<select class="form-select bg-secondary-subtle" name="category_id" id="category" readonly>
@@ -61,7 +61,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="trade" class="col-form-label">商品名</label>
+						<label for="trade" class="col-form-label fw-bold">商品名</label>
 					</div>
 					<div class="col-6 p-2">
 						<input type="textarea" id="trade" class="form-control bg-secondary-subtle"
@@ -71,7 +71,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="unit" class="col-form-label">単価</label>
+						<label for="unit" class="col-form-label fw-bold">単価</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="unit" class="form-control bg-secondary-subtle" name="unit_price"
@@ -81,7 +81,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="num" class="col-form-label">個数</label>
+						<label for="num" class="col-form-label fw-bold">個数</label>
 					</div>
 					<div class="col-3 p-2">
 						<input type="textarea" id="num" class="form-control bg-secondary-subtle" name="sale_number" value="<c:out value="${sales.getSale_number()}"></c:out>" placeholder="個数" readonly>
@@ -90,7 +90,7 @@
 
 				<div class="row g-3 align-items-center">
 					<div class="col-4 d-flex flex-row-reverse">
-						<label for="note" class="col-form-label">備考</label>
+						<label for="note" class="col-form-label fw-bold">備考</label>
 					</div>
 					<div class="col-6 p-2">
 						<textarea class="form-control bg-secondary-subtle" id="note" name="note" placeholder="備考" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
