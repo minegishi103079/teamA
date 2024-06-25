@@ -43,7 +43,7 @@ public class AccountsFormCheck {
 	public boolean validate3(HttpServletRequest req) {
 
 		boolean a = nameCheck(req.getParameter("name"));
-		boolean b = mailCheck(req.getParameter("mail"));
+		boolean b = mailCheck2(req.getParameter("mail"));
 		boolean c = password2Check(req.getParameter("password1"), req.getParameter("password2"));
 
 		boolean result = a && b && c;
@@ -61,6 +61,13 @@ public class AccountsFormCheck {
 	private boolean mailCheck(String mail) {
 		if(mailEmpty(mail)) {
 				return mailLength(mail)&mailFormat(mail)&mailDuplication(mail);
+		}
+		return false;
+	}
+	
+	private boolean mailCheck2(String mail) {
+		if(mailEmpty(mail)) {
+				return mailLength(mail)&mailFormat(mail);
 		}
 		return false;
 	}
