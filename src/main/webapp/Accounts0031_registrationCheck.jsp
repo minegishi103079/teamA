@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/readonly.css" type="text/css">
 <link rel="stylesheet" href="css/active.css" type="text/css">
-<title>アカウント登録画面</title>
+<title>アカウント登録確認画面</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
-			<h1>アカウントを登録してよろしいですか</h1>
+			<h1>アカウントを登録してよろしいですか？</h1>
 			<form class="form" action="Accounts0031" method="post">
 
 				<div class="row g-3 align-items-center">

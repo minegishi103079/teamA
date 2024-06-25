@@ -25,7 +25,7 @@
 
 	<div class="container-fluid">
 		<div class="offset-1 col-10" style="margin-top: 10vh;">
-			<h1>アカウント詳細編集画面</h1>
+			<h1>アカウント詳細編集</h1>
 			<form class="form" action="Accounts0042" method="post">
 
 				<div class="row g-3 align-items-center">
