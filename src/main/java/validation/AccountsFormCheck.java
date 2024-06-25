@@ -67,14 +67,14 @@ public class AccountsFormCheck {
 	
 	private boolean password1Check(String password1,String password2) {
 		if(passEmpty(password1) &passCheckEmpty(password2)) {
-			return passLength(password1) & passLength(password2) & passSame1(password1, password2)& password(password1);
+			return passLength(password1) & passSame1(password1, password2)& password(password1);
 		}
 		return false;
 	}
 	
 	private boolean password2Check(String password1,String password2) {
 		if(passEmpty(password1) &passCheckEmpty(password2)) {
-			return passLength(password1) & passLength(password2) & passSame2(password1, password2)&password(password1);
+			return passLength(password1) & passSame2(password1, password2)&password(password1);
 		}
 		return false;
 	}
@@ -208,7 +208,7 @@ public class AccountsFormCheck {
 	
 	//パスワードの正規表現のやつ
 	private boolean password(String password) {
-		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:])");	
+		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}$");	
 	
 		 
 		// チェック対象文字列をMatcherに格納します
