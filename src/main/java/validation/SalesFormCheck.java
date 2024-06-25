@@ -21,18 +21,14 @@ public class SalesFormCheck {
 	public boolean validate(HttpServletRequest req) {
 
 		boolean a = dateCheck(req.getParameter("sale_date"));
-		boolean b = accountEmpty(req.getParameter("account_id"));
-		boolean c = categoryEmpty(req.getParameter("category_id"));
+		boolean b = accountsCheck(req.getParameter("account_id"));
+		boolean c = categoryCheck(req.getParameter("category_id"));
 		boolean d = nameCheck(req.getParameter("trade_name"));
-		
-		
 		boolean e =priceCheck(req.getParameter("unit_price"));
 		boolean f = saleNumberCheck(req.getParameter("sale_number"));
 		boolean g = noteLength(req.getParameter("note"));
-		boolean h = accountExist(req.getParameter("account_id"));
-		boolean i = categoryExist(req.getParameter("category_id"));
 
-		boolean result = a && b && c && d && e && f && g && h && i;
+		boolean result = a && b && c && d && e && f && g;
 
 		return result;
 	}
@@ -78,6 +74,15 @@ public class SalesFormCheck {
 		return true;
 
 	}
+	
+	//担当統括チェック
+	private boolean accountsCheck(String account) {
+		if(accountEmpty(account)) {
+			return accountExist(account);
+		}
+		return false;
+	}
+	
 
 	//担当必須入力チェック
 	private boolean accountEmpty(String str) {
@@ -89,6 +94,14 @@ public class SalesFormCheck {
 		}
 		return true;
 	}
+	
+	//商品カテゴリー統括チェック
+		private boolean categoryCheck(String category) {
+			if(categoryEmpty(category)) {
+				return categoryExist(category);
+			}
+			return false;
+		}
 
 	//商品カテゴリー必須入力チェック
 	private boolean categoryEmpty(String str) {

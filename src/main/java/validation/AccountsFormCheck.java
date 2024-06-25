@@ -67,7 +67,7 @@ public class AccountsFormCheck {
 	
 	private boolean mailCheck2(String mail) {
 		if(mailEmpty(mail)) {
-				return mailLength(mail)&mailFormat(mail);
+				return mailLength(mail)&mailFormat2(mail);
 		}
 		return false;
 	}
@@ -134,7 +134,7 @@ public class AccountsFormCheck {
 	        if(EmailValidator.getInstance().isValid(str)) {
 	            return true;
 	        }else {
-	        	errors.add("メールアドレスの形式が誤っています。");
+	        	errors.add("メールアドレスを正しく入力して下さい。");
 	        	return false;
 	        }
 	        
@@ -142,6 +142,21 @@ public class AccountsFormCheck {
 		return false;
 		
 	}
+	//メールアドレス形式チェック
+		private boolean mailFormat2(String str) {
+			
+		    if (str != null) {
+		        if(EmailValidator.getInstance().isValid(str)) {
+		            return true;
+		        }else {
+		        	errors.add("メールアドレスの形式が誤っています。");
+		        	return false;
+		        }
+		        
+		    }
+			return false;
+			
+		}
 	
 	//パスワード必須入力チェック
 	private boolean passEmpty(String str) {
