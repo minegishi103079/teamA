@@ -183,7 +183,7 @@ public class SalesFormCheck {
 	//個数統括チェック
 	private boolean saleNumberCheck(String saleNumber) {
 		if(saleNumberEmpty(saleNumber)) {
-			return saleNumberFormat(saleNumber) & saleNumberLength(saleNumber);
+			return saleNumberLength(saleNumber) & saleNumberFormat(saleNumber);
 		}
 		return false;
 	}
