@@ -64,7 +64,7 @@
 					</div>
 				</div>
 
-				<div class="row g-3 align-items-center">
+				<div class="row g-3">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="varidationTextarea" class="col-form-label">パスワード
 							<button type="button" class="btn btn-secondary btn-sm" disabled>必須</button>
@@ -74,6 +74,7 @@
 						<input type="password" class="form-control" name="password1"
 							value="<c:out value="${accountInsert.getPassword()}"></c:out>"
 							placeholder="パスワード" required>
+							<div class= "mt-1">英大文字・英小文字・数字・記号(!@;:)のうち3種類を含む8文字以上30文字以内にして下さい</div>
 					</div>
 				</div>
 
