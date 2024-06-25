@@ -208,7 +208,7 @@ public class AccountsFormCheck {
 	
 	//パスワードの正規表現のやつ
 	private boolean password(String password) {
-		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}$");	
+		Pattern pattern1 = Pattern. compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:])*");	
 	
 		 
 		// チェック対象文字列をMatcherに格納します
