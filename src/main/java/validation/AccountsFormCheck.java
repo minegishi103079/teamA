@@ -204,10 +204,20 @@ public class AccountsFormCheck {
 		return true;
 	}
 	
-	
-	
-
+//	パスワードの正規表現のやつ
+//	private boolean password(String password) {
+//		Pattern pattern1 = Pattern. compile("	
+//	^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@;:])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@;:])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@;:]))([a-zA-Z0-9!@;:]){8,}$
+//");
+//		 
+//		// チェック対象文字列をMatcherに格納します
+//		Matcher matcher1 = pattern1.matcher(password);
+//		 
+//		// 判定結果を取得します
+//		if (!(matcher1.matches())) {
+//			errors.add("英大文字・英小文字・数字・記号(!@;:)の4種類の文字種のうち3種類を含むパスワードにして下さい");
+//			return false;
+//		}
+//		return true;
+//	}
 }
-
-//まだできてないやつ
-//バリデート分ける必要があれば分ける
