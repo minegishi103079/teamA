@@ -83,7 +83,7 @@ public class LoginFormCheck {
 	        if(EmailValidator.getInstance().isValid(str)) {
 	            return true;
 	        }else {
-	        	errors.add("メールアドレスの形式が誤っています。");
+	        	errors.add("メールアドレスを正しく入力してください");
 	        	return false;
 	        }
 	        
