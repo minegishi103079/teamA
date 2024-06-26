@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary"
 	style="padding: 0px;">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#" style="padding: 13px;">物品売上管理システム</a>
+		<a class="navbar-brand" style="padding: 13px;">物品売上管理システム</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
