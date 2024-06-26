@@ -44,7 +44,7 @@ public class Login extends HttpFilter implements Filter {
 
 		// pass the request along the filter chain
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
-	      HttpServletResponse httpResponse = (HttpServletResponse)response;
+	    HttpServletResponse httpResponse = (HttpServletResponse)response;
 
 	      String path= httpRequest.getServletPath();
 
