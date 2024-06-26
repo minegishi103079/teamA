@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/active.css" type="text/css">
 <link rel="stylesheet" href="css/readonly.css" type="text/css">
-<title>アカウント詳細編集確認画面</title>
+<title>アカウント詳細編集確認</title>
 </head>
 <body>
 
