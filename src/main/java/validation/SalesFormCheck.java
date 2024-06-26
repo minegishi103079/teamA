@@ -43,13 +43,6 @@ public class SalesFormCheck {
 		
 		return false;
 
-//		boolean p = dateStartFormat(req.getParameter("date1"));
-//		boolean q = dateEndFormat(req.getParameter("date2"));
-//		boolean r = numberCheck(req);
-//
-//		boolean result = p && q && r;
-//
-//		return result;
 
 	}
 	//販売日統括チェック
@@ -133,7 +126,7 @@ public class SalesFormCheck {
 	private boolean nameEmpty(String str) {
 		str = str != null? str: "";
 		if (str.isEmpty()) {
-			errors.add("商品名を入力してください。");
+			errors.add("商品名を入力して下さい。");
 			return false;
 		}
 		return true;
@@ -161,7 +154,7 @@ public class SalesFormCheck {
 	private boolean priceEmpty(String str) {
 		str = str != null? str: "";
 		if (str.isEmpty()) {
-			errors.add("単価を入力してください。");
+			errors.add("単価を入力して下さい。");
 			return false;
 		}
 		return true;
@@ -182,7 +175,7 @@ public class SalesFormCheck {
 		try {
 			Integer.parseInt(str);
 		} catch (NumberFormatException e) {
-			errors.add("単価を正しく入力してください。");
+			errors.add("単価を正しく入力して下さい。");
 			return false;
 		}
 		return true;
@@ -200,7 +193,7 @@ public class SalesFormCheck {
 	private boolean saleNumberEmpty(String str) {
 		str = str != null? str: "";
 		if (str.isEmpty()) {
-			errors.add("個数を入力してください。");
+			errors.add("個数を入力して下さい。");
 			return false;
 		}
 		return true;
@@ -221,7 +214,7 @@ public class SalesFormCheck {
 		try {
 			Integer.parseInt(str);
 		} catch (NumberFormatException e) {
-			errors.add("個数を正しく入力してください。");
+			errors.add("個数を正しく入力して下さい。");
 			return false;
 		}
 		return true;

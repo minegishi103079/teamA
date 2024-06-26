@@ -73,7 +73,7 @@ public class LoginFormCheck {
 	        if(EmailValidator.getInstance().isValid(str)) {
 	            return true;
 	        }else {
-	        	errors.add("メールアドレスを正しく入力してください");
+	        	errors.add("メールアドレスを正しく入力して下さい");
 	        	return false;
 	        }
 	        

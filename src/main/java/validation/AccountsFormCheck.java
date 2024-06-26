@@ -172,7 +172,7 @@ public class AccountsFormCheck {
 	private boolean passLength(String str) {
 		str = str != null? str: "";
 		if (str.length() < 8 | str.length() > 30) {
-			errors.add("パスワードは8文字以上30文字以内にしてください。");
+			errors.add("パスワードは8文字以上30文字以内にして下さい。");
 			return false;
 		}
 		return true;
