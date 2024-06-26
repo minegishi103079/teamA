@@ -52,7 +52,6 @@ public class AccountsService {
 			
 
 		} catch (SQLException e) {
-			e.printStackTrace();
 			hashUpdate(bean);
 		}
 	}

@@ -29,7 +29,6 @@ public class LoginFormCheck {
 		}
 		return false;
 		
-		
 	}
 	
 	
@@ -145,7 +144,6 @@ public class LoginFormCheck {
 			}
 			if (str1.equals(ab.getPassword())) {
 				account = ab;
-//				result = hashPassCheck(str1);
 				result = true;
 			}
 		}
@@ -158,18 +156,10 @@ public class LoginFormCheck {
 	
 	
 	private boolean hashPassCheck(String str) {
-//		String sql = "select * from hash where ";
-//		for (int i = 0; i < list.size(); i++) {
-//			if (i>=1) {
-//				sql += " or ";
-//			}
-//			sql += "account_id = "+ list.get(i).getAccount_id();
-//		}
 		String sql = "select * from hash where account_id = ?";
 		
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
-//			ps.setInt(1, account.getAccount_id());
 			for (int i = 0; i < list.size(); i++) {
 				ps.setInt(1, list.get(i).getAccount_id() );
 				ResultSet rs = ps.executeQuery();
