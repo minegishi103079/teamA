@@ -46,7 +46,7 @@
 						<label for="varidationTextarea" class="col-form-label fw-bold">メールアドレス</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail"
+						<input type="text" class="form-control" name="mail"
 							placeholder="メールアドレス">
 					</div>
 				</div>
