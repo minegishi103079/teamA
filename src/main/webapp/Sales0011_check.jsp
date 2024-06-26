@@ -95,7 +95,7 @@
 						<label for="Textarea" class="col-form-label fw-bold">備考</label>
 					</div>
 					<div class="col-6 p-2 ">
-						<textarea class="form-control bg-secondary-subtle" id="Textarea" rows="3"
+						<textarea class="form-control bg-secondary-subtle" id="Textarea" rows="5"
 							name="note" readonly><c:out value="${saleInsert.getNote()}"></c:out></textarea>
 					</div>
 				</div>
