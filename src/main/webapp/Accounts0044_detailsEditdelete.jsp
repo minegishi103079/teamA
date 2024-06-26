@@ -97,15 +97,11 @@
 					</div>
 				</div>
 			</form>
-			<div class="row d-flex justify-content-center mt-2">
-				<div class="col-auto">
+			<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
 					<button type="submit" class="btn btn-danger" name="account_id"
 						value="<c:out value="${accounts.getAccount_id() }"></c:out>"
 						form="decide">✕OK</button>
-				</div>
-				<div class="col-auto">
 					<a class="btn btn-light" href="Accounts0041">キャンセル</a>
-				</div>
 			</div>
 			</form>
 		</div>
