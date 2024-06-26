@@ -121,7 +121,7 @@ public class AccountsFormCheck {
 	private boolean mailLength(String str) {
 		str = str != null? str: "";
 		if (str.length() > 100) {
-			errors.add("メールアドレスの指定が長すぎます。");
+			errors.add("メールアドレスが長すぎます。");
 			return false;
 		}
 		return true;
