@@ -19,17 +19,17 @@
 	
 	 <script type="text/javascript">
 	  var a1 = <c:out value="${monthly.get(0)}" />;
-	  var a2 = ${monthly.get(1)};
-	  var a3 = ${monthly.get(2)};
-	  var a4 = ${monthly.get(3)};
-	  var a5 = ${monthly.get(4)};
-	  var a6 = ${monthly.get(5)};
-	  var a7 = ${monthly.get(6)};
-	  var a8 = ${monthly.get(7)};
-	  var a9 = ${monthly.get(8)};
-	  var a10 = ${monthly.get(9)};
-	  var a11 = ${monthly.get(10)};
-	  var a12 = ${monthly.get(11)};
+	  var a2 = <c:out value="${monthly.get(1)}" />;
+	  var a3 = <c:out value="${monthly.get(2)}" />;
+	  var a4 = <c:out value="${monthly.get(3)}" />;
+	  var a5 = <c:out value="${monthly.get(4)}" />;
+	  var a6 = <c:out value="${monthly.get(5)}" />;
+	  var a7 = <c:out value="${monthly.get(6)}" />;
+	  var a8 = <c:out value="${monthly.get(7)}" />;
+	  var a9 = <c:out value="${monthly.get(8)}" />;
+	  var a10 = <c:out value="${monthly.get(9)}" />;
+	  var a11 = <c:out value="${monthly.get(10)}" />;
+	  var a12 = <c:out value="${monthly.get(11)}" />;
 	</script>
 	 <canvas id="lineChart"></canvas>
 	  <script type="text/javascript" src="js/monthlySale.js"></script>

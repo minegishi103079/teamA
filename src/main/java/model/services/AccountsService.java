@@ -48,10 +48,12 @@ public class AccountsService {
 			
 
 			ps.executeUpdate();
-			hashUpdate(bean);
+			hashInsert(bean);
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			hashUpdate(bean);
 		}
 	}
 
@@ -224,7 +226,6 @@ public class AccountsService {
 
 			} catch (Exception e) {
 				e.printStackTrace();
-				hashInsert(bean);
 			}
 		}
 		
