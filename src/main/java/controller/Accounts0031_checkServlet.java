@@ -49,12 +49,6 @@ public class Accounts0031_checkServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		AccountsService as = new AccountsService();
 		
-//		AccountsBean ab = new AccountsBean(
-//				0,
-//				request.getParameter("name"),
-//				request.getParameter("mail"),
-//				request.getParameter("password1"),
-//				request.getParameter("authority"));
 		HttpSession session = request.getSession();
 		AccountsBean ab = CommonUtil.request_AcoountsBean(request);
 		if (!ab.equals((AccountsBean)session.getAttribute("accountInsert"))) {

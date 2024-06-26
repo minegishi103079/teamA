@@ -43,23 +43,22 @@ public class Accounts0040_serchInputServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 検索結果を反映する
+		request.setCharacterEncoding("UTF-8");
 		
-				request.setCharacterEncoding("UTF-8");
-				
-				AccountsFormCheck af = new AccountsFormCheck();
-				
-				// フォームチェック、問題なければtrue
-				if(af.validate2(request)) {
-					
-					HttpSession session = request.getSession();
-					// 検索結果をbeanに入れる
-					session.setAttribute("accountSearch", CommonUtil.request_AcoountSearchBean(request));
-					response.sendRedirect("Accounts0041");
-					
-				}else {
-					request.setAttribute("errors", af.getErrors());
-					doGet(request, response);
-				}
+		AccountsFormCheck af = new AccountsFormCheck();
+		
+		// フォームチェック、問題なければtrue
+		if(af.validate2(request)) {
+			
+			HttpSession session = request.getSession();
+			// 検索結果をbeanに入れる
+			session.setAttribute("accountSearch", CommonUtil.request_AcoountSearchBean(request));
+			response.sendRedirect("Accounts0041");
+			
+		}else {
+			request.setAttribute("errors", af.getErrors());
+			doGet(request, response);
+		}
 	}
 
 }

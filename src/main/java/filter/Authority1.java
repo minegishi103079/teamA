@@ -43,8 +43,6 @@ public class Authority1 extends HttpFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		var req = (HttpServletRequest) request;
 		var res = (HttpServletResponse) response;
-
-		String path = req.getServletPath();
 		
 		HttpSession session = req.getSession();
 		

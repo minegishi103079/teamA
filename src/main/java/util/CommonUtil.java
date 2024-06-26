@@ -174,12 +174,4 @@ public class CommonUtil {
 		return new SalesBean(sale_id, sale_date, account_id, category_id, trade_name, unit_price, sale_number, note);
 	}
 
-	//	CommonUtil.str_LocalDate(request.getParameter("sale_date")),
-	//	str_Int(request.getParameter("account_id")),
-	//	str_Int(request.getParameter("category_id")),
-	//	request.getParameter("trade_name"),
-	//	str_Int(request.getParameter("unit_price")),
-	//	str_Int(request.getParameter("sale_number")),
-	//	request.getParameter("note"),
-
 }

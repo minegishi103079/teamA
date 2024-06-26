@@ -43,8 +43,6 @@ public class Authority2 extends HttpFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		var req = (HttpServletRequest) request;
 		var res = (HttpServletResponse) response;
-
-		String path = req.getServletPath();
 		
 		HttpSession session = req.getSession();
 		
@@ -53,7 +51,6 @@ public class Authority2 extends HttpFilter implements Filter {
 		
 		if(authority.equals("2") || authority.equals("3") ) {
 			chain.doFilter(request, response);
-			
 			return;
 		}else{
 			res.sendRedirect("C0020");

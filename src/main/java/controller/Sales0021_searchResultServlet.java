@@ -33,8 +33,6 @@ public class Sales0021_searchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// ToDo:sessionにBeanで保管されている検索条件から、一覧を表示
-		
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();

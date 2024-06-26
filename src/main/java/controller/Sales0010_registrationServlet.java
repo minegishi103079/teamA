@@ -84,19 +84,12 @@ public class Sales0010_registrationServlet extends HttpServlet {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-			
-			
-			
 			response.sendRedirect("Sales0011");
 			
-			// 検索結果をbeanに入れる
-//			session.setAttribute("search", CommonUtil.request_SearchBean(request));
-//			response.sendRedirect("Sales0021");
 			
 		}else {
 			request.setAttribute("errors", sf.getErrors());
 			doGet(request, response);
-			//response.sendRedirect("Sale0010Registration_Servlet");
 		}
 	}
 }

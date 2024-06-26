@@ -71,13 +71,6 @@ public class AccountsService {
 
 	}
 	
-	//アカウント一覧表示
-//	public ArrayList<AccountsBean> accountsSelectAll() {
-//		String sql = "SELECT * FROM accounts";
-//		
-//		return accountsResultAllList(sql);
-//	}
-	
 	//アカウント検索一覧表示
 	ArrayList<AccountsBean> accountsResultAllList(String sql) {
 		ArrayList<AccountsBean> list = new ArrayList<>();
@@ -122,35 +115,35 @@ public class AccountsService {
 	}
 		
 		
-		// アカウント詳細
-		public AccountsBean AccountsDetailSales(String account_id) {
-			String sql = "SELECT * FROM accounts WHERE account_id = ?";
-			AccountsBean accounts = null;
+	// アカウント詳細
+	public AccountsBean AccountsDetailSales(String account_id) {
+		String sql = "SELECT * FROM accounts WHERE account_id = ?";
+		AccountsBean accounts = null;
+		
+		
+		try (
+				Connection con = DbUtil.open();
+				PreparedStatement ps = con.prepareStatement(sql);
+		){
+			ps.setString(1, account_id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				accounts = new AccountsBean(
+						rs.getInt("account_id"), 
+						rs.getString("name"), 
+						rs.getString("mail"),
+						rs.getString("password"),
+						rs.getString("authority")
+						);
+			};
 			
 			
-			try (
-					Connection con = DbUtil.open();
-					PreparedStatement ps = con.prepareStatement(sql);
-			){
-				ps.setString(1, account_id);
-				ResultSet rs = ps.executeQuery();
-				while(rs.next()) {
-					accounts = new AccountsBean(
-							rs.getInt("account_id"), 
-							rs.getString("name"), 
-							rs.getString("mail"),
-							rs.getString("password"),
-							rs.getString("authority")
-							);
-				};
-				
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			return accounts;
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		
+		return accounts;
+	}
 		
 		
 		

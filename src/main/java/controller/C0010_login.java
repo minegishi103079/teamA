@@ -46,8 +46,6 @@ public class C0010_login extends HttpServlet {
 		
 		if(lf.validate(request)) {
 			HttpSession session = request.getSession();
-			
-			
 			AccountsBean bean = lf.getAccount();
 			
 			if(bean == null) {
