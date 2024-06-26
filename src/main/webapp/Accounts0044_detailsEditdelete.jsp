@@ -101,7 +101,7 @@
 				<div class="col-auto">
 					<button type="submit" class="btn btn-danger" name="account_id"
 						value="<c:out value="${accounts.getAccount_id() }"></c:out>"
-						form="decide">✓OK</button>
+						form="decide">✕OK</button>
 				</div>
 				<div class="col-auto">
 					<a class="btn btn-light" href="Accounts0041">キャンセル</a>

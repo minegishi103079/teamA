@@ -100,7 +100,7 @@
 				<div class="row d-flex justify-content-center mt-2">
 					<div class="col-auto">
 						<button type="submit" class="btn btn-danger" name="sale_id" 
-						value="<c:out value="${sales.getSale_id() }"></c:out>" form="decide">✓OK</button>
+						value="<c:out value="${sales.getSale_id() }"></c:out>" form="decide">✕OK</button>
 					</div>
 					<div class="col-auto">
 						<form method="get" action="Sales0022" id="cancel">
