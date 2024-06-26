@@ -88,12 +88,12 @@
 					</div>
 				</div>
 
-				<div class="row g-3 align-items-center">
+				<div class="row g-3 align-items">
 					<div class="col-4 d-flex flex-row-reverse">
 						<label for="note" class="col-form-label fw-bold">備考</label>
 					</div>
 					<div class="col-6 p-2">
-						<textarea class="form-control bg-secondary-subtle" id="note" name="note" placeholder="備考" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
+						<textarea class="form-control bg-secondary-subtle" id="note" name="note" rows="5" placeholder="備考" readonly><c:out value="${sales.getNote()}"></c:out></textarea>
 					</div>
 				</div>
 			</form>
