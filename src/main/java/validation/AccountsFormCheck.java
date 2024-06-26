@@ -101,7 +101,7 @@ public class AccountsFormCheck {
 	private boolean nameLength(String str) {
 		str = str != null? str: "";
 		if (str.length() > 20) {
-			errors.add("氏名の指定が長すぎます。");
+			errors.add("氏名が長すぎます。");
 			return false;
 		}
 		return true;
