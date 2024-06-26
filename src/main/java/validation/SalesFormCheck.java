@@ -34,14 +34,22 @@ public class SalesFormCheck {
 	}
 
 	public boolean validate_2(HttpServletRequest req) {
+		
+		if(dateStartFormat(req.getParameter("date1"))){
+			if(dateEndFormat(req.getParameter("date2"))) {
+				return numberCheck(req);
+			}
+		}
+		
+		return false;
 
-		boolean p = dateStartFormat(req.getParameter("date1"));
-		boolean q = dateEndFormat(req.getParameter("date2"));
-		boolean r = numberCheck(req);
-
-		boolean result = p && q && r;
-
-		return result;
+//		boolean p = dateStartFormat(req.getParameter("date1"));
+//		boolean q = dateEndFormat(req.getParameter("date2"));
+//		boolean r = numberCheck(req);
+//
+//		boolean result = p && q && r;
+//
+//		return result;
 
 	}
 	//販売日統括チェック
