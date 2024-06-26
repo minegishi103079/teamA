@@ -107,7 +107,7 @@
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					<button class="btn btn-primary" type="submit" name="account_id"
-						value="<c:out value="${accounts.getAccount_id() }"></c:out>">✓OK</button>
+						value="<c:out value="${accounts.getAccount_id() }"></c:out>">✔OK</button>
 					<a class="btn btn-light" href="Accounts0042">キャンセル</a>
 				</div>
 			</form>

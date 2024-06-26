@@ -96,20 +96,16 @@
 					</div>
 				</div>
 			</form>
-
-				<div class="row d-flex justify-content-center mt-2">
-					<div class="col-auto">
+			
+		
+				<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
 						<button type="submit" class="btn btn-danger" name="sale_id" 
 						value="<c:out value="${sales.getSale_id() }"></c:out>" form="decide">✕OK</button>
-					</div>
-					<div class="col-auto">
 						<form method="get" action="Sales0022" id="cancel">
 							<button type="submit" class="btn btn-light" name="sale_id" 
 							value="<c:out value="${sales.getSale_id() }"></c:out>" form="cancel">キャンセル</button>
 						</form>
-					</div>
 				</div>
-			
 		</div>
 
 	</div>

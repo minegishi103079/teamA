@@ -58,7 +58,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail"
+						<input type="text" class="form-control" name="mail"
 							value="<c:out value="${accountInsert.getMail()}"></c:out>"
 							placeholder="メールアドレス" required>
 					</div>
@@ -130,7 +130,7 @@
 
 				<div class="mx-auto p-2" style="width: 100px;">
 					<button type="submit" class="btn btn-primary"
-						href="Accounts0031_registrationcheck.jsp">✓登録</button>
+						href="Accounts0031_registrationcheck.jsp">✔登録</button>
 				</div>
 
 			</form>

@@ -139,13 +139,13 @@
 					</div>
 				</div>
 
-				<div class="row d-flex justify-content-center mt-2">
-					<div class="col-auto">
+				<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
 						<button type="submit" class="btn btn-primary" name="sale_id"
-							value="<c:out value="${sales.getSale_id() }"></c:out>">✓更新</button>
-					</div>
-					<div class="col-auto">
-						<a type="submit" class="btn btn-light" href="Sales0022?sale_id=<c:out value="${sales.getSale_id() }" />">キャンセル</a>
+							value="<c:out value="${sales.getSale_id() }"></c:out>">✔更新</button>
+							<a type="submit" class="btn btn-light" href="Sales0022?sale_id=<c:out value="${sales.getSale_id() }" />">キャンセル</a>
+				</div>
+					
+						
 					</div>
 				</div>
 			</form>

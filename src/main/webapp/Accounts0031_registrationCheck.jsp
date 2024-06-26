@@ -108,7 +108,7 @@
 
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
-					<button class="btn btn-primary" type="submit">OK</button>
+					<button class="btn btn-primary" type="submit">✔OK</button>
 					<a class="btn btn-light" href="Accounts0030">キャンセル</a>
 				</div>
 		</div>

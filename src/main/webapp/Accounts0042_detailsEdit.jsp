@@ -48,7 +48,7 @@
 						</label>
 					</div>
 					<div class="col-6 p-2">
-						<input type="email" class="form-control" name="mail"
+						<input type="text" class="form-control" name="mail"
 							value="<c:out value="${accounts.getMail()}"></c:out>"
 							placeholder="メールアドレス" required>
 					</div>
@@ -119,7 +119,7 @@
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center p-2">
 					<button class="btn btn-primary" type="submit" name="account_id"
-						value="<c:out value="${accounts.getAccount_id() }"></c:out>">✓更新</button>
+						value="<c:out value="${accounts.getAccount_id() }"></c:out>">✔更新</button>
 					<a class="btn btn-light" href="Accounts0041">キャンセル</a>
 				</div>
 

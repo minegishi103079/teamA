@@ -72,30 +72,20 @@
 					<c:out value="${sales.getNote()}"></c:out>
 				</div>
 			</div>
-			<div class="row d-flex justify-content-center mt-2">
-				<div class="col-auto">
+			<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
 					<form class="" action="Sales0023" method="get" id="edit">
 						<button type="submit" class="btn btn-primary" name="sale_id" for="edit"
 							value="<c:out value="${sales.getSale_id() }"></c:out>"
-							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >✓編集</button>
+							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >✔編集</button>
 					</form>
-				</div>
-				<div class="col-auto">
 					<form class="" action="Sales0025" method="get" id="delete">
 						<button type="submit" class="btn btn-danger" name="sale_id" for="delete"
 							value="<c:out value="${sales.getSale_id() }"></c:out>"
 							<c:if test="${bean.getAuthority() < 2 }"> disabled</c:if> >✕削除</button>
 					</form>
-				</div>
-				<div class="col-auto">
 					<a type="submit" class="btn btn-light" href="Sales0021">キャンセル</a>
-				</div>
 			</div>
-
 		</div>
 	</div>
-
 </body>
-
-
 </html>
