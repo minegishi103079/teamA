@@ -37,12 +37,6 @@
 	</div>
 	
 	<div class="m-5 col-auto" style="width: 600px; height: auto;">
-	<!-- <script type="text/javascript">
-	  var category = <c:out value="${category}" />;
-	</script>
-	<canvas id="barChart"></canvas>
-	  <script type="text/javascript" src="js/categorizedSale.js"></script>
-	 -->
 	<canvas id="barChart"></canvas>
 	<script>
 	//キャンバスの要素を取得

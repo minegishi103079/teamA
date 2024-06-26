@@ -25,20 +25,11 @@ public class LoginFormCheck {
 
 		if (mailCheck(req.getParameter("mail")) & passCheck(req.getParameter("password"))) {
 			if (accountExist(req.getParameter("mail")))
-					return passSame(req.getParameter("password"));
+					return passSame(req.getParameter("password")) && hashPassCheck(req.getParameter("password"));
 		}
 		return false;
 		
 		
-//		boolean a = mailCheck(req.getParameter("mail"));
-//		boolean f = passCheck(req.getParameter("password"));
-//		boolean h = accountExist(req.getParameter("mail"));
-//		boolean i = passSame(req.getParameter("password"));
-//		boolean k = hashPassCheck(req.getParameter("password"));
-//
-//		boolean result =  c && d && e && f && g && h && (i || k) ;
-//
-//		return result;
 	}
 	
 	
@@ -178,19 +169,24 @@ public class LoginFormCheck {
 		
 		try (Connection conn = DbUtil.open();
 				PreparedStatement ps = conn.prepareStatement(sql);) {
-			ps.setInt(1, account.getAccount_id());
-			ResultSet rs = ps.executeQuery();
-			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			while (rs.next()) {
-				String salt = rs.getString("salt");
-				String hash = str + salt;
-				md.update(hash.getBytes());
-			    byte[] hashBytes = md.digest();
-			    String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
-			    
-			    if (hashpassword.equals(rs.getString("hashpassword"))) {
-			    	return true;
-			    }
+//			ps.setInt(1, account.getAccount_id());
+			for (int i = 0; i < list.size(); i++) {
+				ps.setInt(1, list.get(i).getAccount_id() );
+				ResultSet rs = ps.executeQuery();
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				while (rs.next()) {
+					String salt = rs.getString("salt");
+					String hash = str + salt;
+					md.update(hash.getBytes());
+					byte[] hashBytes = md.digest();
+					String hashpassword = Base64.getEncoder().encodeToString(hashBytes);
+					
+					if (hashpassword.equals(rs.getString("hashpassword"))) {
+						account = list.get(i);
+						return true;
+					}
+				}
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
