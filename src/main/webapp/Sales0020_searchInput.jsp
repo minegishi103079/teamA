@@ -111,7 +111,7 @@
 				</div>
 
 				<div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
-					<button type="submit" class="btn btn-primary">検索</button>
+					<button type="submit" class="btn btn-primary">🔍検索</button>
 					<a class="btn btn-light" href="Sales0020">クリア</a>
 				</div>
 
